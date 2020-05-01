@@ -3,7 +3,7 @@
 Flutter application built on top of contra wireframe kit. Thorough this project i will be developing all the screens in flutter and sharing in couple of series post.
 
 <p align="center">
-  <img src = "screenshots/welcome_screen.jpg" width=350>
+  <img src = "screenshots/welcome_screen.jpg" width=250>
 </p>
 
 ## Kits
@@ -21,8 +21,8 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 - Onboarding
 
-<img src = "screenshots/onboard_type_1.jpg" width=210><img src = "screenshots/onboard_type_2.jpg" width=210><img src = "screenshots/onboard_type_3.jpg" width=210>
-<img src = "screenshots/onboard_type_4.jpg" width=210>
+<img src = "screenshots/onboard_type_1.jpg" width=220><img src = "screenshots/onboard_type_2.jpg" width=220><img src = "screenshots/onboard_type_3.jpg" width=220>
+<img src = "screenshots/onboard_type_4.jpg" width=220>
 
 
 ## Mentions
