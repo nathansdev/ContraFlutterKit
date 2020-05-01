@@ -1,6 +1,8 @@
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
+import 'package:contraflutterkit/onboarding/welcome_screen.dart';
 import 'package:contraflutterkit/utils/colors.dart';
+import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'onboarding/type1/pager.dart';
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
         '/onboard_type_two': (context) => OnboardingPagerTypeTwo(),
         '/onboard_type_three': (context) => OnboardingPagerTypeThree(),
         '/onboard_type_four': (context) => OnboardPageTypeFour(),
+        '/empty_state': (context) => EmptyState(),
+        '/welcome_screen': (context) => WelcomeScreenPage(),
       },
     );
   }
@@ -64,27 +68,35 @@ class _MyHomePageState extends State<MyHomePage> {
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
               title: Text("Forms, Login, Signup"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "/empty_state");
+              },
             ),
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
               title: Text("Chatting Screens"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "/empty_state");
+              },
             ),
             Container(
               child: ListTile(
                 contentPadding: EdgeInsets.all(20),
                 trailing: Icon(Icons.navigate_next),
                 title: Text("Onboarding"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, "/empty_state");
+                },
               ),
             ),
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
               title: Text("Profile"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "/empty_state");
+              },
             )
           ],
         ),

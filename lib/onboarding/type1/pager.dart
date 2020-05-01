@@ -81,7 +81,9 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
                         padding: EdgeInsets.all(16),
                         color: white,
                         textColor: black,
-                        onPressed: () {},
+                        onPressed: () {
+//                          Navigator.pushNamed(context, "/welcome_screen");
+                        },
                         child: Text(
                           "Skip",
                           style: TextStyle(
@@ -102,11 +104,17 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
                         color: wood_smoke,
                         onPressed: () {
                           if (_pageController.hasClients) {
-                            _pageController.animateToPage(
-                              currentPageValue + 1,
-                              duration: const Duration(milliseconds: 400),
-                              curve: Curves.easeInOut,
-                            );
+                            if (currentPageValue < 2) {
+                              _pageController.animateToPage(
+                                currentPageValue + 1,
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.easeInOut,
+                              );
+                            } else {
+                              Navigator.pushNamed(context, "/welcome_screen");
+                            }
+                          } else {
+                            Navigator.pushNamed(context, "/welcome_screen");
                           }
                         },
                         textColor: white,

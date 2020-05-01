@@ -104,7 +104,9 @@ class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
                         child: RaisedButton(
                           padding: EdgeInsets.all(16),
                           color: wood_smoke,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/welcome_screen");
+                          },
                           textColor: white,
                           child: Text(
                             "Get Started",

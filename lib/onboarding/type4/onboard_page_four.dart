@@ -76,7 +76,9 @@ class OnboardPageTypeFour extends StatelessWidget {
                       child: RaisedButton(
                         padding: EdgeInsets.all(16),
                         color: wood_smoke,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/welcome_screen");
+                        },
                         textColor: white,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

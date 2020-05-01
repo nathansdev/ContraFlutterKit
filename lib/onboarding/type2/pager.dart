@@ -96,11 +96,17 @@ class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
                   GestureDetector(
                     onTap: () {
                       if (_pageController.hasClients) {
-                        _pageController.animateToPage(
-                          currentPageValue + 1,
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
+                        if (currentPageValue < 2) {
+                          _pageController.animateToPage(
+                            currentPageValue + 1,
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                          );
+                        } else {
+                          Navigator.pushNamed(context, "/welcome_screen");
+                        }
+                      } else {
+                        Navigator.pushNamed(context, "/welcome_screen");
                       }
                     },
                     child: Container(
