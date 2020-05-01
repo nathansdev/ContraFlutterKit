@@ -53,7 +53,7 @@ class OnboardPageTypeFour extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         left: 24.0, right: 24.0, top: 4.0, bottom: 12.0),
                     child: Text(
-                      Strings.contra_wireframe_kit,
+                      Strings.contra_wireframe_kit_next_line,
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           fontSize: 44,
@@ -69,7 +69,8 @@ class OnboardPageTypeFour extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    padding:
+                        const EdgeInsets.only(left: 24.0, top: 8, right: 24),
                     child: ButtonTheme(
                       minWidth: MediaQuery.of(context).size.width,
                       child: RaisedButton(

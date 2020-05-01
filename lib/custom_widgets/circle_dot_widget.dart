@@ -9,9 +9,11 @@ class CircleDotWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 12.0,
-      height: 12.0,
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 150),
+      margin: EdgeInsets.symmetric(horizontal: 8),
+      height: isActive ? 14 : 10,
+      width: isActive ? 14 : 10,
       decoration: BoxDecoration(
           border: Border.all(width: 2.0, color: borderColor),
           color: color,

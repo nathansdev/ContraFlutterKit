@@ -1,5 +1,11 @@
-import 'package:contraflutterkit/onboarding/onboard_pages.dart';
+import 'package:contraflutterkit/onboarding/onboard_main.dart';
+import 'package:contraflutterkit/onboarding/type3/pager.dart';
+import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/material.dart';
+
+import 'onboarding/type1/pager.dart';
+import 'onboarding/type2/pager.dart';
+import 'onboarding/type4/onboard_page_four.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,12 +17,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Contra Flutter Kit',
       theme: ThemeData(
-        fontFamily: 'Montserrat',
-        primarySwatch: Colors.blue,
-      ),
+          fontFamily: 'Montserrat',
+          primarySwatch: Colors.blue,
+          primaryColor: persian_blue),
       home: MyHomePage(title: 'Contra Flutter Kit Demo'),
       routes: {
-        '/onboard': (context) => OnboardPage(),
+        '/onboard_all': (context) => OnboardPage(),
+        '/onboard_type_one': (context) => OnboardingPagerTypeOne(),
+        '/onboard_type_two': (context) => OnboardingPagerTypeTwo(),
+        '/onboard_type_three': (context) => OnboardingPagerTypeThree(),
+        '/onboard_type_four': (context) => OnboardPageTypeFour(),
       },
     );
   }
@@ -47,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: Icon(Icons.navigate_next),
               title: Text("Onboarding and Splash"),
               onTap: () {
-                Navigator.pushNamed(context, "/onboard");
+                Navigator.pushNamed(context, "/onboard_all");
               },
             ),
             ListTile(
