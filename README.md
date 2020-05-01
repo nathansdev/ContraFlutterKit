@@ -26,9 +26,6 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 
 ## Mentions
+- Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
+- Link to the wireframe official page [Contra wireframe kit](https://contrauikit.com/)
 
-- [Contra wireframe kit](https://contrauikit.com/)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
