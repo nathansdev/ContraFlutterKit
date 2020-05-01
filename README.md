@@ -21,8 +21,8 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 - Onboarding
 
-<img src = "screenshots/onboard_type_1.jpg" width=200><img src = "screenshots/onboard_type_3.jpg" width=200><img src = "screenshots/onboard_type_3.jpg" width=200>
-<img src = "screenshots/onboard_type_4.jpg" width=200>
+<img src = "screenshots/onboard_type_1.jpg" width=210><img src = "screenshots/onboard_type_2.jpg" width=210><img src = "screenshots/onboard_type_3.jpg" width=210>
+<img src = "screenshots/onboard_type_4.jpg" width=210>
 
 
 ## Mentions
