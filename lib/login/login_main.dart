@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class OnboardPageMain extends StatefulWidget {
+class LoginMainPage extends StatefulWidget {
   @override
-  _OnboardPageMainState createState() => _OnboardPageMainState();
+  _LoginMainPageState createState() => _LoginMainPageState();
 }
 
-class _OnboardPageMainState extends State<OnboardPageMain> {
+class _LoginMainPageState extends State<LoginMainPage> {
   @override
   void initState() {
     super.initState();
@@ -16,7 +16,7 @@ class _OnboardPageMainState extends State<OnboardPageMain> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Onboarding"),
+        title: Text("Login"),
       ),
       body: Column(
         children: <Widget>[
@@ -25,7 +25,7 @@ class _OnboardPageMainState extends State<OnboardPageMain> {
             trailing: Icon(Icons.navigate_next),
             title: Text("Type One"),
             onTap: () {
-              Navigator.pushNamed(context, "/onboard_type_one");
+              Navigator.pushNamed(context, "/login_type_one");
             },
           ),
           ListTile(
@@ -33,7 +33,7 @@ class _OnboardPageMainState extends State<OnboardPageMain> {
             trailing: Icon(Icons.navigate_next),
             title: Text("Type Two"),
             onTap: () {
-              Navigator.pushNamed(context, "/onboard_type_two");
+              Navigator.pushNamed(context, "/login_type_two");
             },
           ),
           ListTile(
@@ -41,7 +41,7 @@ class _OnboardPageMainState extends State<OnboardPageMain> {
             trailing: Icon(Icons.navigate_next),
             title: Text("Type Three"),
             onTap: () {
-              Navigator.pushNamed(context, "/onboard_type_three");
+              Navigator.pushNamed(context, "/login_type_three");
             },
           ),
           Container(
@@ -50,7 +50,27 @@ class _OnboardPageMainState extends State<OnboardPageMain> {
               trailing: Icon(Icons.navigate_next),
               title: Text("Type Four"),
               onTap: () {
-                Navigator.pushNamed(context, "/onboard_type_four");
+                Navigator.pushNamed(context, "/login_type_four");
+              },
+            ),
+          ),
+          Container(
+            child: ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
+              title: Text("Type Five"),
+              onTap: () {
+                Navigator.pushNamed(context, "/login_type_five");
+              },
+            ),
+          ),
+          Container(
+            child: ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
+              title: Text("Contact Us Form"),
+              onTap: () {
+                Navigator.pushNamed(context, "/contact_us_form");
               },
             ),
           ),
