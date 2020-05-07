@@ -67,7 +67,7 @@ class LoginFormTypeTwo extends StatelessWidget {
                     height: 24,
                   ),
                   LoginPasswordText(
-                    text: "Email address",
+                    text: "..........",
                     iconPath: "assets/icons/lock.svg",
                   ),
                   SizedBox(

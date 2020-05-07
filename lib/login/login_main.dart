@@ -68,6 +68,16 @@ class _LoginMainPageState extends State<LoginMainPage> {
             child: ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
+              title: Text("Type Signup"),
+              onTap: () {
+                Navigator.pushNamed(context, "/signin_type_one");
+              },
+            ),
+          ),
+          Container(
+            child: ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
               title: Text("Contact Us Form"),
               onTap: () {
                 Navigator.pushNamed(context, "/contact_us_form");

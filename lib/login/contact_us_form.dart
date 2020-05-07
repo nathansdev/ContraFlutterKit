@@ -75,7 +75,10 @@ class ContactUsForm extends StatelessWidget {
                   SizedBox(
                     height: 24,
                   ),
-                  ButtonSolidWithIcon(
+                  ButtonPlainWithIcon(
+                    iconPath: "assets/icons/arrow_next.svg",
+                    isPrefix: false,
+                    isSuffix: true,
                     text: "Send Message",
                     callback: () {},
                   ),

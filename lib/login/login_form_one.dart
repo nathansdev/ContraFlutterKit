@@ -73,14 +73,17 @@ class LoginFormTypeOne extends StatelessWidget {
                     height: 24,
                   ),
                   LoginPasswordText(
-                    text: "Email address",
+                    text: "..........",
                     iconPath: "assets/icons/lock.svg",
                   ),
                   SizedBox(
                     height: 48,
                   ),
-                  ButtonSolidWithIcon(
-                    text: "Get Started",
+                  ButtonPlainWithIcon(
+                    iconPath: "assets/icons/arrow_next.svg",
+                    isPrefix: false,
+                    isSuffix: true,
+                    text: "Sign in",
                     callback: () {},
                   ),
                   SizedBox(
