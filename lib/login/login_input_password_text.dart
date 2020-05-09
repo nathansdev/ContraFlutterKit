@@ -15,9 +15,12 @@ class LoginPasswordText extends StatelessWidget {
       child: TextField(
         obscureText: true,
         decoration: InputDecoration(
-            hintText: text,
+            hintText: '\u25CF \u25CF \u25CF \u25CF \u25CF \u25CF',
             hintStyle: TextStyle(
-                fontSize: 21, fontWeight: FontWeight.bold, color: wood_smoke),
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: wood_smoke,
+            ),
             contentPadding: EdgeInsets.all(16),
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(width: 2, color: black),

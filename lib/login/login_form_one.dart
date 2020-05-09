@@ -80,6 +80,8 @@ class LoginFormTypeOne extends StatelessWidget {
                     height: 48,
                   ),
                   ButtonPlainWithIcon(
+                    color: wood_smoke,
+                    textColor: white,
                     iconPath: "assets/icons/arrow_next.svg",
                     isPrefix: false,
                     isSuffix: true,
@@ -87,7 +89,7 @@ class LoginFormTypeOne extends StatelessWidget {
                     callback: () {},
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 36,
                   ),
                   CustomRichText(
                     alignment: Alignment.center,

@@ -58,9 +58,9 @@ class _LoginMainPageState extends State<LoginMainPage> {
             child: ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Type Five"),
+              title: Text("Type Verification"),
               onTap: () {
-                Navigator.pushNamed(context, "/login_type_five");
+                Navigator.pushNamed(context, "/login__type_verification");
               },
             ),
           ),

@@ -9,14 +9,17 @@ class ButtonPlainWithIcon extends StatelessWidget {
   final VoidCallback callback;
   final bool isPrefix;
   final bool isSuffix;
+  final Color color;
+  final Color textColor;
 
-  const ButtonPlainWithIcon({
-    this.text,
-    this.callback,
-    this.isPrefix,
-    this.isSuffix,
-    this.iconPath,
-  });
+  const ButtonPlainWithIcon(
+      {this.text,
+      this.callback,
+      this.isPrefix,
+      this.isSuffix,
+      this.iconPath,
+      this.color,
+      this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +27,9 @@ class ButtonPlainWithIcon extends StatelessWidget {
       minWidth: MediaQuery.of(context).size.width,
       child: RaisedButton(
         padding: EdgeInsets.all(16),
-        color: wood_smoke,
+        color: color,
         onPressed: callback,
-        textColor: white,
+        textColor: textColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

@@ -76,6 +76,8 @@ class ContactUsForm extends StatelessWidget {
                     height: 24,
                   ),
                   ButtonPlainWithIcon(
+                    color: wood_smoke,
+                    textColor: white,
                     iconPath: "assets/icons/arrow_next.svg",
                     isPrefix: false,
                     isSuffix: true,

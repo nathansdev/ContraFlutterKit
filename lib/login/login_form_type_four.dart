@@ -1,11 +1,11 @@
-import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/button_solid_with_icon.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'login_text.dart';
+import 'login_input_email_text.dart';
+import 'login_input_password_text.dart';
 
 class LoginFormTypeFour extends StatelessWidget {
   @override
@@ -13,100 +13,110 @@ class LoginFormTypeFour extends StatelessWidget {
     return Material(
       child: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
         Container(
-          color: lightening_yellow,
+          color: flamingo,
           alignment: Alignment.center,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              SvgPicture.asset(
-                "assets/images/peep_standing_left.svg",
-                width: 370,
-                height: 590,
-              ),
-            ],
+          child: SvgPicture.asset(
+            "assets/images/peep_standing_center.svg",
+            height: 800,
+            width: 180,
           ),
         ),
         Container(
-          alignment: Alignment.center,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              SvgPicture.asset(
-                "assets/images/peep_standing_right.svg",
-                width: 370,
-                height: 590,
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          left: 24,
-          top: 56,
-          child: ButtonRoundWithShadow(
-            iconPath: "assets/icons/close.svg",
-            borderColor: black,
-            shadowColor: black,
-            color: white,
-            callback: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ),
-        Container(
-          height: 410,
+          height: 360,
           alignment: Alignment.bottomCenter,
-          margin: EdgeInsets.all(24),
-          padding: EdgeInsets.all(24),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16), color: white),
+          decoration: ShapeDecoration(
+            shadows: [
+              BoxShadow(
+                color: wood_smoke,
+                offset: Offset(
+                  0.0, // Move to right 10  horizontally
+                  -6.0, // Move to bottom 5 Vertically
+                ),
+              )
+            ],
+            color: white,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(16),
+                    topLeft: Radius.circular(16))),
+          ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              LoginText(
-                text: "Login",
-                alignment: Alignment.center,
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24,
+                ),
+                child: Container(
+                  height: 56,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 5,
+                        child: Text(
+                          "Welcome",
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w800,
+                              color: wood_smoke),
+                        ),
+                      ),
+                      Expanded(
+                          flex: 1,
+                          child: IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              icon: SvgPicture.asset(
+                                "assets/icons/close.svg",
+                                color: wood_smoke,
+                              )))
+                    ],
+                  ),
+                ),
+              ),
+              Divider(
+                thickness: 2,
+                color: wood_smoke,
               ),
               SizedBox(
-                height: 10,
+                height: 24,
               ),
-              Text(
-                "You don’t think you should login first and behave like human not robot.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 17, color: trout, fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ButtonPlainWithIcon(
-                iconPath: "assets/icons/mail.svg",
-                isPrefix: true,
-                isSuffix: false,
-                text: "Email",
-                callback: () {},
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: LoginEmailText(
+                  text: "Email address",
+                  iconPath: "assets/icons/user.svg",
+                ),
               ),
               SizedBox(
-                height: 16,
+                height: 24,
               ),
-              ButtonPlainWithIcon(
-                iconPath: "assets/icons/facebook.svg",
-                isPrefix: true,
-                isSuffix: false,
-                text: "Facebook",
-                callback: () {},
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: LoginPasswordText(
+                  text: "..........",
+                  iconPath: "assets/icons/lock.svg",
+                ),
               ),
               SizedBox(
-                height: 16,
+                height: 24,
               ),
-              ButtonPlainWithIcon(
-                iconPath: "assets/icons/twitter.svg",
-                isPrefix: true,
-                isSuffix: false,
-                text: "Twitter",
-                callback: () {},
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: ButtonPlainWithIcon(
+                  color: wood_smoke,
+                  textColor: white,
+                  iconPath: "assets/icons/arrow_next.svg",
+                  isPrefix: false,
+                  isSuffix: true,
+                  text: "Continue",
+                  callback: () {},
+                ),
+              ),
+              SizedBox(
+                height: 24,
               ),
             ],
           ),

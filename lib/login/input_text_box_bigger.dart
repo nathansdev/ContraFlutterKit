@@ -13,9 +13,11 @@ class InputTextBoxBigger extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
+      alignment: Alignment.center,
       child: TextField(
         keyboardType: TextInputType.multiline,
         maxLines: 4,
+        textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.top,
         decoration: InputDecoration(
             hintText: text,
@@ -34,12 +36,18 @@ class InputTextBoxBigger extends StatelessWidget {
             border: OutlineInputBorder(
                 borderSide: BorderSide(width: 2, color: black),
                 borderRadius: BorderRadius.all(Radius.circular(16))),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: SvgPicture.asset(
-                iconPath,
-                height: 24,
-                width: 24,
+            prefixIcon: Container(
+              height: 128,
+              width: 48,
+              alignment: Alignment.topLeft,
+              margin: EdgeInsets.all(4),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 12.0, top: 16.0),
+                child: SvgPicture.asset(
+                  iconPath,
+                  height: 24,
+                  width: 24,
+                ),
               ),
             )),
       ),

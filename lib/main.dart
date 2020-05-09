@@ -10,8 +10,8 @@ import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'login/contact_us_form.dart';
-import 'login/login_form_type_five.dart';
 import 'login/login_form_type_four.dart';
+import 'login/login_form_type_three.dart';
 import 'login/verification_type.dart';
 import 'onboarding/type1/pager.dart';
 import 'onboarding/type2/pager.dart';
@@ -42,10 +42,10 @@ class MyApp extends StatelessWidget {
         '/login_all': (context) => LoginMainPage(),
         '/login_type_one': (context) => LoginFormTypeOne(),
         '/login_type_two': (context) => LoginFormTypeTwo(),
+        '/login_type_three': (context) => LoginFormTypeThree(),
         '/login_type_four': (context) => LoginFormTypeFour(),
-        '/login_type_five': (context) => LoginFormTypeFive(),
         '/signin_type_one': (context) => SignInFormTypeOne(),
-        '/login_type_three': (context) => VerificationType(),
+        '/login__type_verification': (context) => VerificationType(),
         '/contact_us_form': (context) => ContactUsForm(),
       },
     );

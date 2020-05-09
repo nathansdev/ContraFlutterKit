@@ -10,3 +10,4 @@ const wood_smoke = Color(0xFF18191F);
 const trout = Color(0xFF474A57);
 const santas_gray = Color(0xFF969BAB);
 const selago = Color(0xFFE9E7FC);
+const carribean_green = Color(0xFF00C6AE);
