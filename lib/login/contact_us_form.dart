@@ -11,88 +11,87 @@ import 'login_text.dart';
 class ContactUsForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        color: white,
-        padding: EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 56,
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.all(24),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    children: <Widget>[],
+                  ),
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                Expanded(
+                  flex: 5,
+                  child: Column(
+                    children: <Widget>[
+                      LoginText(
+                        text: "Contact us",
+                        alignment: Alignment.centerLeft,
+                      ),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        "Wireframe is still important for ideation.",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize: 21,
+                            color: trout,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      LoginEmailText(
+                        text: "Full Name",
+                        iconPath: "assets/icons/user.svg",
+                      ),
+                      SizedBox(
+                        height: 24,
+                      ),
+                      InputTextBoxBigger(
+                        text: "Write your message",
+                        iconPath: "assets/icons/mail.svg",
+                      ),
+                      SizedBox(
+                        height: 24,
+                      ),
+                      ButtonPlainWithIcon(
+                        color: wood_smoke,
+                        textColor: white,
+                        iconPath: "assets/icons/arrow_next.svg",
+                        isPrefix: false,
+                        isSuffix: true,
+                        text: "Send Message",
+                        callback: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Expanded(
-              flex: 1,
-              child: Row(
-                children: <Widget>[
-                  ButtonRoundWithShadow(
-                    iconPath: "assets/icons/close.svg",
-                    borderColor: black,
-                    shadowColor: black,
-                    color: white,
-                    callback: () {
-                      Navigator.of(context).pop();
-                    },
-                  )
-                ],
-              ),
+          ),
+          Positioned(
+            left: 24,
+            top: 80,
+            child: ButtonRoundWithShadow(
+              iconPath: "assets/icons/close.svg",
+              borderColor: black,
+              shadowColor: black,
+              color: white,
+              callback: () {
+                Navigator.of(context).pop();
+              },
             ),
-            SizedBox(
-              height: 24,
-            ),
-            Expanded(
-              flex: 4,
-              child: Column(
-                children: <Widget>[
-                  LoginText(
-                    text: "Contact us",
-                    alignment: Alignment.centerLeft,
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Text(
-                    "Wireframe is still important for ideation.",
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                        fontSize: 21,
-                        color: trout,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  LoginEmailText(
-                    text: "Full Name",
-                    iconPath: "assets/icons/user.svg",
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  InputTextBoxBigger(
-                    text: "Write your message",
-                    iconPath: "assets/icons/mail.svg",
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  ButtonPlainWithIcon(
-                    color: wood_smoke,
-                    textColor: white,
-                    iconPath: "assets/icons/arrow_next.svg",
-                    isPrefix: false,
-                    isSuffix: true,
-                    text: "Send Message",
-                    callback: () {},
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

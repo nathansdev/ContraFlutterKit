@@ -18,43 +18,45 @@ class _OnboardPageMainState extends State<OnboardPageMain> {
       appBar: AppBar(
         title: Text("Onboarding"),
       ),
-      body: Column(
-        children: <Widget>[
-          ListTile(
-            contentPadding: EdgeInsets.all(20),
-            trailing: Icon(Icons.navigate_next),
-            title: Text("Type One"),
-            onTap: () {
-              Navigator.pushNamed(context, "/onboard_type_one");
-            },
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.all(20),
-            trailing: Icon(Icons.navigate_next),
-            title: Text("Type Two"),
-            onTap: () {
-              Navigator.pushNamed(context, "/onboard_type_two");
-            },
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.all(20),
-            trailing: Icon(Icons.navigate_next),
-            title: Text("Type Three"),
-            onTap: () {
-              Navigator.pushNamed(context, "/onboard_type_three");
-            },
-          ),
-          Container(
-            child: ListTile(
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Type Four"),
+              title: Text("Type One"),
               onTap: () {
-                Navigator.pushNamed(context, "/onboard_type_four");
+                Navigator.pushNamed(context, "/onboard_type_one");
               },
             ),
-          ),
-        ],
+            ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
+              title: Text("Type Two"),
+              onTap: () {
+                Navigator.pushNamed(context, "/onboard_type_two");
+              },
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
+              title: Text("Type Three"),
+              onTap: () {
+                Navigator.pushNamed(context, "/onboard_type_three");
+              },
+            ),
+            Container(
+              child: ListTile(
+                contentPadding: EdgeInsets.all(20),
+                trailing: Icon(Icons.navigate_next),
+                title: Text("Type Four"),
+                onTap: () {
+                  Navigator.pushNamed(context, "/onboard_type_four");
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

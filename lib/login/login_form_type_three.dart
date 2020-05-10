@@ -10,8 +10,8 @@ import 'login_text.dart';
 class LoginFormTypeThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
+    return Scaffold(
+      body: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
         Container(
           color: lightening_yellow,
           alignment: Alignment.center,

@@ -19,11 +19,16 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 ## Screenshots
 
-- Onboarding
+- Onboarding and Splash screens
 
 <img src = "screenshots/onboard_type_1.jpg" width=220><img src = "screenshots/onboard_type_2.jpg" width=220><img src = "screenshots/onboard_type_3.jpg" width=220>
 <img src = "screenshots/onboard_type_4.jpg" width=220>
 
+
+- Login, Verification, Contact Us Forms
+
+<img src = "screenshots/login_type_1.jpg" width=220><img src = "screenshots/login_type_2.jpg" width=220><img src = "screenshots/login_type_3.jpg" width=220><img src = "screenshots/login_type_4.jpg" width=220>
+<img src = "screenshots/signup_type_1.jpg" width=220><img src = "screenshots/verification_type_1.jpg" width=220><img src = "screenshots/contact_us_type_1.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
