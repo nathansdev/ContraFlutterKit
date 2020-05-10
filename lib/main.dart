@@ -1,3 +1,7 @@
+import 'package:contraflutterkit/login/login_form_one.dart';
+import 'package:contraflutterkit/login/login_form_two.dart';
+import 'package:contraflutterkit/login/login_main.dart';
+import 'package:contraflutterkit/login/signup_form_one.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
@@ -5,6 +9,10 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'login/contact_us_form.dart';
+import 'login/login_form_type_four.dart';
+import 'login/login_form_type_three.dart';
+import 'login/verification_type.dart';
 import 'onboarding/type1/pager.dart';
 import 'onboarding/type2/pager.dart';
 import 'onboarding/type4/onboard_page_four.dart';
@@ -24,13 +32,21 @@ class MyApp extends StatelessWidget {
           primaryColor: persian_blue),
       home: MyHomePage(title: 'Contra Flutter Kit Demo'),
       routes: {
-        '/onboard_all': (context) => OnboardPage(),
+        '/onboard_all': (context) => OnboardPageMain(),
         '/onboard_type_one': (context) => OnboardingPagerTypeOne(),
         '/onboard_type_two': (context) => OnboardingPagerTypeTwo(),
         '/onboard_type_three': (context) => OnboardingPagerTypeThree(),
         '/onboard_type_four': (context) => OnboardPageTypeFour(),
         '/empty_state': (context) => EmptyState(),
         '/welcome_screen': (context) => WelcomeScreenPage(),
+        '/login_all': (context) => LoginMainPage(),
+        '/login_type_one': (context) => LoginFormTypeOne(),
+        '/login_type_two': (context) => LoginFormTypeTwo(),
+        '/login_type_three': (context) => LoginFormTypeThree(),
+        '/login_type_four': (context) => LoginFormTypeFour(),
+        '/signin_type_one': (context) => SignInFormTypeOne(),
+        '/login__type_verification': (context) => VerificationType(),
+        '/contact_us_form': (context) => ContactUsForm(),
       },
     );
   }
@@ -69,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: Icon(Icons.navigate_next),
               title: Text("Forms, Login, Signup"),
               onTap: () {
-                Navigator.pushNamed(context, "/empty_state");
+                Navigator.pushNamed(context, "/login_all");
               },
             ),
             ListTile(

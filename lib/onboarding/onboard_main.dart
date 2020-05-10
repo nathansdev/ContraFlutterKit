@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class OnboardPage extends StatefulWidget {
+class OnboardPageMain extends StatefulWidget {
   @override
-  _OnboardPageState createState() => _OnboardPageState();
+  _OnboardPageMainState createState() => _OnboardPageMainState();
 }
 
-class _OnboardPageState extends State<OnboardPage> {
+class _OnboardPageMainState extends State<OnboardPageMain> {
   @override
   void initState() {
     super.initState();
