@@ -124,7 +124,7 @@ class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
                           color: lightening_yellow,
                           shape: CircleBorder(
                               side: BorderSide(color: wood_smoke, width: 2))),
-                      child: SvgPicture.asset("assets/icons/arrow_back.svg"),
+                      child: SvgPicture.asset("assets/icons/arrow_forward.svg"),
                     ),
                   )
                 ],

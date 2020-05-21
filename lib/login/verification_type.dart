@@ -254,7 +254,7 @@ class VerificationType extends StatelessWidget {
                     ButtonPlainWithIcon(
                       color: wood_smoke,
                       textColor: white,
-                      iconPath: "assets/icons/arrow_back.svg",
+                      iconPath: "assets/icons/arrow_forward.svg",
                       isPrefix: false,
                       isSuffix: false,
                       text: "Verify",
@@ -272,7 +272,7 @@ class VerificationType extends StatelessWidget {
           child: Row(
             children: <Widget>[
               ButtonRoundWithShadow(
-                iconPath: "assets/icons/arrow.svg",
+                iconPath: "assets/icons/arrow_forward.svg",
                 borderColor: black,
                 shadowColor: black,
                 color: white,
