@@ -32,7 +32,7 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 - Chat Screens
 
-<img src = "screenshots/login_type_1.jpg" width=220><img src = "screenshots/chat_home_page.jpg" width=220><img src = "screenshots/chat_message_page.jpg" width=220><img src = "screenshots/chat_search_page.jpg" width=220>
+<img src = "screenshots/chat_home_page.jpg" width=220><img src = "screenshots/chat_message_page.jpg" width=220><img src = "screenshots/chat_search_page.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
