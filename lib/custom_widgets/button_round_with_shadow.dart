@@ -7,12 +7,14 @@ class ButtonRoundWithShadow extends StatelessWidget {
   final Color color;
   final String iconPath;
   final VoidCallback callback;
+  final double size;
 
   const ButtonRoundWithShadow(
       {this.borderColor,
       this.shadowColor,
       this.color,
       this.iconPath,
+      this.size,
       this.callback});
 
   @override
@@ -20,7 +22,9 @@ class ButtonRoundWithShadow extends StatelessWidget {
     return GestureDetector(
       onTap: callback,
       child: Container(
-        padding: EdgeInsets.all(16),
+        height: size == null ? null : size,
+        width: size == null ? null : size,
+        padding: EdgeInsets.all(size != null ? 8 : 16),
         decoration: ShapeDecoration(
             shadows: [
               BoxShadow(

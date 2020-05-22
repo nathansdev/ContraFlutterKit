@@ -1,3 +1,6 @@
+import 'package:contraflutterkit/chat/chat_home_page.dart';
+import 'package:contraflutterkit/chat/chat_list_page.dart';
+import 'package:contraflutterkit/chat/chat_messages_page.dart';
 import 'package:contraflutterkit/login/login_form_one.dart';
 import 'package:contraflutterkit/login/login_form_two.dart';
 import 'package:contraflutterkit/login/login_main.dart';
@@ -47,6 +50,9 @@ class MyApp extends StatelessWidget {
         '/signin_type_one': (context) => SignInFormTypeOne(),
         '/login__type_verification': (context) => VerificationType(),
         '/contact_us_form': (context) => ContactUsForm(),
+        '/chat_home': (context) => ChatHomePage(),
+        '/chat_screen_page': (context) => ChatListPage(),
+        '/chat_list_page': (context) => ChatMessagesPage(),
       },
     );
   }
@@ -93,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: Icon(Icons.navigate_next),
               title: Text("Chatting Screens"),
               onTap: () {
-                Navigator.pushNamed(context, "/empty_state");
+                Navigator.pushNamed(context, "/chat_home");
               },
             ),
             Container(

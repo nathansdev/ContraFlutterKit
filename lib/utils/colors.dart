@@ -11,3 +11,6 @@ const trout = Color(0xFF474A57);
 const santas_gray = Color(0xFF969BAB);
 const selago = Color(0xFFE9E7FC);
 const carribean_green = Color(0xFF00C6AE);
+const santas_gray_10 = Color(0xFF9FA4B4);
+const dandelion = Color(0xFFFFD465);
+const caribbean_color = Color(0xFF00C6AE);

@@ -4,8 +4,9 @@ import 'package:flutter/cupertino.dart';
 class LoginText extends StatelessWidget {
   final Alignment alignment;
   final String text;
+  final double size;
 
-  const LoginText({this.alignment, this.text});
+  const LoginText({this.alignment, this.text, this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,11 @@ class LoginText extends StatelessWidget {
       alignment: alignment,
       child: Text(
         text,
-        style:
-            TextStyle(fontSize: 36, fontWeight: FontWeight.w800, color: black),
+        maxLines: 1,
+        style: TextStyle(
+            fontSize: size == null ? 36 : size,
+            fontWeight: FontWeight.w800,
+            color: black),
       ),
     );
   }

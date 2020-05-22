@@ -30,6 +30,10 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 <img src = "screenshots/login_type_1.jpg" width=220><img src = "screenshots/login_type_2.jpg" width=220><img src = "screenshots/login_type_3.jpg" width=220><img src = "screenshots/login_type_4.jpg" width=220>
 <img src = "screenshots/signup_type_1.jpg" width=220><img src = "screenshots/verification_type_1.jpg" width=220><img src = "screenshots/contact_us_type_1.jpg" width=220>
 
+- Chat Screens
+
+<img src = "screenshots/chat_home_page.jpg" width=220><img src = "screenshots/chat_message_page.jpg" width=220><img src = "screenshots/chat_search_page.jpg" width=220>
+
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
 - Link to the wireframe official page [Contra wireframe kit](https://contrauikit.com/)
