@@ -25,80 +25,56 @@ class _ChatMessagesPageState extends State<ChatMessagesPage> {
   @override
   void initState() {
     super.initState();
+    _items.add(
+        Message(name: "Charli", message: "Hi", time: "3.20 AM", isUser: false));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
-        time: "3.00 AM",
+        message: "How are you?",
+        time: "3.20 AM",
+        isUser: false));
+    _items.add(Message(
+        name: "Charli",
+        message: "Its been long time",
+        time: "3.20 AM",
         isUser: false));
     _items.add(Message(
         name: "Charli",
         message: "Please have a look",
         time: "3.20 AM",
         isUser: false));
+    _items.add(
+        Message(name: "Charli", message: "Hey", time: "4.00 AM", isUser: true));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
-        time: "3.10 AM",
-        isUser: false));
-    _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
-        time: "3.50 AM",
-        isUser: false));
-    _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
+        message: "Hi, I am good",
         time: "4.00 AM",
         isUser: true));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
+        message: "I have completed the document",
         time: "4.10 AM",
         isUser: false));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
-        time: "3.35 AM",
-        isUser: true));
-    _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
-        time: "3.35 AM",
-        isUser: true));
-    _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
-        time: "3.50 AM",
+        message: "Will share with you",
+        time: "4.10 AM",
         isUser: false));
     _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
-        time: "3.60 AM",
-        isUser: false));
+        name: "Charli", message: "Yes Please", time: "3.35 AM", isUser: true));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
+        message: "Hello again",
         time: "3.55 AM",
         isUser: false));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
-        time: "3.50 AM",
+        message: "I have shared a file",
+        time: "3.55 AM",
         isUser: false));
     _items.add(Message(
         name: "Charli",
-        message: "Please have a look",
-        time: "3.35 AM",
-        isUser: false));
-    _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
-        time: "3.35 AM",
-        isUser: false));
-    _items.add(Message(
-        name: "Charli",
-        message: "Please have a look",
-        time: "3.35 AM",
+        message: "Please take a look at it",
+        time: "3.55 AM",
         isUser: false));
     _items.add(Message(
         name: "Charli", message: "Sure", time: "3.35 AM", isUser: true));
@@ -114,41 +90,55 @@ class _ChatMessagesPageState extends State<ChatMessagesPage> {
     return Scaffold(
       backgroundColor: white,
       appBar: CustomAppBar(
-        height: 120,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: ButtonRoundWithShadow(
-                      size: 48,
-                      borderColor: wood_smoke,
-                      color: white,
-                      callback: () {
-                        Navigator.pop(context);
-                      },
-                      shadowColor: wood_smoke,
-                      iconPath: "assets/icons/arrow_back.svg"),
+        height: 150,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 24.0),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: ButtonRoundWithShadow(
+                          size: 48,
+                          borderColor: wood_smoke,
+                          color: white,
+                          callback: () {
+                            Navigator.pop(context);
+                          },
+                          shadowColor: wood_smoke,
+                          iconPath: "assets/icons/arrow_back.svg"),
+                    ),
+                  ),
                 ),
-              ),
+                Expanded(
+                  flex: 1,
+                  child: LoginText(
+                    size: 27,
+                    alignment: Alignment.bottomCenter,
+                    text: widget.chat.name,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 20,
+                  ),
+                )
+              ],
             ),
-            Expanded(
-              flex: 1,
-              child: LoginText(
-                size: 27,
-                alignment: Alignment.bottomCenter,
-                text: "Karthick",
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: SizedBox(
-                width: 20,
+            Container(
+              padding: EdgeInsets.only(top: 24),
+              alignment: Alignment.bottomCenter,
+              child: Divider(
+                color: wood_smoke,
+                thickness: 3,
+                height: 0,
               ),
             )
           ],

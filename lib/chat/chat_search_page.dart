@@ -125,7 +125,7 @@ class _ChatSearchPageState extends State<ChatSearchPage> {
     return Scaffold(
       backgroundColor: white,
       appBar: CustomAppBar(
-        height: 120,
+        height: 140,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Row(

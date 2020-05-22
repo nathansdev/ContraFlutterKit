@@ -45,18 +45,22 @@ class ChatMessageItemWidget extends StatelessWidget {
           SizedBox(
             width: 12,
           ),
-          Container(
-            padding: EdgeInsets.all(16),
-            decoration: ShapeDecoration(
-                color: message.isUser ? caribbean_color : color,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                    side: BorderSide(color: borderColor, width: 2))),
-            child: Text(
-              message.message,
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                  color: textColor, fontWeight: FontWeight.bold, fontSize: 17),
+          Flexible(
+            child: Container(
+              padding: EdgeInsets.all(16),
+              decoration: ShapeDecoration(
+                  color: message.isUser ? caribbean_color : color,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      side: BorderSide(color: borderColor, width: 2))),
+              child: Text(
+                message.message,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                    color: textColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17),
+              ),
             ),
           ),
         ],

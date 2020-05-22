@@ -35,17 +35,17 @@ class _ChatListPageState extends State<ChatListPage> {
         name: "Harray",
         message: "No food left in the kitchen",
         time: "3.30 AM",
-        count: "2"));
+        count: ""));
     _items.add(Chat(
         name: "Leonard",
         message: "Get groceries while coming",
         time: "3.30 AM",
-        count: "2"));
+        count: ""));
     _items.add(Chat(
         name: "Sheldon",
         message: "Please have a look",
         time: "3.30 AM",
-        count: "2"));
+        count: ""));
     _items.add(Chat(
         name: "Chirag",
         message: "Please have a look",
@@ -55,12 +55,12 @@ class _ChatListPageState extends State<ChatListPage> {
         name: "Charli",
         message: "Please have a look",
         time: "3.30 AM",
-        count: "2"));
+        count: "4"));
     _items.add(Chat(
         name: "Karthick",
         message: "Can we have coffe?",
         time: "3.30 AM",
-        count: "2"));
+        count: "4"));
     _items.add(Chat(
         name: "Murali",
         message: "Lets meet tommorrow",

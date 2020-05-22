@@ -14,6 +14,7 @@ class LoginText extends StatelessWidget {
       alignment: alignment,
       child: Text(
         text,
+        maxLines: 1,
         style: TextStyle(
             fontSize: size == null ? 36 : size,
             fontWeight: FontWeight.w800,

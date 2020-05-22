@@ -24,7 +24,7 @@ class ChatListItemWidget extends StatelessWidget {
               flex: 1,
               child: RoundImageWithText(
                 size: 48,
-                text: "A",
+                text: chat.name.substring(0, 1),
                 color: dandelion,
                 borderColor: wood_smoke,
                 shadowColor: wood_smoke,
@@ -76,10 +76,12 @@ class ChatListItemWidget extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  BadgeText(
-                    text: chat.count,
-                    color: flamingo,
-                  )
+                  chat.count.isNotEmpty
+                      ? BadgeText(
+                          text: chat.count,
+                          color: flamingo,
+                        )
+                      : SizedBox()
                 ],
               ),
             )

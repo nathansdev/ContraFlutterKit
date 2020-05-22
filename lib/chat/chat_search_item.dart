@@ -24,7 +24,7 @@ class ChatSearchItemWidget extends StatelessWidget {
             flex: 1,
             child: RoundImageWithText(
               size: 54,
-              text: "A",
+              text: chat.name.substring(0, 1),
               color: dandelion,
               borderColor: wood_smoke,
               shadowColor: wood_smoke,
