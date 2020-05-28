@@ -8,6 +8,9 @@ import 'package:contraflutterkit/login/signup_form_one.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
+import 'package:contraflutterkit/shopping/shopping_list_page_type_one.dart';
+import 'package:contraflutterkit/shopping/shopping_list_page_type_two.dart';
+import 'package:contraflutterkit/shopping/shopping_main_page.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +56,9 @@ class MyApp extends StatelessWidget {
         '/chat_home': (context) => ChatHomePage(),
         '/chat_screen_page': (context) => ChatListPage(),
         '/chat_list_page': (context) => ChatMessagesPage(),
+        '/shopping_main_page': (context) => ShoppingMainPage(),
+        '/shopping_list_page_one': (context) => ShoppingListPageOne(),
+        '/shopping_list_page_two': (context) => ShoppingListPageTwo(),
       },
     );
   }
@@ -100,6 +106,14 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("Chatting Screens"),
               onTap: () {
                 Navigator.pushNamed(context, "/chat_home");
+              },
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
+              title: Text("Shopping Screens"),
+              onTap: () {
+                Navigator.pushNamed(context, "/shopping_main_page");
               },
             ),
             Container(
