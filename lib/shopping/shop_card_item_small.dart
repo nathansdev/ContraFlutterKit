@@ -4,19 +4,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ShopGridItemWidget extends StatelessWidget {
+class ShopCardSmallItemWidget extends StatelessWidget {
   final ShopItem shopItem;
 
-  const ShopGridItemWidget({this.shopItem});
+  const ShopCardSmallItemWidget({this.shopItem});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(8),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            width: MediaQuery.of(context).size.width,
+            width: 120,
+            height: 117,
             decoration: ShapeDecoration(
                 color: shopItem.bgColor,
                 shape: RoundedRectangleBorder(
@@ -24,35 +27,31 @@ class ShopGridItemWidget extends StatelessWidget {
                     side: BorderSide(color: wood_smoke, width: 2))),
             child: SvgPicture.asset(
               shopItem.image,
-              width: 155,
-              height: 170,
+              width: 50,
+              height: 50,
             ),
-          ),
-          SizedBox(
-            height: 2,
           ),
           Container(
             alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(vertical: 2),
             child: Text(
               shopItem.name,
               maxLines: 2,
               textAlign: TextAlign.start,
               style: TextStyle(
-                  color: wood_smoke, fontSize: 17, fontWeight: FontWeight.bold),
+                  color: wood_smoke, fontSize: 15, fontWeight: FontWeight.w800),
             ),
-          ),
-          SizedBox(
-            height: 2,
           ),
           Container(
             alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(vertical: 1),
             child: Text(
               "\$" + shopItem.price,
               textAlign: TextAlign.start,
               style: TextStyle(
-                  color: trout, fontSize: 18, fontWeight: FontWeight.w800),
+                  color: trout, fontSize: 13, fontWeight: FontWeight.bold),
             ),
-          ),
+          )
         ],
       ),
     );

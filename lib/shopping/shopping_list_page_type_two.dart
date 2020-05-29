@@ -1,5 +1,5 @@
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
-import 'package:contraflutterkit/custom_widgets/chips_select_widget.dart';
+import 'package:contraflutterkit/custom_widgets/chips_filter_widget.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/login_text.dart';
 import 'package:contraflutterkit/shopping/shop_grid_item.dart';
@@ -25,44 +25,52 @@ class _ShoppingListPageTwoState extends State<ShoppingListPageTwo> {
     _filters.add("Less");
     _filters.add("More");
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_1.svg",
+        image: "assets/images/shopping/coat_fur.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: flamingo,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_2.svg",
+        image: "assets/images/shopping/shirt_and_coat.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: carribean_green,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_3.svg",
+        image: "assets/images/shopping/striped_tee.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: lightening_yellow,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_4.svg",
+        image: "assets/images/shopping/thunder_tshirt.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: pink_salomn,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_1.svg",
+        image: "assets/images/shopping/coat_fur.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: flamingo,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_2.svg",
+        image: "assets/images/shopping/shirt_and_coat.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: flamingo,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_3.svg",
+        image: "assets/images/shopping/striped_tee.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: flamingo,
         by: "Company name"));
     _items.add(ShopItem(
-        image: "assets/images/shopping/product_image_4.svg",
+        image: "assets/images/shopping/thunder_tshirt.svg",
         name: "Rebousa - White striped tee",
         price: "189",
+        bgColor: flamingo,
         by: "Company name"));
   }
 

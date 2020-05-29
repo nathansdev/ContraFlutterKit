@@ -5,13 +5,16 @@ class ButtonPlain extends StatelessWidget {
   final Color color;
   final Color borderColor;
   final Color textColor;
+  final double size;
+  final String text;
 
-  const ButtonPlain({this.color, this.textColor, this.borderColor});
+  const ButtonPlain(
+      {this.color, this.textColor, this.borderColor, this.size, this.text});
 
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: MediaQuery.of(context).size.width,
+      minWidth: size != null ? size : MediaQuery.of(context).size.width,
       child: RaisedButton(
         padding: EdgeInsets.all(16),
         color: color,
@@ -20,7 +23,7 @@ class ButtonPlain extends StatelessWidget {
         },
         textColor: textColor,
         child: Text(
-          "Get Started",
+          text,
           style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
         ),
         shape: RoundedRectangleBorder(

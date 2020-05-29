@@ -18,10 +18,18 @@ class ShopListItemWidget extends StatelessWidget {
         children: <Widget>[
           Expanded(
               flex: 1,
-              child: SvgPicture.asset(
-                shopItem.image,
-                width: 100,
-                height: 120,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: ShapeDecoration(
+                    color: shopItem.bgColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(16)),
+                        side: BorderSide(color: wood_smoke, width: 2))),
+                child: SvgPicture.asset(
+                  shopItem.image,
+                  width: 100,
+                  height: 120,
+                ),
               )),
           SizedBox(
             width: 16,

@@ -1,29 +1,24 @@
-import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
-import 'package:contraflutterkit/custom_widgets/chips_filter_widget.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
+import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/shopping/shop_card_item.dart';
 import 'package:contraflutterkit/shopping/shop_item.dart';
-import 'package:contraflutterkit/shopping/shop_list_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ShoppingListPageOne extends StatefulWidget {
+class ShoppingHomePageOne extends StatefulWidget {
   @override
-  _ShoppingListPageOneState createState() => _ShoppingListPageOneState();
+  _ShoppingHomePageOneState createState() => _ShoppingHomePageOneState();
 }
 
-class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
+class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
   List<ShopItem> _items = List<ShopItem>();
-  List<String> _filters = List<String>();
+  TextEditingController _textEditingController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _filters.add("Small");
-    _filters.add("Big");
-    _filters.add("Less");
-    _filters.add("More");
     _items.add(ShopItem(
         image: "assets/images/shopping/coat_fur.svg",
         name: "Rebousa - White striped tee",
@@ -83,61 +78,47 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 24.0),
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: ButtonRoundWithShadow(
-                          size: 48,
-                          borderColor: wood_smoke,
-                          color: white,
-                          callback: () {
-                            Navigator.pop(context);
-                          },
-                          shadowColor: wood_smoke,
-                          iconPath: "assets/icons/arrow_back.svg"),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Icon(
+                    Icons.menu,
+                    color: wood_smoke,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: LoginText(
+                      size: 27,
+                      alignment: Alignment.bottomCenter,
+                      text: "T-shirts",
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: LoginText(
-                    size: 27,
-                    alignment: Alignment.bottomCenter,
-                    text: "T-shirts",
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: SizedBox(
-                    width: 20,
-                  ),
-                )
-              ],
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 24),
-              alignment: Alignment.bottomCenter,
-              child: Divider(
-                color: wood_smoke,
-                thickness: 3,
-                height: 0,
+                  IconButton(
+                    color: wood_smoke,
+                    icon: Icon(Icons.notifications),
+                    onPressed: () {},
+                  )
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ChipsFilterWidget(
-              filters: _filters,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: CustomSearchText(
+                iconPath: "assets/icons/ic_search.svg",
+                text: "Search with love ...",
+                enable: true,
+                callback: () {},
+                controller: _textEditingController,
+              ),
             ),
             ListView.builder(
                 shrinkWrap: true,
@@ -145,7 +126,7 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
                 reverse: false,
                 itemCount: _items.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ShopListItemWidget(
+                  return ShopCardItemWidget(
                     shopItem: _items[index],
                   );
                 }),
