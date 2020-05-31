@@ -34,6 +34,11 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 <img src = "screenshots/chat_home_page.jpg" width=220><img src = "screenshots/chat_message_page.jpg" width=220><img src = "screenshots/chat_search_page.jpg" width=220>
 
+- Shopping Screen Types
+
+<img src = "screenshots/shopping_screen_one.jpg" width=220><img src = "screenshots/shopping_screen_two.jpg" width=220><img src = "screenshots/shopping_screen_three.jpg" width=220>
+<img src = "screenshots/shopping_screen_four.jpg" width=220><img src = "screenshots/shopping_screen_five.jpg" width=220><img src = "screenshots/shopping_screen_six.jpg" width=220>
+
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
 - Link to the wireframe official page [Contra wireframe kit](https://contrauikit.com/)

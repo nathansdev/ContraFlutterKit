@@ -81,8 +81,8 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
         .add(Category(bgColor: foam, startColor: wood_smoke, name: "Kid"));
     _categories.add(Category(
         bgColor: bareley_white, startColor: wood_smoke, name: "Adult"));
-    _categories.add(
-        Category(bgColor: bareley_white, startColor: wood_smoke, name: "Men"));
+    _categories
+        .add(Category(bgColor: fair_pink, startColor: wood_smoke, name: "Men"));
     _categories
         .add(Category(bgColor: foam, startColor: wood_smoke, name: "Men"));
   }
