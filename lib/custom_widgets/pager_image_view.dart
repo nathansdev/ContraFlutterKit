@@ -1,45 +1,43 @@
 import 'package:contraflutterkit/custom_widgets/circle_dot_widget.dart';
-import 'package:contraflutterkit/shopping/category_item.dart';
-import 'package:contraflutterkit/shopping/shopping_card_pager_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class ShoppingCardPager extends StatefulWidget {
+class PagerImageView extends StatefulWidget {
+  final List<String> images;
+
+  const PagerImageView({this.images});
+
   @override
-  _ShoppingCardPagerState createState() => _ShoppingCardPagerState();
+  _PagerImageViewState createState() => _PagerImageViewState();
 }
 
-class _ShoppingCardPagerState extends State<ShoppingCardPager> {
+class _PagerImageViewState extends State<PagerImageView> {
   PageController _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
-  final List<Widget> _cards = [
-    ShoppingCardPagerItem(
-      categoryBig: CategoryBig(
-          bgColor: lightening_yellow,
-          startColor: lightening_yellow,
-          name: "Summer Collection",
-          image: "assets/images/shopping/peep_glass.svg"),
-    ),
-    ShoppingCardPagerItem(
-      categoryBig: CategoryBig(
-          bgColor: lightening_yellow,
-          startColor: lightening_yellow,
-          name: "Summer Collection",
-          image: "assets/images/shopping/peep_glass.svg"),
-    ),
-    ShoppingCardPagerItem(
-      categoryBig: CategoryBig(
-          bgColor: lightening_yellow,
-          startColor: lightening_yellow,
-          name: "Summer Collection",
-          image: "assets/images/shopping/peep_glass.svg"),
-    )
-  ];
+  List<String> _images = [];
+  final List<Widget> _cards = [];
 
   @override
   void initState() {
+    _images = widget.images;
+    _cards.add(SvgPicture.asset(
+      _images[0],
+      height: 290,
+      width: 300,
+    ));
+    _cards.add(SvgPicture.asset(
+      _images[1],
+      height: 290,
+      width: 300,
+    ));
+    _cards.add(SvgPicture.asset(
+      _images[2],
+      height: 290,
+      width: 300,
+    ));
     super.initState();
     _pageController = PageController(initialPage: currentPageValue);
   }
@@ -55,7 +53,7 @@ class _ShoppingCardPagerState extends State<ShoppingCardPager> {
     return Column(
       children: <Widget>[
         Container(
-          height: 180,
+          height: 310,
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: PageView.builder(
             physics: ClampingScrollPhysics(),
@@ -78,13 +76,13 @@ class _ShoppingCardPagerState extends State<ShoppingCardPager> {
                 if (i == currentPageValue) ...[
                   CircleDotWidget(
                     isActive: true,
-                    color: flamingo,
-                    borderColor: flamingo,
+                    color: white,
+                    borderColor: white,
                   )
                 ] else
                   CircleDotWidget(
                     isActive: false,
-                    color: white,
+                    color: flamingo,
                     borderColor: wood_smoke,
                   ),
             ],
@@ -96,9 +94,7 @@ class _ShoppingCardPagerState extends State<ShoppingCardPager> {
 
   void animatePage(int page) {
     print('page is $page');
-
     currentPageValue = page;
-
     if (previousPageValue == 0) {
       previousPageValue = currentPageValue;
       _moveBar = _moveBar + 0.14;

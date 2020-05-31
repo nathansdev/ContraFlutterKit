@@ -8,6 +8,8 @@ import 'package:contraflutterkit/login/signup_form_one.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
+import 'package:contraflutterkit/shopping/shopping_detail_page_one.dart';
+import 'package:contraflutterkit/shopping/shopping_detail_page_two.dart';
 import 'package:contraflutterkit/shopping/shopping_home_page_one.dart';
 import 'package:contraflutterkit/shopping/shopping_home_page_two.dart';
 import 'package:contraflutterkit/shopping/shopping_list_page_type_one.dart';
@@ -63,6 +65,8 @@ class MyApp extends StatelessWidget {
         '/shopping_list_page_two': (context) => ShoppingListPageTwo(),
         '/shopping_home_page_one': (context) => ShoppingHomePageOne(),
         '/shopping_home_page_two': (context) => ShoppingHomePageTwo(),
+        '/shopping_home_main_one': (context) => ShoppingDetailPageOne(),
+        '/shopping_home_main_two': (context) => ShoppingDetailPageTwo(),
       },
     );
   }

@@ -14,6 +14,7 @@ class ButtonPlain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
+      height: 48,
       minWidth: size != null ? size : MediaQuery.of(context).size.width,
       child: RaisedButton(
         padding: EdgeInsets.all(16),
@@ -24,7 +25,7 @@ class ButtonPlain extends StatelessWidget {
         textColor: textColor,
         child: Text(
           text,
-          style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w800),
         ),
         shape: RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(16.0)),

@@ -16,3 +16,7 @@ const dandelion = Color(0xFFFFD465);
 const caribbean_color = Color(0xFF00C6AE);
 const pastel_pink = Color(0xFFFFC7DE);
 const pink_salomn = Color(0xFFFF89BB);
+const athen_gray = Color(0xFFF4F5F7);
+const bareley_white = Color(0xFFFFF4CC);
+const fair_pink = Color(0xFFFFE8E8);
+const foam = Color(0xFFD6FCF7);

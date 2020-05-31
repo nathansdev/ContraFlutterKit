@@ -59,9 +59,9 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
               child: ListTile(
                 contentPadding: EdgeInsets.all(20),
                 trailing: Icon(Icons.navigate_next),
-                title: Text("Type Verification"),
+                title: Text("Shopping Detail Page One"),
                 onTap: () {
-                  Navigator.pushNamed(context, "/login__type_verification");
+                  Navigator.pushNamed(context, "/shopping_home_main_one");
                 },
               ),
             ),
@@ -69,9 +69,9 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
               child: ListTile(
                 contentPadding: EdgeInsets.all(20),
                 trailing: Icon(Icons.navigate_next),
-                title: Text("Type Signup"),
+                title: Text("Shopping Detail Page Two"),
                 onTap: () {
-                  Navigator.pushNamed(context, "/signin_type_one");
+                  Navigator.pushNamed(context, "/shopping_home_main_two");
                 },
               ),
             ),

@@ -8,7 +8,6 @@ import 'package:contraflutterkit/shopping/shopping_card_pager.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'category_item.dart';
 
@@ -73,23 +72,19 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
         price: "189",
         bgColor: flamingo,
         by: "Company name"));
-    _categories.add(Category(
-        bgColor: flamingo, startColor: lightening_yellow, name: "Men"));
 
+    _categories.add(
+        Category(bgColor: bareley_white, startColor: wood_smoke, name: "Men"));
+    _categories.add(
+        Category(bgColor: fair_pink, startColor: wood_smoke, name: "Woman"));
+    _categories
+        .add(Category(bgColor: foam, startColor: wood_smoke, name: "Kid"));
     _categories.add(Category(
-        bgColor: flamingo, startColor: lightening_yellow, name: "Woman"));
-
-    _categories.add(Category(
-        bgColor: flamingo, startColor: lightening_yellow, name: "Kid"));
-
-    _categories.add(Category(
-        bgColor: flamingo, startColor: lightening_yellow, name: "Adult"));
-
-    _categories.add(Category(
-        bgColor: flamingo, startColor: lightening_yellow, name: "Men"));
-
-    _categories.add(Category(
-        bgColor: flamingo, startColor: lightening_yellow, name: "Men"));
+        bgColor: bareley_white, startColor: wood_smoke, name: "Adult"));
+    _categories.add(
+        Category(bgColor: bareley_white, startColor: wood_smoke, name: "Men"));
+    _categories
+        .add(Category(bgColor: foam, startColor: wood_smoke, name: "Men"));
   }
 
   @override
@@ -115,8 +110,8 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
                       text: "Shop Yay",
                     ),
                   ),
-                  SvgPicture.asset(
-                    "assets/icons/ic_avatar.svg",
+                  Image.asset(
+                    "assets/images/peep_avatar.png",
                     width: 48,
                     height: 48,
                   )
@@ -126,44 +121,46 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: CustomSearchText(
-              iconPath: "assets/icons/ic_search.svg",
-              text: "Search with love ...",
-              enable: true,
-              callback: () {},
-              controller: _textEditingController,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: CustomSearchText(
+                iconPath: "assets/icons/ic_search.svg",
+                text: "Search with love ...",
+                enable: true,
+                callback: () {},
+                controller: _textEditingController,
+              ),
             ),
-          ),
-          Container(
-            height: 200,
-            child: ListView.builder(
-                padding: EdgeInsets.all(12),
-                scrollDirection: Axis.horizontal,
-                itemCount: _categories.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return StartWidget(
-                    category: _categories[index],
-                  );
-                }),
-          ),
-          Container(height: 320, child: ShoppingCardPager()),
-          Container(
-            height: 200,
-            child: ListView.builder(
-                padding: EdgeInsets.all(12),
-                scrollDirection: Axis.horizontal,
-                itemCount: _items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ShopCardSmallItemWidget(
-                    shopItem: _items[index],
-                  );
-                }),
-          ),
-        ],
+            Container(
+              height: 180,
+              child: ListView.builder(
+                  padding: EdgeInsets.all(12),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _categories.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return StartWidget(
+                      category: _categories[index],
+                    );
+                  }),
+            ),
+            Container(height: 250, child: ShoppingCardPager()),
+            Container(
+              height: 180,
+              child: ListView.builder(
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _items.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ShopCardSmallItemWidget(
+                      shopItem: _items[index],
+                    );
+                  }),
+            ),
+          ],
+        ),
       ),
     );
   }

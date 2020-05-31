@@ -2,6 +2,7 @@ import 'package:contraflutterkit/custom_widgets/button_plain.dart';
 import 'package:contraflutterkit/shopping/category_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ShoppingCardPagerItem extends StatelessWidget {
@@ -12,7 +13,7 @@ class ShoppingCardPagerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      margin: EdgeInsets.symmetric(horizontal: 8),
       decoration: ShapeDecoration(
           color: categoryBig.bgColor,
           shape: RoundedRectangleBorder(
@@ -20,23 +21,34 @@ class ShoppingCardPagerItem extends StatelessWidget {
               side: BorderSide(color: wood_smoke, width: 2))),
       child: Row(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Text(
-                categoryBig.name,
-                style: TextStyle(
+          Expanded(
+            flex: 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0, top: 24),
+                  child: Text(
+                    categoryBig.name,
+                    style: TextStyle(
+                        color: wood_smoke,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w800),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0, bottom: 24),
+                  child: ButtonPlain(
                     color: wood_smoke,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800),
-              ),
-              ButtonPlain(
-                color: wood_smoke,
-                borderColor: wood_smoke,
-                textColor: white,
-                text: "Shop now",
-                size: 96,
-              )
-            ],
+                    borderColor: wood_smoke,
+                    textColor: white,
+                    text: "Shop now",
+                    size: 96,
+                  ),
+                )
+              ],
+            ),
           ),
           SvgPicture.asset(
             categoryBig.image,

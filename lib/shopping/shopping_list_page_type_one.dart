@@ -79,55 +79,41 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
     return Scaffold(
       backgroundColor: white,
       appBar: CustomAppBar(
-        height: 150,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 24.0),
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: ButtonRoundWithShadow(
-                          size: 48,
-                          borderColor: wood_smoke,
-                          color: white,
-                          callback: () {
-                            Navigator.pop(context);
-                          },
-                          shadowColor: wood_smoke,
-                          iconPath: "assets/icons/arrow_back.svg"),
-                    ),
-                  ),
+        height: 120,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 24.0),
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: ButtonRoundWithShadow(
+                      size: 48,
+                      borderColor: wood_smoke,
+                      color: white,
+                      callback: () {
+                        Navigator.pop(context);
+                      },
+                      shadowColor: wood_smoke,
+                      iconPath: "assets/icons/arrow_back.svg"),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: LoginText(
-                    size: 27,
-                    alignment: Alignment.bottomCenter,
-                    text: "T-shirts",
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: SizedBox(
-                    width: 20,
-                  ),
-                )
-              ],
+              ),
             ),
-            Container(
-              padding: EdgeInsets.only(top: 24),
-              alignment: Alignment.bottomCenter,
-              child: Divider(
-                color: wood_smoke,
-                thickness: 3,
-                height: 0,
+            Expanded(
+              flex: 1,
+              child: LoginText(
+                size: 27,
+                alignment: Alignment.bottomCenter,
+                text: "T-shirts",
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: SizedBox(
+                width: 20,
               ),
             )
           ],
