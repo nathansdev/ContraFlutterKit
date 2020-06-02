@@ -40,6 +40,14 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
+              title: Text("Shopping Home Page"),
+              onTap: () {
+                Navigator.pushNamed(context, "/shopping_home_page");
+              },
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.all(20),
+              trailing: Icon(Icons.navigate_next),
               title: Text("Shopping Home Page One"),
               onTap: () {
                 Navigator.pushNamed(context, "/shopping_home_page_one");
@@ -61,7 +69,7 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
                 trailing: Icon(Icons.navigate_next),
                 title: Text("Shopping Detail Page One"),
                 onTap: () {
-                  Navigator.pushNamed(context, "/shopping_home_main_one");
+                  Navigator.pushNamed(context, "/shopping_detail_page_one");
                 },
               ),
             ),
@@ -71,7 +79,7 @@ class _ShoppingMainPageState extends State<ShoppingMainPage> {
                 trailing: Icon(Icons.navigate_next),
                 title: Text("Shopping Detail Page Two"),
                 onTap: () {
-                  Navigator.pushNamed(context, "/shopping_home_main_two");
+                  Navigator.pushNamed(context, "/shopping_detail_page_two");
                 },
               ),
             ),

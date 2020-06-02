@@ -103,17 +103,23 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: LoginText(
                       size: 44,
                       alignment: Alignment.bottomCenter,
                       text: "Shop Yay",
                     ),
                   ),
-                  Image.asset(
-                    "assets/images/peep_avatar.png",
-                    width: 48,
-                    height: 48,
+                  Expanded(
+                    flex: 1,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Image.asset(
+                        "assets/images/peep_avatar.png",
+                        width: 48,
+                        height: 48,
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -156,6 +162,10 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
                   itemBuilder: (BuildContext context, int index) {
                     return ShopCardSmallItemWidget(
                       shopItem: _items[index],
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, "/shopping_detail_page_one");
+                      },
                     );
                   }),
             ),

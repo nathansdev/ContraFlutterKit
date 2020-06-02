@@ -45,6 +45,9 @@ class ShoppingCardPagerItem extends StatelessWidget {
                     textColor: white,
                     text: "Shop now",
                     size: 96,
+                    onTap: () {
+                      Navigator.pushNamed(context, "/shopping_list_page_two");
+                    },
                   ),
                 )
               ],

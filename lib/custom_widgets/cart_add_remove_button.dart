@@ -17,30 +17,33 @@ class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
   }
 
   void onAddClicked() {
-    setState(() {
-      count = count + 1;
-      print("add clicked " + count.toString());
-    });
+    if (count < 4)
+      setState(() {
+        count = count + 1;
+        print("add clicked " + count.toString());
+      });
   }
 
   void onRemoveClicked() {
-    setState(() {
-      count = count - 1;
-      print("remove clicked " + count.toString());
-    });
+    if (count > 0)
+      setState(() {
+        count = count - 1;
+        print("remove clicked " + count.toString());
+      });
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 96,
-      height: 36,
+      height: 40,
       decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               side: BorderSide(color: wood_smoke, width: 2))),
       child: Row(
         mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           count == 0
               ? SizedBox()
@@ -50,14 +53,14 @@ class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
                     onTap: () {
                       onRemoveClicked();
                     },
-                    child: Center(
-                      child: IconButton(
-                        alignment: Alignment.topCenter,
-                        icon: Icon(Icons.remove),
-                        onPressed: () {
-                          onRemoveClicked();
-                        },
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.remove,
+                        size: 24,
                       ),
+                      onPressed: () {
+                        onRemoveClicked();
+                      },
                     ),
                   ),
                 ),
@@ -65,9 +68,16 @@ class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
               ? Expanded(
                   flex: 2,
                   child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
                       alignment: Alignment.center,
                       height: MediaQuery.of(context).size.height,
-                      color: lightening_yellow,
+                      decoration: ShapeDecoration(
+                        color: lightening_yellow,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                bottomLeft: Radius.circular(10))),
+                      ),
                       child: Text(
                         "Add",
                         textAlign: TextAlign.center,
@@ -79,6 +89,7 @@ class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
               : Expanded(
                   flex: 1,
                   child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
                       alignment: Alignment.center,
                       height: MediaQuery.of(context).size.height,
                       color: lightening_yellow,
@@ -95,19 +106,14 @@ class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
               onTap: () {
                 onAddClicked();
               },
-              child: Container(
-                alignment: Alignment.topCenter,
-                color: white,
-                height: MediaQuery.of(context).size.height,
-                child: Center(
-                  child: IconButton(
-                    alignment: Alignment.topCenter,
-                    icon: Icon(Icons.add),
-                    onPressed: () {
-                      onAddClicked();
-                    },
-                  ),
+              child: IconButton(
+                icon: Icon(
+                  Icons.add,
+                  size: 24,
                 ),
+                onPressed: () {
+                  onAddClicked();
+                },
               ),
             ),
           )

@@ -1,14 +1,14 @@
-import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class ColorWidget extends StatelessWidget {
   final Color borderColor;
   final Color shadowColor;
+  final Color bgColor;
   final bool selected;
   final VoidCallback onTap;
 
   const ColorWidget(
-      {this.borderColor, this.shadowColor, this.selected, this.onTap});
+      {this.borderColor,this.bgColor, this.shadowColor, this.selected, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ColorWidget extends StatelessWidget {
                 ),
               )
             ],
-            color: selected ? lightening_yellow : white,
+            color: bgColor,
             shape:
                 CircleBorder(side: BorderSide(color: borderColor, width: 2))),
       ),

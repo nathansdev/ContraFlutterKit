@@ -115,8 +115,10 @@ class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
               child: CustomSearchText(
                 iconPath: "assets/icons/ic_search.svg",
                 text: "Search with love ...",
-                enable: true,
-                callback: () {},
+                enable: false,
+                callback: () {
+                  Navigator.pushNamed(context, "/shopping_list_page_one");
+                },
                 controller: _textEditingController,
               ),
             ),
@@ -128,6 +130,9 @@ class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
                 itemBuilder: (BuildContext context, int index) {
                   return ShopCardItemWidget(
                     shopItem: _items[index],
+                    onTap: () {
+                      Navigator.pushNamed(context, "/shopping_detail_page_two");
+                    },
                   );
                 }),
           ],

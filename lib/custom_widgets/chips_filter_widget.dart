@@ -1,3 +1,4 @@
+import 'package:contraflutterkit/custom_widgets/chip_widget.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,10 +29,22 @@ class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
       padding: const EdgeInsets.only(right: 16.0, top: 16.0),
       child: Wrap(
         spacing: 12,
+        runSpacing: 12,
         children: List<Widget>.generate(
           options.length,
           (int index) {
-            return ChoiceChip(
+            return ChipWidget(
+              selected: selectedChoices.contains(index),
+              text: options[index],
+              onTap: () {
+                setState(() {
+                  selectedChoices.contains(index)
+                      ? selectedChoices.remove(index)
+                      : selectedChoices.add(index);
+                });
+              },
+            );
+            ChoiceChip(
               disabledColor: white,
               selectedColor: pastel_pink,
               padding: EdgeInsets.all(12),
