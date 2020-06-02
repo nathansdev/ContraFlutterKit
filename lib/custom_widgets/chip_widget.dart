@@ -1,0 +1,36 @@
+import 'package:contraflutterkit/utils/colors.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class ChipWidget extends StatelessWidget {
+  final String text;
+  final bool selected;
+  final VoidCallback onTap;
+
+  const ChipWidget({this.text, this.selected, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+          height: 48,
+          padding: EdgeInsets.all(12),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(color: wood_smoke),
+              ),
+              selected ? Icon(Icons.close) : SizedBox()
+            ],
+          ),
+          decoration: ShapeDecoration(
+              color: selected ? pastel_pink : white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(44)),
+                  side: BorderSide(color: wood_smoke, width: 2)))),
+    );
+  }
+}

@@ -26,14 +26,14 @@ class _ShoppingCardPagerState extends State<ShoppingCardPager> {
       categoryBig: CategoryBig(
           bgColor: lightening_yellow,
           startColor: lightening_yellow,
-          name: "Summer Collection",
+          name: "Tee Shirts",
           image: "assets/images/shopping/peep_glass.svg"),
     ),
     ShoppingCardPagerItem(
       categoryBig: CategoryBig(
           bgColor: lightening_yellow,
           startColor: lightening_yellow,
-          name: "Summer Collection",
+          name: "Formal Pants",
           image: "assets/images/shopping/peep_glass.svg"),
     )
   ];

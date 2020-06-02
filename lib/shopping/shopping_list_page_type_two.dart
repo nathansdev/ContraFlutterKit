@@ -20,9 +20,9 @@ class _ShoppingListPageTwoState extends State<ShoppingListPageTwo> {
   void initState() {
     super.initState();
     _filters.add("Small");
-    _filters.add("Big");
-    _filters.add("Less");
-    _filters.add("More");
+    _filters.add("Medium");
+    _filters.add("Shirt");
+    _filters.add("Tee");
     _items.add(ShopItem(
         image: "assets/images/shopping/coat_fur.svg",
         name: "Rebousa - White striped tee",
@@ -142,6 +142,10 @@ class _ShoppingListPageTwoState extends State<ShoppingListPageTwo> {
                     itemBuilder: (BuildContext context, int index) {
                       return ShopGridItemWidget(
                         shopItem: _items[index],
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, "/shopping_detail_page_one");
+                        },
                       );
                     }),
               ],

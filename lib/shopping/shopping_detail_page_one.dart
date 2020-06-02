@@ -174,13 +174,16 @@ class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
                         ],
                       ),
                       SizedBox(
-                        height: 24,
+                        height: 36,
                       ),
                       ButtonPlain(
+                        height: 60,
+                        textSize: 21,
                         text: "Add to Bag",
                         color: wood_smoke,
                         textColor: white,
                         borderColor: wood_smoke,
+                        onTap: () {},
                       )
                     ],
                   ),
