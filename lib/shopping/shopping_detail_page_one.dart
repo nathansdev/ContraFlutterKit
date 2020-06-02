@@ -24,8 +24,8 @@ class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
     _filters.add("S");
     _filters.add("M");
     _filters.add("L");
+    _colors.add(flamingo);
     _colors.add(lightening_yellow);
-    _colors.add(Colors.red);
     _colors.add(carribean_green);
     super.initState();
   }

@@ -27,13 +27,14 @@ class _ColorsSelectWidgetState extends State<ColorsSelectWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only( right: 16.0, top: 16.0),
+      padding: const EdgeInsets.only(right: 16.0, top: 16.0),
       child: Wrap(
         spacing: 12,
         children: List<Widget>.generate(
           options.length,
           (int index) {
             return ColorWidget(
+              bgColor: options[index],
               borderColor: wood_smoke,
               shadowColor: wood_smoke,
               selected: selectedChoices.contains(index),
