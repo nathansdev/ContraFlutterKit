@@ -1,6 +1,7 @@
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ChipWidget extends StatelessWidget {
   final String text;
@@ -21,9 +22,10 @@ class ChipWidget extends StatelessWidget {
             children: <Widget>[
               Text(
                 text,
-                style: TextStyle(color: wood_smoke),
+                style:
+                    TextStyle(color: wood_smoke, fontWeight: FontWeight.bold),
               ),
-              selected ? Icon(Icons.close) : SizedBox()
+              selected ? SvgPicture.asset("assets/icons/close.svg") : SizedBox()
             ],
           ),
           decoration: ShapeDecoration(

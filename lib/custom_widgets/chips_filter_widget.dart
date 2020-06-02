@@ -29,6 +29,7 @@ class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
       padding: const EdgeInsets.only(right: 16.0, top: 16.0),
       child: Wrap(
         spacing: 12,
+        runSpacing: 12,
         children: List<Widget>.generate(
           options.length,
           (int index) {
