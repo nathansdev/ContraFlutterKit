@@ -8,12 +8,14 @@ class ButtonPlainWithShadow extends StatelessWidget {
   final Color color;
   final String text;
   final VoidCallback callback;
+  final double size;
 
   const ButtonPlainWithShadow(
       {this.borderColor,
       this.shadowColor,
       this.color,
       this.text,
+      this.size,
       this.callback});
 
   @override
@@ -21,8 +23,8 @@ class ButtonPlainWithShadow extends StatelessWidget {
     return GestureDetector(
       onTap: callback,
       child: ButtonTheme(
+        minWidth: size != null ? size : MediaQuery.of(context).size.width,
         child: Container(
-          width: MediaQuery.of(context).size.width,
           child: Text(
             text,
             textAlign: TextAlign.center,
