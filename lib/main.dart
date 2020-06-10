@@ -1,6 +1,8 @@
 import 'package:contraflutterkit/blog/blog_home_page.dart';
+import 'package:contraflutterkit/blog/blog_list_page_four.dart';
 import 'package:contraflutterkit/blog/blog_list_page_one.dart';
 import 'package:contraflutterkit/blog/blog_main_page.dart';
+import 'package:contraflutterkit/blog/blog_staggered_grid_page.dart';
 import 'package:contraflutterkit/chat/chat_home_page.dart';
 import 'package:contraflutterkit/chat/chat_list_page.dart';
 import 'package:contraflutterkit/chat/chat_messages_page.dart';
@@ -23,6 +25,7 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'blog/blog_list_page_three.dart';
 import 'blog/blog_list_page_two.dart';
 import 'login/contact_us_form.dart';
 import 'login/login_form_type_four.dart';
@@ -77,8 +80,9 @@ class MyApp extends StatelessWidget {
         '/blog_home_page': (context) => BlogHomePage(),
         '/blog_list_page_one': (context) => BlogListPageOne(),
         '/blog_list_page_two': (context) => BlogListPageTwo(),
-        '/blog_list_page_three': (context) => ShoppingHomePageOne(),
-        '/blog_list_page_four': (context) => ShoppingHomePageTwo(),
+        '/blog_list_page_three': (context) => BlogListPageThree(),
+        '/blog_list_page_four': (context) => BlogListPageFour(),
+        '/blog_staggered_page_four': (context) => BlogStaggeredGridPage(),
         '/blog_detail_page': (context) => ShoppingDetailPageOne(),
         '/blog_featured_page': (context) => ShoppingDetailPageTwo(),
       },
