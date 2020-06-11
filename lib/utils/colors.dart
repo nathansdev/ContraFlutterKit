@@ -20,3 +20,5 @@ const athen_gray = Color(0xFFF4F5F7);
 const bareley_white = Color(0xFFFFF4CC);
 const fair_pink = Color(0xFFFFE8E8);
 const foam = Color(0xFFD6FCF7);
+const lavandar_bush = Color(0xFFFFF3F8);
+const mona_lisa = Color(0xFFFF9692);
