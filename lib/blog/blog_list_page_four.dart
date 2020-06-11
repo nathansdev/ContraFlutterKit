@@ -19,30 +19,37 @@ class _BlogListPageFourState extends State<BlogListPageFour> {
   void initState() {
     super.initState();
     _blogs.add(Blog(
-        bgColor: foam,
-        time: "25 April, 20",
-        title: "Work with us and forget about others",
-        user: "Alisa Red",
+        bgColor: dandelion,
+        time: "11 June, 20",
+        title: "Whats the new in Android 11?",
+        user: "Mariano Red",
         description:
             "Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea."));
     _blogs.add(Blog(
-        bgColor: lavandar_bush,
-        time: "1 Jan, 20",
-        title: "Work with us and forget about others",
+        bgColor: foam,
+        time: "9 June, 20",
+        title: "Read this before you fly anywhere",
+        user: "Mariano Red",
+        description:
+            "Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea."));
+    _blogs.add(Blog(
+        bgColor: mona_lisa,
+        time: "1 May, 20",
+        title: "The only black guy in the office",
         user: "Riya Red",
         description:
             "Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea."));
     _blogs.add(Blog(
         bgColor: fair_pink,
-        time: "30 March, 20",
-        title: "Work with us and forget about others",
+        time: "10 May, 20",
+        title: "Whats the new design trend 2020?",
         user: "Con Red",
         description:
             "Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea."));
     _blogs.add(Blog(
-        bgColor: athen_gray,
-        time: "12 Dec, 20",
-        title: "Work with us and forget about others",
+        bgColor: white,
+        time: "30 May, 20",
+        title: "7 habbits of highly effective programmers",
         user: "Melyssa Chen",
         description:
             "Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea. Wireframe is still important for ideation. It will help you to quickly test idea."));
@@ -57,25 +64,15 @@ class _BlogListPageFourState extends State<BlogListPageFour> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.only(top: 24.0, left: 24),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Expanded(
-                    flex: 2,
-                    child: LoginText(
-                      size: 44,
-                      alignment: Alignment.bottomCenter,
-                      text: "Shop Yay",
-                    ),
+                  LoginText(
+                    size: 44,
+                    alignment: Alignment.bottomCenter,
+                    text: "Blogs",
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: SizedBox(),
-                    ),
-                  )
                 ],
               ),
             ),
@@ -88,8 +85,9 @@ class _BlogListPageFourState extends State<BlogListPageFour> {
           itemBuilder: (BuildContext context, int index) {
             return BlogCardTypeThree(
               blog: _blogs[index],
+              isSubType: index == 4 ? true : false,
               onTap: () {
-                Navigator.pushNamed(context, "/shopping_detail_page_two");
+                Navigator.pushNamed(context, "/blog_detail_page");
               },
             );
           }),

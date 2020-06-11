@@ -25,7 +25,7 @@ class BlogCardTypeOne extends StatelessWidget {
                   color: wood_smoke,
                   offset: Offset(
                     0.0, // Move to right 10  horizontally
-                    4.0, // Move to bottom 5 Vertically
+                    6.0, // Move to bottom 5 Vertically
                   ),
                 )
               ],
@@ -44,7 +44,7 @@ class BlogCardTypeOne extends StatelessWidget {
                 height: 24,
               ),
               Text(
-                "Work with us and forget about others",
+                blog.title,
                 style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -57,16 +57,17 @@ class BlogCardTypeOne extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        "Alisa Red",
+                        blog.user,
                         style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
                             color: wood_smoke),
                       ),
                       Text(
-                        "33 March, 20",
+                        blog.time,
                         style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.normal,
@@ -78,6 +79,8 @@ class BlogCardTypeOne extends StatelessWidget {
                     borderColor: wood_smoke,
                     color: lightening_yellow,
                     text: "Follow",
+                    height: 48,
+                    size: 120,
                     callback: () {},
                     shadowColor: wood_smoke,
                   ),

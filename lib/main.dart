@@ -25,6 +25,7 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'blog/blog_detail_page.dart';
 import 'blog/blog_list_page_three.dart';
 import 'blog/blog_list_page_two.dart';
 import 'login/contact_us_form.dart';
@@ -83,7 +84,7 @@ class MyApp extends StatelessWidget {
         '/blog_list_page_three': (context) => BlogListPageThree(),
         '/blog_list_page_four': (context) => BlogListPageFour(),
         '/blog_staggered_page_four': (context) => BlogStaggeredGridPage(),
-        '/blog_detail_page': (context) => ShoppingDetailPageOne(),
+        '/blog_detail_page': (context) => BlogDetailPage(),
         '/blog_featured_page': (context) => ShoppingDetailPageTwo(),
       },
     );

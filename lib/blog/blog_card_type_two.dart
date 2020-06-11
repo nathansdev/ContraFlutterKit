@@ -35,7 +35,7 @@ class BlogCardTypeTwo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                "by Lara Trina • 12 March, 20",
+                "by " + blog.user + " • " + blog.time,
                 style: TextStyle(
                     fontSize: 12, fontWeight: FontWeight.bold, color: trout),
               ),
@@ -43,7 +43,9 @@ class BlogCardTypeTwo extends StatelessWidget {
                 height: 24,
               ),
               Text(
-                "I’m post title, Please keep it 2 line onely...",
+                blog.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w800,

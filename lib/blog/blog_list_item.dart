@@ -60,7 +60,9 @@ class BlogListItem extends StatelessWidget {
                     height: 12,
                   ),
                   Text(
-                    "I’m post title, Please 2 line only...",
+                    blog.title,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: wood_smoke,

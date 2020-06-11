@@ -1,7 +1,10 @@
-import 'package:contraflutterkit/shopping/shopping_home_page_one.dart';
-import 'package:contraflutterkit/shopping/shopping_home_page_two.dart';
+import 'package:contraflutterkit/blog/blog_list_page_four.dart';
+import 'package:contraflutterkit/blog/blog_list_page_one.dart';
+import 'package:contraflutterkit/blog/blog_list_page_two.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/material.dart';
+
+import 'blog_list_page_three.dart';
 
 class BlogHomePage extends StatefulWidget {
   @override
@@ -11,10 +14,10 @@ class BlogHomePage extends StatefulWidget {
 class _BlogHomePageState extends State<BlogHomePage> {
   int _currentIndex = 0;
   final List<Widget> _childrenWidgets = [
-    ShoppingHomePageTwo(),
-    ShoppingHomePageOne(),
-    ShoppingHomePageTwo(),
-    ShoppingHomePageOne(),
+    BlogListPageOne(),
+    BlogListPageTwo(),
+    BlogListPageThree(),
+    BlogListPageFour(),
   ];
 
   void _onItemTapped(int index) {
