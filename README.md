@@ -16,6 +16,7 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 - Toast
 - Chat Screens
 - Shopping screens
+- Blogs
 
 ## Screenshots
 
@@ -38,6 +39,11 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 <img src = "screenshots/shopping_screen_one.jpg" width=220><img src = "screenshots/shopping_screen_two.jpg" width=220><img src = "screenshots/shopping_screen_three.jpg" width=220>
 <img src = "screenshots/shopping_screen_four.jpg" width=220><img src = "screenshots/shopping_screen_five.jpg" width=220><img src = "screenshots/shopping_screen_six.jpg" width=220>
+
+- Blog Screen Types
+
+<img src = "screenshots/blog_type_one.jpg" width=220><img src = "screenshots/blog_type_two.jpg" width=220><img src = "screenshots/blog_type_three.jpg" width=220>
+<img src = "screenshots/blog_type_four.jpg" width=220><img src = "screenshots/blog_type_five.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
