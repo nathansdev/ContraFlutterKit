@@ -6,6 +6,7 @@ class ButtonPlainWithShadow extends StatelessWidget {
   final Color borderColor;
   final Color shadowColor;
   final Color color;
+  final Color textColor;
   final String text;
   final VoidCallback callback;
   final double size;
@@ -15,6 +16,7 @@ class ButtonPlainWithShadow extends StatelessWidget {
       {this.borderColor,
       this.shadowColor,
       this.color,
+      this.textColor,
       this.text,
       this.size,
       this.height,
@@ -33,7 +35,9 @@ class ButtonPlainWithShadow extends StatelessWidget {
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: wood_smoke, fontSize: 21, fontWeight: FontWeight.w800),
+                color: textColor != null ? textColor : wood_smoke,
+                fontSize: 21,
+                fontWeight: FontWeight.w800),
           ),
         ),
         decoration: ShapeDecoration(
