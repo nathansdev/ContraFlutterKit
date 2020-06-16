@@ -6,6 +6,7 @@ import 'package:contraflutterkit/payment/payment_card.dart';
 import 'package:contraflutterkit/payment/payment_type.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPageThree extends StatefulWidget {
@@ -13,8 +14,13 @@ class PaymentPageThree extends StatefulWidget {
   _PaymentPageThreeState createState() => _PaymentPageThreeState();
 }
 
-class _PaymentPageThreeState extends State<PaymentPageThree> {
+class _PaymentPageThreeState extends State<PaymentPageThree>
+    with SingleTickerProviderStateMixin {
   List<CardDetail> _list = List<CardDetail>();
+  AnimationController controller;
+  PageController _pageController;
+  bool isVertical = true;
+  bool isChecked = false;
 
   @override
   void initState() {
@@ -34,6 +40,18 @@ class _PaymentPageThreeState extends State<PaymentPageThree> {
         color: Colors.black,
         type: "Credit Card",
         number: "8765 7875 6759 4344"));
+    controller = AnimationController(
+        reverseDuration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 200),
+        vsync: this)
+      ..addStatusListener((status) {});
+    _pageController = PageController(initialPage: 0, viewportFraction: 0.8);
+  }
+
+  void onChecked(bool val) {
+    setState(() {
+      isChecked = val;
+    });
   }
 
   @override
@@ -41,7 +59,26 @@ class _PaymentPageThreeState extends State<PaymentPageThree> {
     return Scaffold(
       appBar: CustomAppBar(
         height: 200,
-        child: CustomHeader(),
+        child: Row(
+          children: <Widget>[
+            CustomHeader(),
+/*            Expanded(
+              flex: 1,
+              child: IconButton(
+                icon: AnimatedIcon(
+                  icon: AnimatedIcons.view_list,
+                  progress: controller,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isVertical ? controller.forward() : controller.reverse();
+                    isVertical = !isVertical;
+                  });
+                },
+              ),
+            )*/
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -85,16 +122,34 @@ class _PaymentPageThreeState extends State<PaymentPageThree> {
                 ],
               ),
             ),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                reverse: false,
-                itemCount: _list.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return PaymentCard(
-                    card: _list[index],
-                  );
-                }),
+            isVertical
+                ? ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    reverse: false,
+                    itemCount: _list.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return PaymentCard(
+                        card: _list[index],
+                        isVertical: isVertical,
+                        color: wood_smoke,
+                      );
+                    })
+                : Container(
+                    height: MediaQuery.of(context).size.height / 2.3,
+                    child: PageView.builder(
+                        controller: _pageController,
+                        dragStartBehavior: DragStartBehavior.start,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _list.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return PaymentCard(
+                            card: _list[index],
+                            isVertical: false,
+                            color: white,
+                          );
+                        }),
+                  ),
           ],
         ),
       ),

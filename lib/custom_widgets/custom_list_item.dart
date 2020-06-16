@@ -9,7 +9,7 @@ class CustomListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        padding: EdgeInsets.symmetric(vertical: 16),
+        padding: EdgeInsets.symmetric(vertical: 24),
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         reverse: false,

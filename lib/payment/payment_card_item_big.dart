@@ -7,13 +7,17 @@ import 'package:flutter/material.dart';
 
 class PaymentCartItemBig extends StatelessWidget {
   final PaymentType type;
+  final bool isVertical;
 
-  const PaymentCartItemBig({this.type});
+  const PaymentCartItemBig({this.type, this.isVertical});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(16),
+      height: isVertical ? MediaQuery.of(context).size.width : 250,
+      margin: isVertical
+          ? EdgeInsets.symmetric(horizontal: 24, vertical: 12)
+          : EdgeInsets.only(right: 12, top: 24, bottom: 12),
       padding: EdgeInsets.all(24),
       decoration: ShapeDecoration(
           color: type.color,
@@ -42,9 +46,17 @@ class PaymentCartItemBig extends StatelessWidget {
             style: TextStyle(
                 color: white, fontSize: 44, fontWeight: FontWeight.w800),
           ),
-          CustomListItem(
-            list: type.list,
-          ),
+          isVertical
+              ? CustomListItem(
+                  list: type.list,
+                )
+              : Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 24.0),
+                  child: Text(
+                    "You don’t think you should give some dollar to use our service.",
+                    style: TextStyle(color: white, fontSize: 17),
+                  ),
+                ),
           ButtonPlainWithShadow(
             text: "Select",
             height: 48,
@@ -53,6 +65,9 @@ class PaymentCartItemBig extends StatelessWidget {
             callback: () {},
             textColor: white,
             borderColor: wood_smoke,
+          ),
+          SizedBox(
+            height: 12,
           )
         ],
       ),

@@ -13,8 +13,8 @@ class PaymentCartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(16),
-      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      padding: EdgeInsets.all(24),
       decoration: ShapeDecoration(
           color: bgColor,
           shadows: [

@@ -75,59 +75,67 @@ class _PaymentPageOneState extends State<PaymentPageOne> {
           ],
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          PaymentCartItem(
-            bgColor: lightening_yellow,
-            type: "per month",
-            price: "\$" + "54",
-          ),
-          PaymentCartItem(
-            bgColor: white,
-            type: "per month",
-            price: "\$" + "54",
-          ),
-          PaymentCartItem(
-            bgColor: lightening_yellow,
-            type: "per month",
-            price: "\$" + "54",
-          ),
-          Container(
-            margin: EdgeInsets.all(16),
-            padding: EdgeInsets.all(16),
-            decoration: ShapeDecoration(
-                color: bareley_white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                )),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                LoginText(
-                  alignment: Alignment.centerLeft,
-                  size: 21,
-                  text: "Auto renew",
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(top: 12),
+          child: Column(
+            children: <Widget>[
+              PaymentCartItem(
+                bgColor: lightening_yellow,
+                type: "per month",
+                price: "\$" + "54",
+              ),
+              PaymentCartItem(
+                bgColor: white,
+                type: "per month",
+                price: "\$" + "54",
+              ),
+              PaymentCartItem(
+                bgColor: lightening_yellow,
+                type: "per month",
+                price: "\$" + "54",
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                padding: EdgeInsets.all(24),
+                decoration: ShapeDecoration(
+                    color: bareley_white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                    )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    LoginText(
+                      alignment: Alignment.centerLeft,
+                      size: 21,
+                      text: "Auto renew",
+                    ),
+                    Switch(
+                      value: isChanged,
+                      onChanged: onChanged,
+                      activeColor: lightening_yellow,
+                      inactiveTrackColor: selago,
+                      inactiveThumbColor: white,
+                    )
+                  ],
                 ),
-                Switch(
-                  value: isChanged,
-                  onChanged: onChanged,
-                )
-              ],
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: ButtonPlainWithShadow(
+                  text: "Subscribe now",
+                  height: 48,
+                  shadowColor: wood_smoke,
+                  color: wood_smoke,
+                  callback: () {},
+                  textColor: white,
+                  borderColor: wood_smoke,
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ButtonPlainWithShadow(
-              text: "Subscribe now",
-              height: 48,
-              shadowColor: wood_smoke,
-              color: wood_smoke,
-              callback: () {},
-              textColor: white,
-              borderColor: wood_smoke,
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

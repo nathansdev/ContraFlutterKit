@@ -6,6 +6,7 @@ import 'package:contraflutterkit/payment/payment_card_item_big.dart';
 import 'package:contraflutterkit/payment/payment_type.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPageTwo extends StatefulWidget {
@@ -20,6 +21,7 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
   AnimationController controller;
   bool isVertical = true;
   bool isChecked = false;
+  PageController _pageController;
 
   @override
   void initState() {
@@ -36,11 +38,8 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
         reverseDuration: Duration(milliseconds: 300),
         duration: const Duration(milliseconds: 200),
         vsync: this)
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          controller.reverse();
-        }
-      });
+      ..addStatusListener((status) {});
+    _pageController = PageController(initialPage: 0, viewportFraction: 0.8);
   }
 
   void onChecked(bool val) {
@@ -89,9 +88,19 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
                 ),
                 Expanded(
                   flex: 1,
-                  child: AnimatedIcon(
-                    icon: AnimatedIcons.menu_arrow,
-                    progress: controller,
+                  child: IconButton(
+                    icon: AnimatedIcon(
+                      icon: AnimatedIcons.view_list,
+                      progress: controller,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        isVertical
+                            ? controller.forward()
+                            : controller.reverse();
+                        isVertical = !isVertical;
+                      });
+                    },
                   ),
                 )
               ],
@@ -102,16 +111,30 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                reverse: false,
-                itemCount: types.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return PaymentCartItemBig(
-                    type: types[index],
-                  );
-                }),
+            isVertical
+                ? ListView.builder(
+                    padding: EdgeInsets.only(top: 12),
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    reverse: false,
+                    scrollDirection: Axis.vertical,
+                    itemCount: types.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return PaymentCartItemBig(
+                          type: types[index], isVertical: true);
+                    })
+                : Container(
+                    height: MediaQuery.of(context).size.height / 2.3,
+                    child: PageView.builder(
+                        controller: _pageController,
+                        dragStartBehavior: DragStartBehavior.start,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: types.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return PaymentCartItemBig(
+                              type: types[index], isVertical: false);
+                        }),
+                  ),
             Container(
               padding: const EdgeInsets.all(16.0),
               child: Row(
@@ -130,7 +153,7 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(24.0),
               child: ButtonPlainWithShadow(
                 text: "Subscribe now",
                 height: 48,
