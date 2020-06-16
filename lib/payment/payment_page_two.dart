@@ -29,11 +29,33 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
     list.add("Get 24x7 Support");
     list.add("120+ Screens");
     list.add("120+ Screens");
-    types.add(PaymentType(type: "POPULAR", list: list, color: flamingo));
     types.add(PaymentType(
-        price: "34", type: "TRENDING", list: list, color: Colors.yellow));
-    types.add(
-        PaymentType(price: "34", type: "POPULAR", list: list, color: flamingo));
+        type: "POPULAR",
+        list: list,
+        color: flamingo,
+        buttonColor: wood_smoke,
+        buttonTextColor: white));
+    types.add(PaymentType(
+        price: "34",
+        type: "TRENDING",
+        list: list,
+        color: lightening_yellow,
+        buttonColor: wood_smoke,
+        buttonTextColor: white));
+    types.add(PaymentType(
+        price: "25",
+        type: "POPULAR",
+        list: list,
+        color: Colors.black,
+        buttonColor: white,
+        buttonTextColor: Colors.black));
+    types.add(PaymentType(
+        price: "34",
+        type: "CLASSIC",
+        list: list,
+        color: flamingo,
+        buttonColor: wood_smoke,
+        buttonTextColor: white));
     controller = AnimationController(
         reverseDuration: Duration(milliseconds: 300),
         duration: const Duration(milliseconds: 200),

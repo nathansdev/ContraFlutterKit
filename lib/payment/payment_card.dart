@@ -88,7 +88,7 @@ class PaymentCard extends StatelessWidget {
                     "assets/icons/logo_visa.svg",
                     color: color,
                     width: 36,
-                    height: 96,
+                    height: 56,
                   ),
                 ),
               )

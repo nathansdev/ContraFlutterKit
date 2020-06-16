@@ -4,9 +4,11 @@ class PaymentType {
   final String type;
   final String price;
   final Color color;
+  final Color buttonColor;
+  final Color buttonTextColor;
   final List<String> list;
 
-  const PaymentType({this.type, this.price, this.color, this.list});
+  const PaymentType({this.type, this.price, this.color, this.list,this.buttonColor,this.buttonTextColor});
 }
 
 class CardDetail {

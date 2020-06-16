@@ -60,11 +60,11 @@ class PaymentCartItemBig extends StatelessWidget {
           ButtonPlainWithShadow(
             text: "Select",
             height: 48,
-            shadowColor: wood_smoke,
-            color: wood_smoke,
+            shadowColor: type.buttonColor,
+            color: type.buttonColor,
             callback: () {},
-            textColor: white,
-            borderColor: wood_smoke,
+            textColor: type.buttonTextColor,
+            borderColor: type.buttonColor,
           ),
           SizedBox(
             height: 12,

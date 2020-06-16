@@ -32,12 +32,17 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
         number: "8765 7875 6759 4344"));
     _list.add(CardDetail(
         user_name: "Karthi",
-        color: Colors.yellow,
+        color: lightening_yellow,
         type: "Credit Card",
         number: "8765 7875 6759 4344"));
     _list.add(CardDetail(
         user_name: "Karthi",
         color: Colors.black,
+        type: "Credit Card",
+        number: "8765 7875 6759 4344"));
+    _list.add(CardDetail(
+        user_name: "Karthi",
+        color: flamingo,
         type: "Credit Card",
         number: "8765 7875 6759 4344"));
     controller = AnimationController(
