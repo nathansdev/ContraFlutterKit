@@ -22,3 +22,4 @@ const fair_pink = Color(0xFFFFE8E8);
 const foam = Color(0xFFD6FCF7);
 const lavandar_bush = Color(0xFFFFF3F8);
 const mona_lisa = Color(0xFFFF9692);
+const athens = Color(0xFFEEEFF4);

@@ -13,6 +13,10 @@ import 'package:contraflutterkit/login/signup_form_one.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
+import 'package:contraflutterkit/payment/payment_main_page.dart';
+import 'package:contraflutterkit/payment/payment_page_one.dart';
+import 'package:contraflutterkit/payment/payment_page_three.dart';
+import 'package:contraflutterkit/payment/payment_page_two.dart';
 import 'package:contraflutterkit/shopping/shopping_detail_page_one.dart';
 import 'package:contraflutterkit/shopping/shopping_detail_page_two.dart';
 import 'package:contraflutterkit/shopping/shopping_home_page.dart';
@@ -86,6 +90,10 @@ class MyApp extends StatelessWidget {
         '/blog_staggered_page_four': (context) => BlogStaggeredGridPage(),
         '/blog_detail_page': (context) => BlogDetailPage(),
         '/blog_featured_page': (context) => ShoppingDetailPageTwo(),
+        '/payment_main_page': (context) => PaymentMainPage(),
+        '/payment_page_type_one': (context) => PaymentPageOne(),
+        '/payment_page_type_two': (context) => PaymentPageTwo(),
+        '/payment_page_type_three': (context) => PaymentPageThree(),
       },
     );
   }
@@ -107,69 +115,81 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            ListTile(
-              contentPadding: EdgeInsets.all(20),
-              trailing: Icon(Icons.navigate_next),
-              title: Text("Onboarding and Splash"),
-              onTap: () {
-                Navigator.pushNamed(context, "/onboard_all");
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.all(20),
-              trailing: Icon(Icons.navigate_next),
-              title: Text("Forms, Login, Signup"),
-              onTap: () {
-                Navigator.pushNamed(context, "/login_all");
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.all(20),
-              trailing: Icon(Icons.navigate_next),
-              title: Text("Chatting Screens"),
-              onTap: () {
-                Navigator.pushNamed(context, "/chat_home");
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.all(20),
-              trailing: Icon(Icons.navigate_next),
-              title: Text("Shopping Screens"),
-              onTap: () {
-                Navigator.pushNamed(context, "/shopping_main_page");
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.all(20),
-              trailing: Icon(Icons.navigate_next),
-              title: Text("Blog Screens"),
-              onTap: () {
-                Navigator.pushNamed(context, "/blog_main_page");
-              },
-            ),
-            Container(
-              child: ListTile(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              ListTile(
                 contentPadding: EdgeInsets.all(20),
                 trailing: Icon(Icons.navigate_next),
-                title: Text("Onboarding"),
+                title: Text("Onboarding and Splash"),
+                onTap: () {
+                  Navigator.pushNamed(context, "/onboard_all");
+                },
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.all(20),
+                trailing: Icon(Icons.navigate_next),
+                title: Text("Forms, Login, Signup"),
+                onTap: () {
+                  Navigator.pushNamed(context, "/login_all");
+                },
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.all(20),
+                trailing: Icon(Icons.navigate_next),
+                title: Text("Chatting Screens"),
+                onTap: () {
+                  Navigator.pushNamed(context, "/chat_home");
+                },
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.all(20),
+                trailing: Icon(Icons.navigate_next),
+                title: Text("Shopping Screens"),
+                onTap: () {
+                  Navigator.pushNamed(context, "/shopping_main_page");
+                },
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.all(20),
+                trailing: Icon(Icons.navigate_next),
+                title: Text("Blog Screens"),
+                onTap: () {
+                  Navigator.pushNamed(context, "/blog_main_page");
+                },
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Payment"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/payment_main_page");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Onboarding"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/empty_state");
+                  },
+                ),
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.all(20),
+                trailing: Icon(Icons.navigate_next),
+                title: Text("Profile"),
                 onTap: () {
                   Navigator.pushNamed(context, "/empty_state");
                 },
-              ),
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.all(20),
-              trailing: Icon(Icons.navigate_next),
-              title: Text("Profile"),
-              onTap: () {
-                Navigator.pushNamed(context, "/empty_state");
-              },
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

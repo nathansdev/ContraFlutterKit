@@ -17,6 +17,7 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 - Chat Screens
 - Shopping screens
 - Blogs
+- Payment Screens
 
 ## Screenshots
 
@@ -44,6 +45,11 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 <img src = "screenshots/blog_type_one.jpg" width=220><img src = "screenshots/blog_type_two.jpg" width=220><img src = "screenshots/blog_type_three.jpg" width=220>
 <img src = "screenshots/blog_type_four.jpg" width=220><img src = "screenshots/blog_type_five.jpg" width=220>
+
+- Payment Screen Types
+
+<img src = "screenshots/payment_type_one.jpg" width=220><img src = "screenshots/payment_type_two.jpg" width=220><img src = "screenshots/payment_type_three.jpg" width=220>
+<img src = "screenshots/blog_type_four.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
