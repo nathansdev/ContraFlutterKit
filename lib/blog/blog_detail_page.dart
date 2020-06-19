@@ -23,7 +23,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
           height: MediaQuery.of(context).size.height,
           alignment: Alignment.topCenter,
           child: CustomAppBar(
-            height: 150 - statusBarHeight,
+            height: kToolbarHeight + statusBarHeight + statusBarHeight,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

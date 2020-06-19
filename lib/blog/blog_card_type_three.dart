@@ -120,7 +120,7 @@ class BlogCardTypeThree extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: Row(
                       children: <Widget>[
                         Expanded(
@@ -141,9 +141,6 @@ class BlogCardTypeThree extends StatelessWidget {
                               )
                             ],
                           ),
-                        ),
-                        SizedBox(
-                          width: 20,
                         ),
                         Expanded(
                           flex: 1,

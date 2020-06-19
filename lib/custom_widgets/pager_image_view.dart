@@ -53,7 +53,7 @@ class _PagerImageViewState extends State<PagerImageView> {
     return Column(
       children: <Widget>[
         Container(
-          height: 310,
+          height: 300,
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: PageView.builder(
             physics: ClampingScrollPhysics(),
@@ -67,26 +67,23 @@ class _PagerImageViewState extends State<PagerImageView> {
             controller: _pageController,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              for (int i = 0; i < _cards.length; i++)
-                if (i == currentPageValue) ...[
-                  CircleDotWidget(
-                    isActive: true,
-                    color: white,
-                    borderColor: white,
-                  )
-                ] else
-                  CircleDotWidget(
-                    isActive: false,
-                    color: flamingo,
-                    borderColor: wood_smoke,
-                  ),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            for (int i = 0; i < _cards.length; i++)
+              if (i == currentPageValue) ...[
+                CircleDotWidget(
+                  isActive: true,
+                  color: white,
+                  borderColor: white,
+                )
+              ] else
+                CircleDotWidget(
+                  isActive: false,
+                  color: flamingo,
+                  borderColor: wood_smoke,
+                ),
+          ],
         ),
       ],
     );

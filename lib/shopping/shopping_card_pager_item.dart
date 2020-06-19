@@ -22,7 +22,7 @@ class ShoppingCardPagerItem extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Expanded(
-            flex: 2,
+            flex: 4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,6 +31,8 @@ class ShoppingCardPagerItem extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 24.0, top: 24),
                   child: Text(
                     categoryBig.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         color: wood_smoke,
                         fontSize: 22,
@@ -53,10 +55,13 @@ class ShoppingCardPagerItem extends StatelessWidget {
               ],
             ),
           ),
-          SvgPicture.asset(
-            categoryBig.image,
-            width: 210,
-            height: 230,
+          Expanded(
+            flex: 4,
+            child: SvgPicture.asset(
+              categoryBig.image,
+              width: 210,
+              height: 230,
+            ),
           ),
         ],
       ),

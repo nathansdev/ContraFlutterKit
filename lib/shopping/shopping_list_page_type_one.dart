@@ -23,6 +23,8 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
     _filters.add("Small");
     _filters.add("Medium");
     _filters.add("Shirt");
+    _filters.add("Shirt");
+    _filters.add("Shirt");
     _filters.add("Tee");
     _items.add(ShopItem(
         image: "assets/images/shopping/coat_fur.svg",
@@ -122,8 +124,11 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ChipsFilterWidget(
-              filters: _filters,
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ChipsFilterWidget(
+                filters: _filters,
+              ),
             ),
             ListView.builder(
                 shrinkWrap: true,

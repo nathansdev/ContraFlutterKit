@@ -117,6 +117,8 @@ class _ShoppingListPageTwoState extends State<ShoppingListPageTwo> {
                       child: Text(
                         "   Summer \n Collection",
                         textAlign: TextAlign.start,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             color: white,
                             fontSize: 36,
@@ -125,15 +127,18 @@ class _ShoppingListPageTwoState extends State<ShoppingListPageTwo> {
                     ),
                   ],
                 ),
-                ChipsFilterWidget(
-                  filters: _filters,
+                Padding(
+                  padding: const EdgeInsets.only(top: 12.0),
+                  child: ChipsFilterWidget(
+                    filters: _filters,
+                  ),
                 ),
                 GridView.builder(
                     padding: EdgeInsets.all(24),
                     gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 16,
-                      childAspectRatio: (1 / 1.5),
+                      childAspectRatio: (1 / 1.7),
                     ),
                     controller: new ScrollController(keepScrollOffset: false),
                     shrinkWrap: true,

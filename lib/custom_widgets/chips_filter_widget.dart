@@ -26,8 +26,9 @@ class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16.0, top: 16.0),
+      padding: const EdgeInsets.only(left: 12.0),
       child: Wrap(
+        alignment: WrapAlignment.start,
         spacing: 12,
         runSpacing: 12,
         children: List<Widget>.generate(

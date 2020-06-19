@@ -33,6 +33,7 @@ class ButtonPlain extends StatelessWidget {
         textColor: textColor,
         child: Text(
           text,
+          maxLines: 1,
           style: TextStyle(
               fontSize: textSize != null ? textSize : 12,
               fontWeight: FontWeight.w800),
