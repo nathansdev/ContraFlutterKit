@@ -54,6 +54,7 @@ class PaymentCartItemBig extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 24.0),
                   child: Text(
                     "You don’t think you should give some dollar to use our service.",
+                    textAlign: TextAlign.center,
                     style: TextStyle(color: white, fontSize: 17),
                   ),
                 ),
@@ -66,9 +67,6 @@ class PaymentCartItemBig extends StatelessWidget {
             textColor: type.buttonTextColor,
             borderColor: type.buttonColor,
           ),
-          SizedBox(
-            height: 12,
-          )
         ],
       ),
     );

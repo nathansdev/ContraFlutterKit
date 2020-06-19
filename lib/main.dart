@@ -170,11 +170,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
               ),
+/*              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Dialogs, Filters, Toasts"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/empty_state");
+                  },
+                ),
+              ),
               Container(
                 child: ListTile(
                   contentPadding: EdgeInsets.all(20),
                   trailing: Icon(Icons.navigate_next),
-                  title: Text("Onboarding"),
+                  title: Text("Profile"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/empty_state");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Menus"),
                   onTap: () {
                     Navigator.pushNamed(context, "/empty_state");
                   },
@@ -187,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   Navigator.pushNamed(context, "/empty_state");
                 },
-              )
+              )*/
             ],
           ),
         ),

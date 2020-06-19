@@ -82,22 +82,22 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
+                SizedBox(
+                  width: 24,
+                ),
                 Expanded(
                   flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 24.0),
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: ButtonRoundWithShadow(
-                          size: 48,
-                          borderColor: wood_smoke,
-                          color: white,
-                          callback: () {
-                            Navigator.pop(context);
-                          },
-                          shadowColor: wood_smoke,
-                          iconPath: "assets/icons/arrow_back.svg"),
-                    ),
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: ButtonRoundWithShadow(
+                        size: 48,
+                        borderColor: wood_smoke,
+                        color: white,
+                        callback: () {
+                          Navigator.pop(context);
+                        },
+                        shadowColor: wood_smoke,
+                        iconPath: "assets/icons/arrow_back.svg"),
                   ),
                 ),
                 Expanded(
@@ -110,19 +110,22 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
                 ),
                 Expanded(
                   flex: 1,
-                  child: IconButton(
-                    icon: AnimatedIcon(
-                      icon: AnimatedIcons.view_list,
-                      progress: controller,
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: IconButton(
+                      icon: AnimatedIcon(
+                        icon: AnimatedIcons.view_list,
+                        progress: controller,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isVertical
+                              ? controller.forward()
+                              : controller.reverse();
+                          isVertical = !isVertical;
+                        });
+                      },
                     ),
-                    onPressed: () {
-                      setState(() {
-                        isVertical
-                            ? controller.forward()
-                            : controller.reverse();
-                        isVertical = !isVertical;
-                      });
-                    },
                   ),
                 )
               ],
@@ -146,7 +149,7 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
                           type: types[index], isVertical: true);
                     })
                 : Container(
-                    height: MediaQuery.of(context).size.height / 2.3,
+                    height: MediaQuery.of(context).size.height / 2,
                     child: PageView.builder(
                         controller: _pageController,
                         dragStartBehavior: DragStartBehavior.start,

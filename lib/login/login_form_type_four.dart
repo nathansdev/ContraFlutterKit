@@ -10,8 +10,8 @@ import 'login_input_password_text.dart';
 class LoginFormTypeFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
+    return Scaffold(
+      body: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
         Container(
           color: flamingo,
           alignment: Alignment.center,
@@ -106,6 +106,7 @@ class LoginFormTypeFour extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 child: ButtonPlainWithIcon(
+                  size: 48,
                   color: wood_smoke,
                   textColor: white,
                   iconPath: "assets/icons/arrow_next.svg",

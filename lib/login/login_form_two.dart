@@ -20,13 +20,10 @@ class LoginFormTypeTwo extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  height: 56,
-                ),
                 Expanded(
                   flex: 1,
-                  child: Row(
-                    children: <Widget>[],
+                  child: SizedBox(
+                    height: 56,
                   ),
                 ),
                 Expanded(
@@ -83,17 +80,13 @@ class LoginFormTypeTwo extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Container(),
-                )
               ],
             ),
           ),
           Positioned(
             left: 24,
             top: 80,
-            child: ButtonRoundWithShadow(
+            child: ButtonRoundWithShadow(size: 48,
               iconPath: "assets/icons/close.svg",
               borderColor: black,
               shadowColor: black,

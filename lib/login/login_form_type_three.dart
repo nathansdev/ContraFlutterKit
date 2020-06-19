@@ -45,6 +45,7 @@ class LoginFormTypeThree extends StatelessWidget {
           left: 24,
           top: 56,
           child: ButtonRoundWithShadow(
+            size: 48,
             iconPath: "assets/icons/close.svg",
             borderColor: black,
             shadowColor: black,

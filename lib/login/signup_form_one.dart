@@ -15,85 +15,81 @@ class SignInFormTypeOne extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            color: white,
-            padding: EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: Row(
-                    children: <Widget>[],
-                  ),
+          Column(
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: Container(),
+              ),
+              Expanded(
+                flex: 5,
+                child: ListView(
+                  padding: EdgeInsets.all(24),
+                  children: <Widget>[
+                    LoginText(
+                      text: "Sign up",
+                      alignment: Alignment.centerLeft,
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Text(
+                      "You have chance to create new account if you really want to.",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          fontSize: 21,
+                          color: trout,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    LoginEmailText(
+                      text: "Full Name",
+                      iconPath: "assets/icons/user.svg",
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    LoginEmailText(
+                      text: "Email address",
+                      iconPath: "assets/icons/mail.svg",
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    LoginPasswordText(
+                      text: "..........",
+                      iconPath: "assets/icons/lock.svg",
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    ButtonPlainWithShadow(
+                      text: "Sign up",
+                      shadowColor: wood_smoke,
+                      borderColor: wood_smoke,
+                      callback: () {},
+                      color: lightening_yellow,
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    CustomRichText(
+                      alignment: Alignment.centerLeft,
+                      text_one: "You are new? ",
+                      text_second: "Create new",
+                    )
+                  ],
                 ),
-                Expanded(
-                  flex: 5,
-                  child: ListView(
-                    children: <Widget>[
-                      LoginText(
-                        text: "Sign up",
-                        alignment: Alignment.centerLeft,
-                      ),
-                      SizedBox(
-                        height: 12,
-                      ),
-                      Text(
-                        "You have chance to create new account if you really want to.",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            fontSize: 21,
-                            color: trout,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      LoginEmailText(
-                        text: "Full Name",
-                        iconPath: "assets/icons/user.svg",
-                      ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      LoginEmailText(
-                        text: "Email address",
-                        iconPath: "assets/icons/mail.svg",
-                      ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      LoginPasswordText(
-                        text: "..........",
-                        iconPath: "assets/icons/lock.svg",
-                      ),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      ButtonPlainWithShadow(
-                        text: "Sign up",
-                        shadowColor: wood_smoke,
-                        borderColor: wood_smoke,
-                        callback: () {},
-                        color: lightening_yellow,
-                      ),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      CustomRichText(
-                        alignment: Alignment.centerLeft,
-                        text_one: "You are new? ",
-                        text_second: "Create new",
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           Positioned(
             left: 24,
             top: 80,
             child: ButtonRoundWithShadow(
+              size: 48,
               iconPath: "assets/icons/close.svg",
               borderColor: black,
               shadowColor: black,

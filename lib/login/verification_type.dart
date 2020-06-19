@@ -14,7 +14,13 @@ class VerificationType extends StatelessWidget {
         Column(
           children: <Widget>[
             Expanded(
-              flex: 3,
+              flex: 1,
+              child: Container(
+                color: lightening_yellow,
+              ),
+            ),
+            Expanded(
+              flex: 2,
               child: Container(
                 color: lightening_yellow,
                 alignment: Alignment.bottomCenter,
@@ -272,7 +278,8 @@ class VerificationType extends StatelessWidget {
           child: Row(
             children: <Widget>[
               ButtonRoundWithShadow(
-                iconPath: "assets/icons/arrow_forward.svg",
+                size: 48,
+                iconPath: "assets/icons/arrow_back.svg",
                 borderColor: black,
                 shadowColor: black,
                 color: white,

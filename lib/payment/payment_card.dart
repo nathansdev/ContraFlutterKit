@@ -52,10 +52,17 @@ class PaymentCard extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(8)))),
                 ),
-                Text(
-                  card.number,
-                  style: TextStyle(
-                      color: white, fontWeight: FontWeight.w800, fontSize: 21),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    card.number,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(
+                        color: white,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 21),
+                  ),
                 ),
               ],
             ),
@@ -72,6 +79,8 @@ class PaymentCard extends StatelessWidget {
                   ),
                   Text(
                     card.user_name,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                     style: TextStyle(
                         color: white,
                         fontWeight: FontWeight.w800,

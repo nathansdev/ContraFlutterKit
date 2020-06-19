@@ -13,22 +13,17 @@ import 'login_text.dart';
 class LoginFormTypeOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Stack(
+    return Scaffold(
+      body: Stack(
         children: [
           Container(
             color: white,
             padding: EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  height: 56,
-                ),
                 Expanded(
                   flex: 1,
-                  child: Row(
-                    children: <Widget>[],
-                  ),
+                  child: Container(),
                 ),
                 Expanded(
                   flex: 1,
@@ -91,10 +86,6 @@ class LoginFormTypeOne extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Container(),
-                )
               ],
             ),
           ),
@@ -102,6 +93,7 @@ class LoginFormTypeOne extends StatelessWidget {
             left: 24,
             top: 80,
             child: ButtonRoundWithShadow(
+              size: 48,
               iconPath: "assets/icons/close.svg",
               borderColor: black,
               shadowColor: black,
