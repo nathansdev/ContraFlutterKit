@@ -33,6 +33,7 @@ import 'alarm/add_alarm_page.dart';
 import 'alarm/alarm_list_page.dart';
 import 'alarm/alarm_main_page.dart';
 import 'alarm/clock_list_page.dart';
+import 'alarm/weather_list_page.dart';
 import 'blog/blog_detail_page.dart';
 import 'blog/blog_list_page_three.dart';
 import 'blog/blog_list_page_two.dart';
@@ -102,7 +103,7 @@ class MyApp extends StatelessWidget {
         '/alarm_list_page': (context) => AlarmListPage(),
         '/add_alarm_page': (context) => AddAlarmPage(),
         '/clock_list_page': (context) => ClockListPage(),
-        '/weather_list_page': (context) => AddAlarmPage(),
+        '/weather_list_page': (context) => WeatherListPage(),
         '/weather_page': (context) => AddAlarmPage(),
       },
     );
