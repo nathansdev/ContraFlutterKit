@@ -123,7 +123,7 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
                         Navigator.pop(context);
                       },
                       shadowColor: wood_smoke,
-                      iconPath: "assets/icons/add.svg"),
+                      iconPath: "assets/icons/ic_add.svg"),
                 ],
               ),
             ),
