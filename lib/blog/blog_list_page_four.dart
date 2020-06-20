@@ -1,5 +1,5 @@
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +68,7 @@ class _BlogListPageFourState extends State<BlogListPageFour> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  LoginText(
+                  ContraText(
                     size: 44,
                     alignment: Alignment.bottomCenter,
                     text: "Blogs",

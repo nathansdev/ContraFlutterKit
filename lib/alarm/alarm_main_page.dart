@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ClockMainPage extends StatefulWidget {
+class AlarmMainPage extends StatefulWidget {
   @override
-  _ClockMainPageState createState() => _ClockMainPageState();
+  _AlarmMainPageState createState() => _AlarmMainPageState();
 }
 
-class _ClockMainPageState extends State<ClockMainPage> {
+class _AlarmMainPageState extends State<AlarmMainPage> {
   @override
   void initState() {
     super.initState();
@@ -15,7 +15,7 @@ class _ClockMainPageState extends State<ClockMainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Clock"),
+        title: Text("Alarm, Clock, Weather"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -23,41 +23,41 @@ class _ClockMainPageState extends State<ClockMainPage> {
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Clock Page Type One"),
+              title: Text("Alarm List Page"),
               onTap: () {
-                Navigator.pushNamed(context, "/payment_page_type_one");
+                Navigator.pushNamed(context, "/alarm_list_page");
               },
             ),
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Clock Page Type Two"),
+              title: Text("Add Alarm Page"),
               onTap: () {
-                Navigator.pushNamed(context, "/payment_page_type_two");
+                Navigator.pushNamed(context, "/add_alarm_page");
               },
             ),
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Clock Page Type Three"),
+              title: Text("Clock List Page"),
               onTap: () {
-                Navigator.pushNamed(context, "/payment_page_type_three");
+                Navigator.pushNamed(context, "/clock_list_page");
               },
             ),
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Clock Page Type Four"),
+              title: Text("Weather List Page"),
               onTap: () {
-                Navigator.pushNamed(context, "/payment_page_type_three");
+                Navigator.pushNamed(context, "/weather_list_page");
               },
             ),
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Clock Page Type Five"),
+              title: Text("Weather Page"),
               onTap: () {
-                Navigator.pushNamed(context, "/payment_page_type_three");
+                Navigator.pushNamed(context, "/weather_page");
               },
             ),
           ],

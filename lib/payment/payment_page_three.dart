@@ -1,7 +1,7 @@
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_header.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/payment/payment_card.dart';
 import 'package:contraflutterkit/payment/payment_type.dart';
 import 'package:contraflutterkit/utils/colors.dart';
@@ -66,7 +66,13 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
         height: 200,
         child: Row(
           children: <Widget>[
-            CustomHeader(),
+            CustomHeader(
+              lineOneText: "Saved",
+              lineTwotext: "Payments",
+              color: wood_smoke,
+              bg_color: white,
+              fg_color: wood_smoke,
+            ),
 /*            Expanded(
               flex: 1,
               child: IconButton(
@@ -109,7 +115,7 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
                             fontSize: 21,
                             fontWeight: FontWeight.w500),
                       ),
-                      LoginText(
+                      ContraText(
                         alignment: Alignment.centerLeft,
                         text: "\$" + "5,666",
                       )

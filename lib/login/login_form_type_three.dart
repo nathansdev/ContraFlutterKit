@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'login_text.dart';
+import 'contra_text.dart';
 
 class LoginFormTypeThree extends StatelessWidget {
   @override
@@ -66,7 +66,7 @@ class LoginFormTypeThree extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              LoginText(
+              ContraText(
                 text: "Login",
                 alignment: Alignment.center,
               ),

@@ -1,4 +1,4 @@
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -134,7 +134,7 @@ class BlogCardTypeThree extends StatelessWidget {
                               SizedBox(
                                 width: 10,
                               ),
-                              LoginText(
+                              ContraText(
                                 text: "324",
                                 size: 13,
                                 alignment: Alignment.center,
@@ -153,7 +153,7 @@ class BlogCardTypeThree extends StatelessWidget {
                               SizedBox(
                                 width: 10,
                               ),
-                              LoginText(
+                              ContraText(
                                 text: "3.2k",
                                 size: 13,
                                 alignment: Alignment.center,

@@ -1,7 +1,7 @@
 import 'package:contraflutterkit/chat/chat_messages_page.dart';
 import 'package:contraflutterkit/chat/chat_search_page.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -105,7 +105,7 @@ class _ChatListPageState extends State<ChatListPage> {
               SizedBox(
                 height: 56,
               ),
-              LoginText(
+              ContraText(
                 alignment: Alignment.centerLeft,
                 text: "Chat",
               ),

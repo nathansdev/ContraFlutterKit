@@ -1,4 +1,4 @@
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +33,7 @@ class PaymentCartItem extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            LoginText(
+            ContraText(
               alignment: Alignment.center,
               text: price,
               size: 44,

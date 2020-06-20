@@ -7,8 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'contra_text.dart';
 import 'login_input_email_text.dart';
-import 'login_text.dart';
 
 class LoginFormTypeOne extends StatelessWidget {
   @override
@@ -45,7 +45,7 @@ class LoginFormTypeOne extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     children: <Widget>[
-                      LoginText(
+                      ContraText(
                         text: "Login",
                         alignment: Alignment.centerLeft,
                       ),

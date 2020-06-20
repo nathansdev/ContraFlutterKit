@@ -1,5 +1,5 @@
 import 'package:contraflutterkit/blog/blog.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ class BlogStaggeredItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LoginText(
+              ContraText(
                 size: 13,
                 alignment: Alignment.centerLeft,
                 text: blog.title,

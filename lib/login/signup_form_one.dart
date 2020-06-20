@@ -6,8 +6,8 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'contra_text.dart';
 import 'login_input_email_text.dart';
-import 'login_text.dart';
 
 class SignInFormTypeOne extends StatelessWidget {
   @override
@@ -26,7 +26,7 @@ class SignInFormTypeOne extends StatelessWidget {
                 child: ListView(
                   padding: EdgeInsets.all(24),
                   children: <Widget>[
-                    LoginText(
+                    ContraText(
                       text: "Sign up",
                       alignment: Alignment.centerLeft,
                     ),

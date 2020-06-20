@@ -3,7 +3,7 @@ import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/cart_add_remove_button.dart';
 import 'package:contraflutterkit/custom_widgets/colors_select_widget.dart';
 import 'package:contraflutterkit/custom_widgets/sizes_select_widget.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +57,7 @@ class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
                   padding: EdgeInsets.all(24),
                   child: Column(
                     children: <Widget>[
-                      LoginText(
+                      ContraText(
                         alignment: Alignment.centerLeft,
                         size: 27,
                         text: "Fur Jacket Cool Look",
@@ -114,7 +114,7 @@ class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
                       SizedBox(
                         height: 16,
                       ),
-                      LoginText(
+                      ContraText(
                         alignment: Alignment.centerLeft,
                         text: "Sizes",
                         size: 15,
@@ -139,7 +139,7 @@ class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                LoginText(
+                                ContraText(
                                   alignment: Alignment.centerLeft,
                                   text: "Colors",
                                   size: 15,
@@ -155,7 +155,7 @@ class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
-                                LoginText(
+                                ContraText(
                                   alignment: Alignment.center,
                                   text: "Quantity",
                                   size: 15,

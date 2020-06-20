@@ -3,7 +3,7 @@ import 'package:contraflutterkit/chat/message.dart';
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_input_text.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -118,7 +118,7 @@ class _ChatMessagesPageState extends State<ChatMessagesPage> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: LoginText(
+                  child: ContraText(
                     size: 27,
                     alignment: Alignment.bottomCenter,
                     text: widget.chat.name,

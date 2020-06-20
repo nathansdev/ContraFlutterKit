@@ -4,9 +4,9 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'contra_text.dart';
 import 'input_text_box_bigger.dart';
 import 'login_input_email_text.dart';
-import 'login_text.dart';
 
 class ContactUsForm extends StatelessWidget {
   @override
@@ -31,7 +31,7 @@ class ContactUsForm extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: <Widget>[
-                      LoginText(
+                      ContraText(
                         text: "Contact us",
                         alignment: Alignment.centerLeft,
                       ),
