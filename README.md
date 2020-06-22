@@ -18,6 +18,7 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 - Shopping screens
 - Blogs
 - Payment Screens
+- Alarm, Clock, Weather Screens
 
 ## Screenshots
 
@@ -50,6 +51,11 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 <img src = "screenshots/payment_type_one.jpg" width=220><img src = "screenshots/payment_type_two.jpg" width=220><img src = "screenshots/payment_type_three.jpg" width=220>
 <img src = "screenshots/payment_type_four.jpg" width=220>
+
+- Alarm, Clock, Weather Screens
+
+<img src = "screenshots/alarm_list_page.jpg" width=220><img src = "screenshots/add_alarm_page.jpg" width=220><img src = "screenshots/clock_list_page.jpg" width=220>
+<img src = "screenshots/weather_list_page.jpg" width=220><img src = "screenshots/add_label_screen.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.

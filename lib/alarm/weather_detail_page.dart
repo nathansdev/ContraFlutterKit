@@ -89,12 +89,28 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
               SizedBox(
                 height: 180,
               ),
-              ContraText(
-                text: "85" + "\u2109",
-                alignment: Alignment.center,
-                color: black,
-                size: 94,
-                weight: FontWeight.w800,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  ContraText(
+                    text: "85",
+                    alignment: Alignment.center,
+                    color: black,
+                    size: 94,
+                    weight: FontWeight.w800,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 24.0),
+                    child: ContraText(
+                      text: "\u2109",
+                      alignment: Alignment.center,
+                      color: black,
+                      size: 27,
+                      weight: FontWeight.w800,
+                    ),
+                  ),
+                ],
               ),
               ContraText(
                 text: "Sunny",
