@@ -1,7 +1,7 @@
 import 'package:contraflutterkit/custom_widgets/button_plain_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/payment/payment_card_item_big.dart';
 import 'package:contraflutterkit/payment/payment_type.dart';
 import 'package:contraflutterkit/utils/colors.dart';
@@ -102,7 +102,7 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
                 ),
                 Expanded(
                   flex: 4,
-                  child: LoginText(
+                  child: ContraText(
                     size: 27,
                     alignment: Alignment.bottomCenter,
                     text: "Payments",

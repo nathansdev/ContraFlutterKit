@@ -1,4 +1,4 @@
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -81,7 +81,7 @@ class BlogListItem extends StatelessWidget {
                               Icons.chat_bubble_outline,
                               color: wood_smoke,
                             ),
-                            LoginText(
+                            ContraText(
                               text: "Comment",
                               size: 13,
                               alignment: Alignment.center,
@@ -97,7 +97,7 @@ class BlogListItem extends StatelessWidget {
                               Icons.favorite_border,
                               color: wood_smoke,
                             ),
-                            LoginText(
+                            ContraText(
                               text: "Like",
                               size: 13,
                               alignment: Alignment.center,

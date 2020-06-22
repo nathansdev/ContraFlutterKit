@@ -1,7 +1,7 @@
 import 'package:contraflutterkit/custom_widgets/button_plain_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      LoginText(
+                      ContraText(
                         size: 44,
                         alignment: Alignment.bottomCenter,
                         text: "Blogs",
@@ -109,7 +109,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                                 Icons.favorite_border,
                                 color: wood_smoke,
                               ),
-                              LoginText(
+                              ContraText(
                                 text: "Like",
                                 size: 13,
                                 alignment: Alignment.center,
@@ -126,7 +126,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                                 Icons.share,
                                 color: wood_smoke,
                               ),
-                              LoginText(
+                              ContraText(
                                 text: "Share",
                                 size: 13,
                                 alignment: Alignment.center,

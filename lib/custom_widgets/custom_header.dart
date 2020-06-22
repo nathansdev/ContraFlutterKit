@@ -1,9 +1,21 @@
-import 'package:contraflutterkit/login/login_text.dart';
-import 'package:contraflutterkit/utils/colors.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomHeader extends StatelessWidget {
+  String lineOneText;
+  String lineTwotext;
+  Color fg_color;
+  Color bg_color;
+  Color color;
+
+  CustomHeader(
+      {this.lineOneText,
+      this.lineTwotext,
+      this.color,
+      this.fg_color,
+      this.bg_color});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,33 +28,29 @@ class CustomHeader extends StatelessWidget {
             children: <Widget>[
               // Stroked text as border.
               Text(
-                'Saved',
+                lineOneText,
                 style: TextStyle(
                   fontSize: 44,
                   fontWeight: FontWeight.w800,
                   foreground: Paint()
                     ..style = PaintingStyle.stroke
                     ..strokeWidth = 1
-                    ..color = wood_smoke,
+                    ..color = fg_color,
                 ),
               ),
               // Solid text as fill.
               Text(
-                'Saved',
+                lineOneText,
                 style: TextStyle(
-                    fontSize: 44, color: white, fontWeight: FontWeight.w800),
+                    fontSize: 44, color: bg_color, fontWeight: FontWeight.w800),
               ),
             ],
           ),
-//          LoginText(
-//            text: "Saved",
-//            alignment: Alignment.centerLeft,
-//            size: 44,
-//          ),
-          LoginText(
-            text: "Payments",
+          ContraText(
+            text: lineTwotext,
             alignment: Alignment.centerLeft,
             size: 44,
+            color: color,
           )
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +75,7 @@ class _BlogListPageTwoState extends State<BlogListPageTwo> {
                   ),
                   Expanded(
                     flex: 1,
-                    child: LoginText(
+                    child: ContraText(
                       size: 27,
                       alignment: Alignment.bottomCenter,
                       text: "contra",

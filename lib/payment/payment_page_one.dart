@@ -1,7 +1,7 @@
 import 'package:contraflutterkit/custom_widgets/button_plain_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/payment/payment_card_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -58,7 +58,7 @@ class _PaymentPageOneState extends State<PaymentPageOne> {
                 ),
                 Expanded(
                   flex: 2,
-                  child: LoginText(
+                  child: ContraText(
                     size: 27,
                     alignment: Alignment.bottomCenter,
                     text: "Payments",
@@ -106,7 +106,7 @@ class _PaymentPageOneState extends State<PaymentPageOne> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    LoginText(
+                    ContraText(
                       alignment: Alignment.centerLeft,
                       size: 21,
                       text: "Auto renew",

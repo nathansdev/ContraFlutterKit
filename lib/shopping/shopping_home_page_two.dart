@@ -1,7 +1,7 @@
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/custom_widgets/star_widget.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/shopping/shop_card_item_small.dart';
 import 'package:contraflutterkit/shopping/shop_item.dart';
 import 'package:contraflutterkit/shopping/shopping_card_pager.dart';
@@ -104,7 +104,7 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
                 children: <Widget>[
                   Expanded(
                     flex: 2,
-                    child: LoginText(
+                    child: ContraText(
                       size: 44,
                       alignment: Alignment.bottomCenter,
                       text: "Shop Yay",

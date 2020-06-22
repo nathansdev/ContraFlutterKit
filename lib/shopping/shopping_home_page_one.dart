@@ -1,6 +1,6 @@
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
-import 'package:contraflutterkit/login/login_text.dart';
+import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/shopping/shop_card_item.dart';
 import 'package:contraflutterkit/shopping/shop_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
@@ -90,7 +90,7 @@ class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
                   ),
                   Expanded(
                     flex: 1,
-                    child: LoginText(
+                    child: ContraText(
                       size: 27,
                       alignment: Alignment.bottomCenter,
                       text: "T-shirts",

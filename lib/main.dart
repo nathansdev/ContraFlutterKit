@@ -29,6 +29,12 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/empty_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'alarm/add_alarm_page.dart';
+import 'alarm/alarm_list_page.dart';
+import 'alarm/alarm_main_page.dart';
+import 'alarm/clock_list_page.dart';
+import 'alarm/weather_detail_page.dart';
+import 'alarm/weather_list_page.dart';
 import 'blog/blog_detail_page.dart';
 import 'blog/blog_list_page_three.dart';
 import 'blog/blog_list_page_two.dart';
@@ -94,6 +100,12 @@ class MyApp extends StatelessWidget {
         '/payment_page_type_one': (context) => PaymentPageOne(),
         '/payment_page_type_two': (context) => PaymentPageTwo(),
         '/payment_page_type_three': (context) => PaymentPageThree(),
+        '/alarm_main_page': (context) => AlarmMainPage(),
+        '/alarm_list_page': (context) => AlarmListPage(),
+        '/add_alarm_page': (context) => AddAlarmPage(),
+        '/clock_list_page': (context) => ClockListPage(),
+        '/weather_list_page': (context) => WeatherListPage(),
+        '/weather_page': (context) => WeatherDetailPage(),
       },
     );
   }
@@ -167,6 +179,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Payment"),
                   onTap: () {
                     Navigator.pushNamed(context, "/payment_main_page");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Alarm, Clock, Weather"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/alarm_main_page");
                   },
                 ),
               ),
