@@ -1,8 +1,11 @@
+import 'package:contraflutterkit/alarm/bottom_sheet_input.dart';
 import 'package:contraflutterkit/custom_widgets/button_plain.dart';
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
+import 'package:contraflutterkit/custom_widgets/contra_time_picker.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'alarm.dart';
@@ -82,13 +85,29 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
       ),
       body: ListView(
         children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24.0),
+            child: ContraTimePickerSpinner(
+              is24HourMode: true,
+              highlightedTextStyle: TextStyle(
+                  color: wood_smoke, fontSize: 36, fontWeight: FontWeight.bold),
+              normalTextStyle: TextStyle(
+                  color: santas_gray,
+                  fontSize: 36,
+                  fontWeight: FontWeight.w800),
+            ),
+          ),
           AlarmLabelWidget(
             label: AlarmLabel(
                 title: "Repeat", selected: false, selectedText: "Never"),
+            onTap: () {},
           ),
           AlarmLabelWidget(
             label: AlarmLabel(
                 title: "Title", selected: true, selectedText: "Never"),
+            onTap: () {
+              _showAddLabelBottomSheet();
+            },
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -109,7 +128,7 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: ButtonPlain(
               text: "Save",
               height: 48,
@@ -122,15 +141,15 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
           )
         ],
       ),
-      floatingActionButton: ButtonRoundWithShadow(
-          size: 48,
-          borderColor: wood_smoke,
-          color: white,
-          callback: () {
-            Navigator.pop(context);
-          },
-          shadowColor: wood_smoke,
-          iconPath: "assets/icons/ic_add.svg"),
+    );
+  }
+
+  _showAddLabelBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return BottomSheetInput();
+      },
     );
   }
 }

@@ -19,3 +19,11 @@ class Weather {
       this.image,
       this.degree});
 }
+
+class WeatherDate {
+  String day;
+  String image;
+  Color color;
+
+  WeatherDate({this.day, this.color, this.image});
+}
