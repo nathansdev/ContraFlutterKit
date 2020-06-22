@@ -58,7 +58,7 @@ class _ClockListPageState extends State<ClockListPage> {
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: ButtonRoundWithShadow(
-              size: 48,
+              size: 60,
               borderColor: wood_smoke,
               color: white,
               callback: () {
@@ -69,7 +69,7 @@ class _ClockListPageState extends State<ClockListPage> {
         ),
       ),
       body: ListView.builder(
-        padding: EdgeInsets.all(24),
+        padding: EdgeInsets.symmetric(horizontal: 24),
         itemBuilder: (BuildContext context, int index) {
           return ClockListItem(
             clock: clocks[index],

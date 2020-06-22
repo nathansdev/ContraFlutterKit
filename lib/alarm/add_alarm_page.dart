@@ -42,6 +42,7 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: CustomAppBar(
         height: 120,
         child: Row(
@@ -90,7 +91,9 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
             child: ContraTimePickerSpinner(
               is24HourMode: true,
               highlightedTextStyle: TextStyle(
-                  color: wood_smoke, fontSize: 36, fontWeight: FontWeight.bold),
+                  color: wood_smoke,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold),
               normalTextStyle: TextStyle(
                   color: santas_gray,
                   fontSize: 36,
@@ -123,15 +126,19 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
                 Switch(
                   value: isChanged,
                   onChanged: onChanged,
+                  activeTrackColor: lightening_yellow,
+                  inactiveTrackColor: santas_gray,
+                  inactiveThumbColor: white,
                 )
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: ButtonPlain(
               text: "Save",
-              height: 48,
+              height: 60,
               color: wood_smoke,
               borderColor: wood_smoke,
               onTap: () {},
@@ -147,6 +154,7 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
   _showAddLabelBottomSheet() {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       builder: (BuildContext context) {
         return BottomSheetInput();
       },

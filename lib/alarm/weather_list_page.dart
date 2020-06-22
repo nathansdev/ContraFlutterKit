@@ -72,7 +72,7 @@ class _WeatherListPageState extends State<WeatherListPage> {
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: ButtonRoundWithShadow(
-              size: 48,
+              size: 60,
               borderColor: wood_smoke,
               color: white,
               callback: () {

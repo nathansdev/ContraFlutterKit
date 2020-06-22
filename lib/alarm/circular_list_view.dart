@@ -36,17 +36,18 @@ class CircularListView extends StatefulWidget {
   }
 
   Widget _backgroundWidget() {
-    return Center(
+    return Transform(
+      transform: new Matrix4.translationValues(145.0, 320.0, 0.0),
       child: Container(
-        width: 100,
-        height: 100,
+        width: 120,
+        height: 120,
         padding: const EdgeInsets.symmetric(horizontal: 34.0, vertical: 120),
         decoration: new BoxDecoration(
           color: white,
           shape: BoxShape.circle,
           border: new Border.all(
             color: Colors.black,
-            width: 5,
+            width: 16,
           ),
         ),
       ),
@@ -55,7 +56,7 @@ class CircularListView extends StatefulWidget {
 
   Widget _radialListItem(double angle) {
     return Transform(
-      transform: new Matrix4.translationValues(215.0, 435.0, 0.0),
+      transform: new Matrix4.translationValues(215.0, 400.0, 0.0),
       child: CircularPosition(
         radius: radius,
         angle: angle,

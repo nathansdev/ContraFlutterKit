@@ -50,7 +50,7 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 150,
+                height: 80,
               ),
               ContraText(
                 text: "11:30 AM, Sunday",
@@ -87,7 +87,7 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
 //                ),
 //              ),
               SizedBox(
-                height: 160,
+                height: 180,
               ),
               ContraText(
                 text: "85" + "\u2109",
