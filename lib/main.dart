@@ -38,6 +38,8 @@ import 'alarm/weather_list_page.dart';
 import 'blog/blog_detail_page.dart';
 import 'blog/blog_list_page_three.dart';
 import 'blog/blog_list_page_two.dart';
+import 'chart/charts_main_page.dart';
+import 'chart/charts_page.dart';
 import 'login/contact_us_form.dart';
 import 'login/login_form_type_four.dart';
 import 'login/login_form_type_three.dart';
@@ -106,6 +108,13 @@ class MyApp extends StatelessWidget {
         '/clock_list_page': (context) => ClockListPage(),
         '/weather_list_page': (context) => WeatherListPage(),
         '/weather_page': (context) => WeatherDetailPage(),
+        '/chart_main_page': (context) => ChartMainPage(),
+        '/bar_chart_page': (context) => ChartsPage(
+              isBarChart: true,
+            ),
+        '/line_chart_page': (context) => ChartsPage(
+              isBarChart: false,
+            ),
       },
     );
   }
@@ -189,6 +198,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Alarm, Clock, Weather"),
                   onTap: () {
                     Navigator.pushNamed(context, "/alarm_main_page");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Data and Statistics"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/chart_main_page");
                   },
                 ),
               ),
