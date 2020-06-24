@@ -10,6 +10,8 @@ import 'package:contraflutterkit/login/login_form_one.dart';
 import 'package:contraflutterkit/login/login_form_two.dart';
 import 'package:contraflutterkit/login/login_main.dart';
 import 'package:contraflutterkit/login/signup_form_one.dart';
+import 'package:contraflutterkit/maps/location_detail.dart';
+import 'package:contraflutterkit/maps/location_listing.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
@@ -44,6 +46,7 @@ import 'login/contact_us_form.dart';
 import 'login/login_form_type_four.dart';
 import 'login/login_form_type_three.dart';
 import 'login/verification_type.dart';
+import 'maps/map_main_page.dart';
 import 'onboarding/type1/pager.dart';
 import 'onboarding/type2/pager.dart';
 import 'onboarding/type4/onboard_page_four.dart';
@@ -115,6 +118,9 @@ class MyApp extends StatelessWidget {
         '/line_chart_page': (context) => ChartsPage(
               isBarChart: false,
             ),
+        '/map_main_page': (context) => LocationMapMainPage(),
+        '/location_list_page': (context) => LocationListingPage(),
+        '/location_detail_page': (context) => LocationDetailPage(),
       },
     );
   }
@@ -208,6 +214,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Data and Statistics"),
                   onTap: () {
                     Navigator.pushNamed(context, "/chart_main_page");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Location And Map"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/map_main_page");
                   },
                 ),
               ),

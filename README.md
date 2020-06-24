@@ -62,6 +62,10 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 <img src = "screenshots/bar_chart.jpg" width=220><img src = "screenshots/line_chart.jpg" width=220>
 
+- Map and Location
+
+<img src = "screenshots/location_list_page.jpg" width=220><img src = "screenshots/location_detail_page.jpg" width=220>
+
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
 - Link to the wireframe official page [Contra wireframe kit](https://contrauikit.com/)
