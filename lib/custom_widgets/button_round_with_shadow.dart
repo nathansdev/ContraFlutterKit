@@ -38,7 +38,9 @@ class ButtonRoundWithShadow extends StatelessWidget {
             color: color,
             shape:
                 CircleBorder(side: BorderSide(color: borderColor, width: 2))),
-        child: SvgPicture.asset(iconPath),
+        child: SvgPicture.asset(
+          iconPath,
+        ),
       ),
     );
   }

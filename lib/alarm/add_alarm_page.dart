@@ -91,9 +91,7 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
             child: ContraTimePickerSpinner(
               is24HourMode: true,
               highlightedTextStyle: TextStyle(
-                  color: wood_smoke,
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold),
+                  color: wood_smoke, fontSize: 36, fontWeight: FontWeight.bold),
               normalTextStyle: TextStyle(
                   color: santas_gray,
                   fontSize: 36,
@@ -134,8 +132,7 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: ButtonPlain(
               text: "Save",
               height: 60,
