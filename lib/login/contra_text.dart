@@ -7,9 +7,15 @@ class ContraText extends StatelessWidget {
   final double size;
   final Color color;
   final FontWeight weight;
+  final TextAlign textAlign;
 
   const ContraText(
-      {this.alignment, this.text, this.size, this.color, this.weight});
+      {this.alignment,
+      this.text,
+      this.size,
+      this.color,
+      this.weight,
+      this.textAlign});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class ContraText extends StatelessWidget {
       alignment: alignment,
       child: Text(
         text,
-        maxLines: 1,
+        textAlign: textAlign != null ? textAlign : TextAlign.start,
         style: TextStyle(
             fontSize: size == null ? 36 : size,
             fontWeight: weight != null ? weight : FontWeight.w800,
