@@ -38,7 +38,7 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
                         Navigator.pop(context);
                       },
                       shadowColor: wood_smoke,
-                      iconPath: "assets/icons/arrow_back.svg"),
+                      iconPath: "assets/icons/arrow_back_white.svg"),
                 ),
               ),
             ),
@@ -88,16 +88,6 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
                       weight: FontWeight.w800,
                       alignment: Alignment.centerLeft,
                       text: "Space 8",
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0),
-                    child: ContraText(
-                      color: white,
-                      size: 21,
-                      weight: FontWeight.w500,
-                      alignment: Alignment.centerLeft,
-                      text: "Wolf Crater, 897, \n New Milkyway Mars",
                     ),
                   ),
                   Padding(
