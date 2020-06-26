@@ -71,9 +71,9 @@ class _ContentMainPageState extends State<ContentMainPage> {
             ListTile(
               contentPadding: EdgeInsets.all(20),
               trailing: Icon(Icons.navigate_next),
-              title: Text("Details Images"),
+              title: Text("Details Images in Grid"),
               onTap: () {
-                Navigator.pushNamed(context, "/detail_screen_four");
+                Navigator.pushNamed(context, "/detail_screen_grid");
               },
             ),
             ListTile(

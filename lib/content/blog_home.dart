@@ -82,6 +82,8 @@ class _BlogHomeState extends State<BlogHome> {
               color: flamingo,
               height: 60,
               textColor: white,
+              isSuffix: false,
+              isPrefix: false,
               shadowColor: wood_smoke,
               callback: () {},
               borderColor: flamingo,

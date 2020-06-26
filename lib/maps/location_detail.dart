@@ -101,16 +101,6 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0),
-                    child: ContraText(
-                      color: white,
-                      size: 21,
-                      weight: FontWeight.w500,
-                      alignment: Alignment.centerLeft,
-                      text: "Wolf Crater, 897, \n New Milkyway Mars",
-                    ),
-                  ),
-                  Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: ButtonPlainWithIcon(
                       text: "Get Direction",
