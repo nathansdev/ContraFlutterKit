@@ -16,6 +16,7 @@ class ContraButton extends StatelessWidget {
   final bool isSuffix;
   final String iconPath;
   final Color iconColor;
+  final double textSize;
 
   const ContraButton(
       {this.borderColor,
@@ -28,6 +29,7 @@ class ContraButton extends StatelessWidget {
       this.callback,
       this.isPrefix,
       this.isSuffix,
+      this.textSize,
       this.iconPath,
       this.iconColor});
 
@@ -56,7 +58,7 @@ class ContraButton extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: textColor != null ? textColor : wood_smoke,
-                  fontSize: 21,
+                  fontSize: textSize != null ? textSize : 21,
                   fontWeight: FontWeight.w800),
             ),
             isSuffix

@@ -45,8 +45,12 @@ import 'blog/blog_list_page_two.dart';
 import 'chart/charts_main_page.dart';
 import 'chart/charts_page.dart';
 import 'content/blog_home.dart';
+import 'content/detail_screen_page_four.dart';
 import 'content/detail_screen_page_one.dart';
+import 'content/detail_screen_page_three.dart';
 import 'content/detail_screen_page_two.dart';
+import 'content/invite_list_page.dart';
+import 'content/user_list_page.dart';
 import 'login/contact_us_form.dart';
 import 'login/login_form_type_four.dart';
 import 'login/login_form_type_three.dart';
@@ -131,11 +135,11 @@ class MyApp extends StatelessWidget {
         '/detail_screen_one': (context) => DetailScreenPageOne(),
         '/image_and_text': (context) => ImageTextPager(),
         '/detail_screen_two': (context) => DetailScreenPageTwo(),
-        '/detail_screen_three': (context) => DetailScreenPageTwo(),
-        '/detail_screen_four': (context) => DetailScreenPageTwo(),
+        '/detail_screen_three': (context) => DetailScreenPageThree(),
+        '/detail_screen_four': (context) => DetailScreenPageFour(),
         '/home_list_page': (context) => DetailScreenPageTwo(),
-        '/user_listing_page': (context) => DetailScreenPageTwo(),
-        '/user_invite_page': (context) => DetailScreenPageTwo(),
+        '/user_listing_page': (context) => UserListPage(),
+        '/user_invite_page': (context) => InviteListPage(),
       },
     );
   }
