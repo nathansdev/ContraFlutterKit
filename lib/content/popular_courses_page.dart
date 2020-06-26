@@ -75,7 +75,7 @@ class _PopularCoursesPageState extends State<PopularCoursesPage> {
         child: Column(
           children: <Widget>[
             Container(
-              height: 250,
+              height: 230,
               child: ListView.builder(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 shrinkWrap: true,

@@ -74,7 +74,7 @@ class _DetailScreenPageOneState extends State<DetailScreenPageOne> {
                         weight: FontWeight.w500,
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 16,
                       ),
                       ContraButton(
                         borderColor: persian_blue,

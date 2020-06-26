@@ -24,32 +24,32 @@ class _InviteListPageState extends State<InviteListPage> {
     invites.add(InviteDetail(
         name: "Bill Rizer",
         designation: "Planet Designer",
-        profile: "",
+        profile: "assets/icons/ic_avatar.svg",
         isInvited: false));
     invites.add(InviteDetail(
         name: "Bill Rizer",
         designation: "Planet Designer",
-        profile: "",
+        profile: "assets/icons/ic_avatar_2.svg",
         isInvited: false));
     invites.add(InviteDetail(
         name: "Konami",
         designation: "Xenon Creator",
-        profile: "",
+        profile: "assets/icons/ic_avatar_3.svg",
         isInvited: true));
     invites.add(InviteDetail(
         name: "Hard Cops",
         designation: "Bill Rizer",
-        profile: "",
+        profile: "assets/icons/ic_avatar.svg",
         isInvited: false));
     invites.add(InviteDetail(
         name: "Rogue Corp",
         designation: "Lancy Neo",
-        profile: "",
+        profile: "assets/icons/ic_avatar_2.svg",
         isInvited: false));
     invites.add(InviteDetail(
         name: " Genbei Yagy ",
         designation: "Planet Designer",
-        profile: "",
+        profile: "assets/icons/ic_avatar_3.svg",
         isInvited: false));
   }
 

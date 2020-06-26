@@ -20,6 +20,8 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 - Payment Screens
 - Alarm, Clock, Weather Screens
 - Data Charts
+- Map and Location
+- Content, Text Details
 
 ## Screenshots
 
@@ -64,7 +66,14 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 
 - Map and Location
 
-<img src = "screenshots/location_list_page.jpg" width=220><img src = "screenshots/location_detail_page.jpg" width=220>
+<img src = "screenshots/location_list_page.jpg" width=220><img src = "screenshots/location_detail.jpg" width=220>
+
+- Content, Text Details
+
+<img src = "screenshots/content_text_one.jpg" width=220><img src = "screenshots/content_text_two.jpg" width=220><img src = "screenshots/content_text_three.jpg" width=220>
+<img src = "screenshots/content_text_four.jpg" width=220><img src = "screenshots/content_text_five.jpg" width=220><img src = "screenshots/content_text_six.jpg" width=220>
+<img src = "screenshots/content_text_seven.jpg" width=220><img src = "screenshots/content_text_eight.jpg" width=220><img src = "screenshots/content_text_nine.jpg" width=220>
+<img src = "screenshots/content_text_ten.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.

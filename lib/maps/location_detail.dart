@@ -38,7 +38,7 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
                         Navigator.pop(context);
                       },
                       shadowColor: wood_smoke,
-                      iconPath: "assets/icons/arrow_back.svg"),
+                      iconPath: "assets/icons/arrow_back_white.svg"),
                 ),
               ),
             ),
