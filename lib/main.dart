@@ -6,6 +6,8 @@ import 'package:contraflutterkit/blog/blog_staggered_grid_page.dart';
 import 'package:contraflutterkit/chat/chat_home_page.dart';
 import 'package:contraflutterkit/chat/chat_list_page.dart';
 import 'package:contraflutterkit/chat/chat_messages_page.dart';
+import 'package:contraflutterkit/content/content_main_page.dart';
+import 'package:contraflutterkit/content/image_text_pager.dart';
 import 'package:contraflutterkit/login/login_form_one.dart';
 import 'package:contraflutterkit/login/login_form_two.dart';
 import 'package:contraflutterkit/login/login_main.dart';
@@ -42,6 +44,15 @@ import 'blog/blog_list_page_three.dart';
 import 'blog/blog_list_page_two.dart';
 import 'chart/charts_main_page.dart';
 import 'chart/charts_page.dart';
+import 'content/blog_home.dart';
+import 'content/detail_screen_grid.dart';
+import 'content/detail_screen_page_four.dart';
+import 'content/detail_screen_page_one.dart';
+import 'content/detail_screen_page_three.dart';
+import 'content/detail_screen_page_two.dart';
+import 'content/invite_list_page.dart';
+import 'content/popular_courses_home_page.dart';
+import 'content/user_list_page.dart';
 import 'login/contact_us_form.dart';
 import 'login/login_form_type_four.dart';
 import 'login/login_form_type_three.dart';
@@ -121,6 +132,17 @@ class MyApp extends StatelessWidget {
         '/map_main_page': (context) => LocationMapMainPage(),
         '/location_list_page': (context) => LocationListingPage(),
         '/location_detail_page': (context) => LocationDetailPage(),
+        '/content_text_main_page': (context) => ContentMainPage(),
+        '/content_blog_home': (context) => BlogHome(),
+        '/detail_screen_one': (context) => DetailScreenPageOne(),
+        '/image_and_text': (context) => ImageTextPager(),
+        '/detail_screen_two': (context) => DetailScreenPageTwo(),
+        '/detail_screen_three': (context) => DetailScreenPageThree(),
+        '/detail_screen_four': (context) => DetailScreenPageFour(),
+        '/detail_screen_grid': (context) => DetailScreenGridPage(),
+        '/home_list_page': (context) => PopularCoursesHomePage(),
+        '/user_listing_page': (context) => UserListPage(),
+        '/user_invite_page': (context) => InviteListPage(),
       },
     );
   }
@@ -224,6 +246,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Location And Map"),
                   onTap: () {
                     Navigator.pushNamed(context, "/map_main_page");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Content, Text Details"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/content_text_main_page");
                   },
                 ),
               ),
