@@ -61,6 +61,7 @@ import 'login/verification_type.dart';
 import 'maps/map_main_page.dart';
 import 'menu/menu_page_one.dart';
 import 'menu/menu_page_two.dart';
+import 'menu/settings_page_one.dart';
 import 'onboarding/type1/pager.dart';
 import 'onboarding/type2/pager.dart';
 import 'onboarding/type4/onboard_page_four.dart';
@@ -149,7 +150,7 @@ class MyApp extends StatelessWidget {
         '/menu_settings_main_page': (context) => MenuSettingsMainPage(),
         '/menu_type_one': (context) => MenuPageOne(),
         '/menu_type_two': (context) => MenuPageTwo(),
-        '/settings_type_one': (context) => MenuPageOne(),
+        '/settings_type_one': (context) => SettingsPageOne(),
         '/settings_type_two': (context) => MenuPageOne(),
         '/settings_type_three': (context) => MenuPageOne(),
       },
