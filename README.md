@@ -3,7 +3,7 @@
 Flutter application built on top of contra wireframe kit. Thorough this project i will be developing all the screens in flutter and sharing in couple of series post.
 
 <p align="center">
-  <img src = "screenshots/welcome_screen.jpg" width=250>
+  <img src = "screenshots/welcome_screen.png" width=1275 height=695>
 </p>
 
 ## Kits
