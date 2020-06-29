@@ -22,6 +22,7 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 - Data Charts
 - Map and Location
 - Content, Text Details
+- Menu And Settings
 
 ## Screenshots
 
@@ -74,6 +75,11 @@ Contra flutter kit will be having screens developed in all the categories.(Curre
 <img src = "screenshots/content_text_four.jpg" width=220><img src = "screenshots/content_text_five.jpg" width=220><img src = "screenshots/content_text_six.jpg" width=220>
 <img src = "screenshots/content_text_seven.jpg" width=220><img src = "screenshots/content_text_eight.jpg" width=220><img src = "screenshots/content_text_nine.jpg" width=220>
 <img src = "screenshots/content_text_ten.jpg" width=220>
+
+- Menu And Settings
+
+<img src = "screenshots/menu_page_one.jpg" width=220><img src = "screenshots/menu_page_two.jpg" width=220><img src = "screenshots/settings_page_one.jpg" width=220>
+<img src = "screenshots/settings_page_two.jpg" width=220><img src = "screenshots/settings_page_three.jpg" width=220>
 
 ## Mentions
 - Special thanks to [vijay verma](https://twitter.com/realvjy) for the awesome design kit.
