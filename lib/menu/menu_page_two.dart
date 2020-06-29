@@ -42,6 +42,7 @@ class _MenuPageTwoState extends State<MenuPageTwo> {
                 child: Icon(
                   Icons.close,
                   color: black,
+                  size: 32,
                 ),
               ),
             ),
@@ -52,7 +53,7 @@ class _MenuPageTwoState extends State<MenuPageTwo> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: <Widget>[
                 Padding(
@@ -114,7 +115,7 @@ class _MenuPageTwoState extends State<MenuPageTwo> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(32.0),
             child: Column(
               children: <Widget>[
                 Padding(

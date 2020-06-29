@@ -15,6 +15,7 @@ import 'package:contraflutterkit/login/signup_form_one.dart';
 import 'package:contraflutterkit/maps/location_detail.dart';
 import 'package:contraflutterkit/maps/location_listing.dart';
 import 'package:contraflutterkit/menu/menu_settings_main_page.dart';
+import 'package:contraflutterkit/menu/settings_page_three.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
@@ -62,6 +63,7 @@ import 'maps/map_main_page.dart';
 import 'menu/menu_page_one.dart';
 import 'menu/menu_page_two.dart';
 import 'menu/settings_page_one.dart';
+import 'menu/settings_page_two.dart';
 import 'onboarding/type1/pager.dart';
 import 'onboarding/type2/pager.dart';
 import 'onboarding/type4/onboard_page_four.dart';
@@ -151,8 +153,8 @@ class MyApp extends StatelessWidget {
         '/menu_type_one': (context) => MenuPageOne(),
         '/menu_type_two': (context) => MenuPageTwo(),
         '/settings_type_one': (context) => SettingsPageOne(),
-        '/settings_type_two': (context) => MenuPageOne(),
-        '/settings_type_three': (context) => MenuPageOne(),
+        '/settings_type_two': (context) => SettingsPageTwo(),
+        '/settings_type_three': (context) => SettingsPageThree(),
       },
     );
   }

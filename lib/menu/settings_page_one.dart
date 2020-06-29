@@ -59,58 +59,65 @@ class _SettingsPageOneState extends State<SettingsPageOne> {
           ],
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
-            child: SettingsCardItem(
-              setting: Settings(
-                  bgColor: pink_salomn,
-                  title: "Happiness",
-                  text:
-                      "Colorful and Beautiful life if you want to enjoy every moment.",
-                  textColor: white,
-                  enable: true),
+      body: Container(
+        padding: EdgeInsets.only(top: 12),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
+              child: SettingsCardItem(
+                setting: Settings(
+                    bgColor: pink_salomn,
+                    title: "Happiness",
+                    text:
+                        "Colorful and Beautiful life if you want to enjoy every moment.",
+                    textColor: white,
+                    enable: true),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
-            child: SettingsCardItem(
-              setting: Settings(
-                  bgColor: foam,
-                  title: "Sadness",
-                  text: "Sometime you don’t want to talk.",
-                  textColor: white,
-                  enable: false),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
+              child: SettingsCardItem(
+                setting: Settings(
+                    bgColor: foam,
+                    title: "Sadness",
+                    text: "Sometime you don’t want to talk.",
+                    textColor: wood_smoke,
+                    enable: false),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
-            child: SettingsCardItem(
-              setting: Settings(
-                  bgColor: bareley_white,
-                  title: "Friends",
-                  text: "I’ll not help you to finish this.",
-                  textColor: white,
-                  enable: false),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
+              child: SettingsCardItem(
+                setting: Settings(
+                    bgColor: bareley_white,
+                    title: "Friends",
+                    text: "I’ll not help you to finish this.",
+                    textColor: wood_smoke,
+                    enable: false),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
-            child: ContraButton(
-              color: wood_smoke,
-              height: 60,
-              isPrefix: false,
-              isSuffix: false,
-              text: "Confirm",
-              textColor: white,
-              textSize: 21,
-              shadowColor: wood_smoke,
-              borderColor: wood_smoke,
-              callback: () {},
-            ),
-          )
-        ],
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
+              child: ContraButton(
+                color: wood_smoke,
+                height: 60,
+                isPrefix: false,
+                isSuffix: false,
+                text: "Confirm",
+                textColor: white,
+                textSize: 21,
+                shadowColor: wood_smoke,
+                borderColor: wood_smoke,
+                callback: () {},
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

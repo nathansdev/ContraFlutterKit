@@ -29,6 +29,7 @@ class _MenuPageOneState extends State<MenuPageOne> {
                 child: Icon(
                   Icons.close,
                   color: black,
+                  size: 32,
                 ),
               ),
             ),

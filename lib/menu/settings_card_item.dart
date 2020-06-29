@@ -49,7 +49,7 @@ class _SettingsCardItemState extends State<SettingsCardItem> {
       decoration: ShapeDecoration(
           color: bgColor,
           shape: RoundedRectangleBorder(
-              side: BorderSide(color: wood_smoke),
+              side: BorderSide(color: wood_smoke, width: 2),
               borderRadius: BorderRadius.all(Radius.circular(16)))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
