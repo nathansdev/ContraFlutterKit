@@ -14,6 +14,8 @@ import 'package:contraflutterkit/login/login_main.dart';
 import 'package:contraflutterkit/login/signup_form_one.dart';
 import 'package:contraflutterkit/maps/location_detail.dart';
 import 'package:contraflutterkit/maps/location_listing.dart';
+import 'package:contraflutterkit/menu/menu_settings_main_page.dart';
+import 'package:contraflutterkit/menu/settings_page_three.dart';
 import 'package:contraflutterkit/onboarding/onboard_main.dart';
 import 'package:contraflutterkit/onboarding/type3/pager.dart';
 import 'package:contraflutterkit/onboarding/welcome_screen.dart';
@@ -58,6 +60,10 @@ import 'login/login_form_type_four.dart';
 import 'login/login_form_type_three.dart';
 import 'login/verification_type.dart';
 import 'maps/map_main_page.dart';
+import 'menu/menu_page_one.dart';
+import 'menu/menu_page_two.dart';
+import 'menu/settings_page_one.dart';
+import 'menu/settings_page_two.dart';
 import 'onboarding/type1/pager.dart';
 import 'onboarding/type2/pager.dart';
 import 'onboarding/type4/onboard_page_four.dart';
@@ -143,6 +149,12 @@ class MyApp extends StatelessWidget {
         '/home_list_page': (context) => PopularCoursesHomePage(),
         '/user_listing_page': (context) => UserListPage(),
         '/user_invite_page': (context) => InviteListPage(),
+        '/menu_settings_main_page': (context) => MenuSettingsMainPage(),
+        '/menu_type_one': (context) => MenuPageOne(),
+        '/menu_type_two': (context) => MenuPageTwo(),
+        '/settings_type_one': (context) => SettingsPageOne(),
+        '/settings_type_two': (context) => SettingsPageTwo(),
+        '/settings_type_three': (context) => SettingsPageThree(),
       },
     );
   }
@@ -256,6 +268,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text("Content, Text Details"),
                   onTap: () {
                     Navigator.pushNamed(context, "/content_text_main_page");
+                  },
+                ),
+              ),
+              Container(
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(20),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text("Menu and Settings"),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/menu_settings_main_page");
                   },
                 ),
               ),
