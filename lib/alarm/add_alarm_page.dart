@@ -42,7 +42,7 @@ class _AddAlarmPageState extends State<AddAlarmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
         height: 120,
         child: Row(
