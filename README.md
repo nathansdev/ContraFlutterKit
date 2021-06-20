@@ -8,7 +8,7 @@ Flutter application built on top of contra wireframe kit. Thorough this project 
 
 ## Kits
 
-Contra flutter kit will be having screens developed in all the categories.(Currently only onboarding kit is available)
+Contra flutter kit will be having screens developed in all the categories.
 - Onboarding
 - Login Forms
 - Menus
