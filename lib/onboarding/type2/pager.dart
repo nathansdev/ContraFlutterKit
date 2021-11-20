@@ -7,6 +7,7 @@ import 'package:contraflutterkit/onboarding/type2/onboard_page_two.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -135,7 +136,7 @@ class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
             ),
           ],
         ),
-        Platform.isIOS
+        kIsWeb || Platform.isIOS
             ? Positioned(
                 left: 24,
                 top: 48,

@@ -6,6 +6,7 @@ import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_header.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'clock.dart';
@@ -49,12 +50,12 @@ class _ClockListPageState extends State<ClockListPage> {
         height: 200,
         child: Row(
           children: [
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? ButtonRoundWithShadow(
                     size: 48,
                     borderColor: wood_smoke,
@@ -65,7 +66,7 @@ class _ClockListPageState extends State<ClockListPage> {
                     shadowColor: wood_smoke,
                     iconPath: "assets/icons/arrow_back.svg")
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )

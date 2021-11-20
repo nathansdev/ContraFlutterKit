@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,7 +15,7 @@ class WelcomeScreenPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? AppBar(
                     backgroundColor: persian_blue,
                     elevation: 0,

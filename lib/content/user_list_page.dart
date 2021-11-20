@@ -8,6 +8,7 @@ import 'package:contraflutterkit/custom_widgets/custom_header.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class UserListPage extends StatefulWidget {
@@ -64,12 +65,12 @@ class _UserListPageState extends State<UserListPage> {
         height: 200,
         child: Row(
           children: [
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? ButtonRoundWithShadow(
                     size: 48,
                     borderColor: wood_smoke,
@@ -80,7 +81,7 @@ class _UserListPageState extends State<UserListPage> {
                     shadowColor: wood_smoke,
                     iconPath: "assets/icons/arrow_back.svg")
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )

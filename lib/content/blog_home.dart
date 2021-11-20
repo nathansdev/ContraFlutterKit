@@ -5,6 +5,7 @@ import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -28,7 +29,7 @@ class _BlogHomeState extends State<BlogHome> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Platform.isIOS
+              kIsWeb||    Platform.isIOS
                       ? GestureDetector(
                           onTap: () {
                             Navigator.of(context).pop();

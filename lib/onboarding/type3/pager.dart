@@ -5,6 +5,7 @@ import 'package:contraflutterkit/custom_widgets/circle_dot_widget.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../onboard_data.dart';
 import 'onboard_page_three.dart';
@@ -123,7 +124,7 @@ class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
             ),
           ],
         ),
-        Platform.isIOS
+        kIsWeb || Platform.isIOS
             ? Positioned(
                 left: 24,
                 top: 48,

@@ -6,6 +6,7 @@ import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'circular_list_view.dart';
@@ -47,50 +48,56 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Platform.isIOS
-                  ? Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        ButtonRoundWithShadow(
-                            size: 48,
-                            borderColor: wood_smoke,
-                            color: white,
-                            callback: () {
-                              Navigator.pop(context);
-                            },
-                            shadowColor: wood_smoke,
-                            iconPath: "assets/icons/arrow_back.svg"),
-                      ],
-                    )
-                  : SizedBox(),
-              SizedBox(
-                height: 80,
-              ),
-              ContraText(
-                text: "11:30 AM, Sunday",
-                color: black,
-                size: 17,
-                weight: FontWeight.bold,
-                alignment: Alignment.center,
-              ),
-              ContraText(
-                text: "New york",
-                alignment: Alignment.center,
-                color: black,
-                size: 36,
-                weight: FontWeight.w800,
-              ),
-              SizedBox(
-                height: 80,
-              ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                kIsWeb || Platform.isIOS
+                    ? SizedBox(
+                        width: 20,
+                      )
+                    : SizedBox(),
+                kIsWeb || Platform.isIOS
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          ButtonRoundWithShadow(
+                              size: 48,
+                              borderColor: wood_smoke,
+                              color: white,
+                              callback: () {
+                                Navigator.pop(context);
+                              },
+                              shadowColor: wood_smoke,
+                              iconPath: "assets/icons/arrow_back.svg"),
+                        ],
+                      )
+                    : SizedBox(),
+                SizedBox(
+                  height: 80,
+                ),
+                ContraText(
+                  text: "11:30 AM, Sunday",
+                  color: black,
+                  size: 17,
+                  weight: FontWeight.bold,
+                  alignment: Alignment.center,
+                ),
+                ContraText(
+                  text: "New york",
+                  alignment: Alignment.center,
+                  color: black,
+                  size: 36,
+                  weight: FontWeight.w800,
+                ),
+                SizedBox(
+                  height: 80,
+                ),
 //              Padding(
 //                padding: const EdgeInsets.all(24.0),
 //                child: Container(
@@ -108,66 +115,71 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
 //                  ),
 //                ),
 //              ),
-              SizedBox(
-                height: 180,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  ContraText(
-                    text: "85",
-                    alignment: Alignment.center,
-                    color: black,
-                    size: 94,
-                    weight: FontWeight.w800,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 24.0),
-                    child: ContraText(
-                      text: "\u2109",
+                SizedBox(
+                  height: kIsWeb ? 250 : 180,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    ContraText(
+                      text: "85",
                       alignment: Alignment.center,
                       color: black,
-                      size: 27,
+                      size: 94,
                       weight: FontWeight.w800,
                     ),
-                  ),
-                ],
-              ),
-              ContraText(
-                text: "Sunny",
-                alignment: Alignment.center,
-                color: trout,
-                size: 24,
-                weight: FontWeight.bold,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Wrap(
-                      direction: Axis.horizontal,
-                      verticalDirection: VerticalDirection.down,
-                      children: List<Widget>.generate(days.length, (int index) {
-                        return WeatherWidget(date: days[index]);
-                      })),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 24.0),
+                      child: ContraText(
+                        text: "\u2109",
+                        alignment: Alignment.center,
+                        color: black,
+                        size: 27,
+                        weight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
                 ),
-              )
-            ],
-          ),
-          Container(
-            child: Align(
-              alignment: Alignment.topLeft,
+                ContraText(
+                  text: "Sunny",
+                  alignment: Alignment.center,
+                  color: trout,
+                  size: 24,
+                  weight: FontWeight.bold,
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Wrap(
+                        direction: Axis.horizontal,
+                        verticalDirection: VerticalDirection.down,
+                        children:
+                            List<Widget>.generate(days.length, (int index) {
+                          return WeatherWidget(date: days[index]);
+                        })),
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
+            Container(
+              padding: kIsWeb
+                  ? EdgeInsets.only(left: 150)
+                  : EdgeInsets.only(left: 0),
               child: CircularListView(
                 items: items,
                 radius: 100,
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

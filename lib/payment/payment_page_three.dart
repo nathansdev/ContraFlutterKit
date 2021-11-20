@@ -8,6 +8,7 @@ import 'package:contraflutterkit/payment/payment_card.dart';
 import 'package:contraflutterkit/payment/payment_type.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -68,12 +69,12 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
         height: 200,
         child: Row(
           children: <Widget>[
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? ButtonRoundWithShadow(
                     size: 48,
                     borderColor: wood_smoke,
@@ -84,7 +85,7 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
                     shadowColor: wood_smoke,
                     iconPath: "assets/icons/arrow_back.svg")
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )

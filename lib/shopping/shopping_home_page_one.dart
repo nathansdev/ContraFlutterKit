@@ -7,6 +7,7 @@ import 'package:contraflutterkit/shopping/shop_card_item.dart';
 import 'package:contraflutterkit/shopping/shop_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingHomePageOne extends StatefulWidget {
@@ -86,7 +87,7 @@ class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Platform.isIOS
+               kIsWeb||   Platform.isIOS
                       ? GestureDetector(
                           onTap: () {
                             Navigator.of(context).pop();

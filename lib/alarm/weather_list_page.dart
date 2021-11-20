@@ -7,6 +7,7 @@ import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class WeatherListPage extends StatefulWidget {
@@ -65,7 +66,7 @@ class _WeatherListPageState extends State<WeatherListPage> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Platform.isIOS
+              kIsWeb || Platform.isIOS
                   ? ButtonRoundWithShadow(
                       size: 48,
                       borderColor: wood_smoke,
@@ -76,7 +77,7 @@ class _WeatherListPageState extends State<WeatherListPage> {
                       shadowColor: wood_smoke,
                       iconPath: "assets/icons/arrow_back.svg")
                   : SizedBox(),
-              Platform.isIOS
+              kIsWeb || Platform.isIOS
                   ? SizedBox(
                       width: 20,
                     )

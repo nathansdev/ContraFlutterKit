@@ -7,6 +7,7 @@ import 'package:contraflutterkit/custom_widgets/custom_header.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PopularCoursesPage extends StatefulWidget {
@@ -68,12 +69,12 @@ class _PopularCoursesPageState extends State<PopularCoursesPage> {
         height: 200,
         child: Row(
           children: [
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? ButtonRoundWithShadow(
                     size: 48,
                     borderColor: wood_smoke,
@@ -84,7 +85,7 @@ class _PopularCoursesPageState extends State<PopularCoursesPage> {
                     shadowColor: wood_smoke,
                     iconPath: "assets/icons/arrow_back.svg")
                 : SizedBox(),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? SizedBox(
                     width: 20,
                   )

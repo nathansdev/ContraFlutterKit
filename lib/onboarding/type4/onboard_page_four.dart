@@ -4,6 +4,7 @@ import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -112,7 +113,7 @@ class OnboardPageTypeFour extends StatelessWidget {
                 ),
               ],
             ),
-            Platform.isIOS
+            kIsWeb || Platform.isIOS
                 ? Positioned(
                     left: 24,
                     top: 48,

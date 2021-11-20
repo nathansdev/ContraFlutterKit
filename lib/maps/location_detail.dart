@@ -68,6 +68,7 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
           Expanded(
             flex: 4,
             child: Container(
+              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(24),
               child: MapWidget(
                 distance: "2.5",

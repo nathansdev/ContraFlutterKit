@@ -5,6 +5,7 @@ import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'blog.dart';
@@ -71,7 +72,7 @@ class _BlogListPageThreeState extends State<BlogListPageThree> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Platform.isIOS
+                  kIsWeb || Platform.isIOS
                       ? GestureDetector(
                           onTap: () {
                             Navigator.of(context).pop();

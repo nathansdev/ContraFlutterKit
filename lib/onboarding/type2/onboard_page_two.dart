@@ -68,10 +68,6 @@ class OnboardPageTypeTwo extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Container(),
-            )
           ],
         ),
       ),
