@@ -10,11 +10,11 @@ class CustomHeader extends StatelessWidget {
   Color color;
 
   CustomHeader(
-      {this.lineOneText,
-      this.lineTwotext,
-      this.color,
-      this.fg_color,
-      this.bg_color});
+      {required this.lineOneText,
+      required this.lineTwotext,
+      required this.color,
+      required this.fg_color,
+      required this.bg_color});
 
   @override
   Widget build(BuildContext context) {

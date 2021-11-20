@@ -90,6 +90,7 @@ class _BlogHomeState extends State<BlogHome> {
             padding: const EdgeInsets.all(8.0),
             child: ContraButton(
               text: "More",
+                iconPath: "",
               size: 200,
               color: flamingo,
               height: 60,

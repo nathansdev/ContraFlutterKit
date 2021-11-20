@@ -3,5 +3,8 @@ class OnboardData {
   final String title;
   final String description;
 
-  const OnboardData({this.placeHolder, this.title, this.description});
+  const OnboardData(
+      {required this.placeHolder,
+      required this.title,
+      required this.description});
 }

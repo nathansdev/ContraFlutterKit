@@ -3,5 +3,5 @@ class Expense {
   String description;
   String time;
 
-  Expense({this.title, this.description, this.time});
+  Expense({required this.title, required this.description, required this.time});
 }

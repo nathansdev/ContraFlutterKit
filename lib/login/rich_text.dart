@@ -6,7 +6,10 @@ class CustomRichText extends StatelessWidget {
   final String text_one;
   final String text_second;
 
-  const CustomRichText({this.alignment, this.text_one, this.text_second});
+  const CustomRichText(
+      {required this.alignment,
+      required this.text_one,
+      required this.text_second});
 
   @override
   Widget build(BuildContext context) {

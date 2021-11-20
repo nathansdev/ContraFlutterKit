@@ -11,8 +11,8 @@ class CircularListView extends StatefulWidget {
   final double radius;
 
   CircularListView({
-    this.items,
-    this.radius,
+    required this.items,
+    required this.radius,
   });
 
   List<Widget> _radialListItems() {
@@ -29,7 +29,7 @@ class CircularListView extends StatefulWidget {
   }
 
   List<Widget> _allWidgets() {
-    List<Widget> allWidgets = List<Widget>();
+    List<Widget> allWidgets = <Widget>[];
     allWidgets.add(_backgroundWidget());
     allWidgets.addAll(_radialListItems());
     return allWidgets;

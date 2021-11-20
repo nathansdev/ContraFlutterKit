@@ -7,7 +7,7 @@ class LoginEmailText extends StatelessWidget {
   final String text;
   final String iconPath;
 
-  const LoginEmailText({this.text, this.iconPath});
+  const LoginEmailText({required this.text,required this.iconPath});
 
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,10 @@ class ContraInputBox extends StatelessWidget {
   final String iconPath;
   final bool showPrefix;
 
-  const ContraInputBox({this.hintText, this.iconPath, this.showPrefix});
+  const ContraInputBox(
+      {required this.hintText,
+      required this.iconPath,
+      required this.showPrefix});
 
   @override
   Widget build(BuildContext context) {

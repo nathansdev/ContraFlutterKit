@@ -11,7 +11,8 @@ class PaymentCard extends StatelessWidget {
   final bool isVertical;
   final Color color;
 
-  const PaymentCard({this.card, this.isVertical, this.color});
+  const PaymentCard(
+      {required this.card, required this.isVertical, required this.color});
 
   @override
   Widget build(BuildContext context) {

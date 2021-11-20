@@ -5,19 +5,19 @@ class ContraButtonRound extends StatelessWidget {
   final Color borderColor;
   final Color shadowColor;
   final Color color;
-  final Color iconColor;
+  final Color? iconColor;
   final String iconPath;
   final VoidCallback callback;
-  final double size;
+  final double? size;
 
   const ContraButtonRound(
-      {this.borderColor,
-      this.shadowColor,
-      this.color,
+      {required this.borderColor,
+      required this.shadowColor,
+      required this.color,
       this.iconColor,
-      this.iconPath,
+      required this.iconPath,
       this.size,
-      this.callback});
+      required this.callback});
 
   @override
   Widget build(BuildContext context) {

@@ -13,14 +13,14 @@ import 'chat.dart';
 class ChatMessagesPage extends StatefulWidget {
   final Chat chat;
 
-  const ChatMessagesPage({this.chat});
+  const ChatMessagesPage({required this.chat});
 
   @override
   _ChatMessagesPageState createState() => _ChatMessagesPageState();
 }
 
 class _ChatMessagesPageState extends State<ChatMessagesPage> {
-  List<Message> _items = List<Message>();
+  List<Message> _items = <Message>[];
 
   @override
   void initState() {
@@ -183,7 +183,7 @@ class _ChatMessagesPageState extends State<ChatMessagesPage> {
     bool val = false;
     if (index > 0) {
       Message current = _items[index];
-      Message previous = _items[index - 1] != null ? _items[index - 1] : null;
+      Message? previous = _items[index - 1] != null ? _items[index - 1] : null;
       if (previous != null) {
         if (previous.time == current.time) {
           val = true;

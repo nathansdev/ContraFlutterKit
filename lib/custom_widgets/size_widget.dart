@@ -9,11 +9,11 @@ class SizeWidget extends StatelessWidget {
   final VoidCallback onTap;
 
   const SizeWidget(
-      {this.borderColor,
-      this.shadowColor,
-      this.selected,
-      this.text,
-      this.onTap});
+      {required this.borderColor,
+      required this.shadowColor,
+      required this.selected,
+      required this.text,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {

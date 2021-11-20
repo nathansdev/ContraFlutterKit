@@ -7,22 +7,22 @@ import 'package:flutter/material.dart';
 class SettingsCardItem extends StatefulWidget {
   Settings setting;
 
-  SettingsCardItem({this.setting});
+  SettingsCardItem({required this.setting});
 
   @override
   _SettingsCardItemState createState() => _SettingsCardItemState();
 }
 
 class _SettingsCardItemState extends State<SettingsCardItem> {
-  String title;
+  late String title;
 
-  String text;
+  late String text;
 
-  bool enable;
+  late bool enable;
 
-  Color bgColor;
+  late Color bgColor;
 
-  Color textColor;
+  late Color textColor;
   bool isChanged = false;
 
   void onChanged(bool value) {

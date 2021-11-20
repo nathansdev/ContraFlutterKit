@@ -14,14 +14,14 @@ import 'line_chart.dart';
 class ChartsPage extends StatefulWidget {
   bool isBarChart;
 
-  ChartsPage({this.isBarChart});
+  ChartsPage({required this.isBarChart});
 
   @override
   _ChartsPageState createState() => _ChartsPageState();
 }
 
 class _ChartsPageState extends State<ChartsPage> {
-  List<Expense> expenses = List<Expense>();
+  List<Expense> expenses = <Expense>[];
 
   @override
   void initState() {

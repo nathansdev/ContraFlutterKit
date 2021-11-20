@@ -8,7 +8,7 @@ class ShopGridItemWidget extends StatelessWidget {
   final ShopItem shopItem;
   final VoidCallback onTap;
 
-  const ShopGridItemWidget({this.shopItem, this.onTap});
+  const ShopGridItemWidget({required this.shopItem, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

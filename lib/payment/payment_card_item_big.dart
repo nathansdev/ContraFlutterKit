@@ -9,7 +9,7 @@ class PaymentCartItemBig extends StatelessWidget {
   final PaymentType type;
   final bool isVertical;
 
-  const PaymentCartItemBig({this.type, this.isVertical});
+  const PaymentCartItemBig({required this.type, required this.isVertical});
 
   @override
   Widget build(BuildContext context) {

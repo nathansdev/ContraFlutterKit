@@ -11,22 +11,22 @@ class ButtonPlainWithIcon extends StatelessWidget {
   final bool isSuffix;
   final Color color;
   final Color textColor;
-  final double size;
+  final double? size;
 
   const ButtonPlainWithIcon(
-      {this.text,
-      this.callback,
-      this.isPrefix,
-      this.isSuffix,
-      this.iconPath,
-      this.color,
+      {required this.text,
+      required this.callback,
+      required this.isPrefix,
+      required this.isSuffix,
+      required this.iconPath,
+      required this.color,
       this.size,
-      this.textColor});
+      required this.textColor});
 
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: size != null ? size : MediaQuery.of(context).size.width,
+      minWidth: size != null ? size! : MediaQuery.of(context).size.width,
       child: RaisedButton(
         padding: EdgeInsets.all(16),
         color: color,

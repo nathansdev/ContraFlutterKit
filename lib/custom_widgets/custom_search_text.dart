@@ -11,7 +11,11 @@ class CustomSearchText extends StatelessWidget {
   final TextEditingController controller;
 
   const CustomSearchText(
-      {this.text, this.iconPath, this.enable, this.callback, this.controller});
+      {required this.text,
+      required this.iconPath,
+      required this.enable,
+      required this.callback,
+      required this.controller});
 
   @override
   Widget build(BuildContext context) {

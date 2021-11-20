@@ -9,7 +9,7 @@ class AlarmLabelWidget extends StatelessWidget {
   AlarmLabel label;
   VoidCallback onTap;
 
-  AlarmLabelWidget({this.label, this.onTap});
+  AlarmLabelWidget({required this.label,required this.onTap});
 
   @override
   Widget build(BuildContext context) {

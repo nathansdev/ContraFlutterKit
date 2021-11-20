@@ -8,7 +8,13 @@ class PaymentType {
   final Color buttonTextColor;
   final List<String> list;
 
-  const PaymentType({this.type, this.price, this.color, this.list,this.buttonColor,this.buttonTextColor});
+  const PaymentType(
+      {required this.type,
+      required this.price,
+      required this.color,
+      required this.list,
+      required this.buttonColor,
+      required this.buttonTextColor});
 }
 
 class CardDetail {
@@ -17,5 +23,9 @@ class CardDetail {
   final String user_name;
   final Color color;
 
-  const CardDetail({this.type, this.number, this.user_name,this.color});
+  const CardDetail(
+      {required this.type,
+      required this.number,
+      required this.user_name,
+      required this.color});
 }

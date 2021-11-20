@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class BlogStaggeredItem extends StatelessWidget {
   final BlogWithSize blog;
 
-  const BlogStaggeredItem({this.blog});
+  const BlogStaggeredItem({required this.blog});
 
   @override
   Widget build(BuildContext context) {

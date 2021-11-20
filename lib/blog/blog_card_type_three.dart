@@ -3,7 +3,6 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'blog.dart';
 
 class BlogCardTypeThree extends StatelessWidget {
@@ -11,7 +10,8 @@ class BlogCardTypeThree extends StatelessWidget {
   final Blog blog;
   final bool isSubType;
 
-  const BlogCardTypeThree({this.onTap, this.blog, this.isSubType});
+  const BlogCardTypeThree(
+      {required this.onTap, required this.blog, required this.isSubType});
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 class PopularCourseItem extends StatelessWidget {
   Author author;
 
-  PopularCourseItem({this.author});
+  PopularCourseItem({required this.author});
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class PopularCourseItem extends StatelessWidget {
 class PopularCourseAuthorItem extends StatelessWidget {
   AuthorText author;
 
-  PopularCourseAuthorItem({this.author});
+  PopularCourseAuthorItem({required this.author});
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +145,7 @@ class Author {
   String name;
   String path;
 
-  Author({this.name, this.designation, this.path});
+  Author({required this.name, required this.designation, required this.path});
 }
 
 class AuthorText {
@@ -153,5 +153,6 @@ class AuthorText {
   String hour;
   Color bgColor;
 
-  AuthorText({this.subject, this.hour, this.bgColor});
+  AuthorText(
+      {required this.subject, required this.hour, required this.bgColor});
 }

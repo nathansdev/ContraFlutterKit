@@ -15,7 +15,7 @@ class BlogStaggeredGridPage extends StatefulWidget {
 }
 
 class _BlogStaggeredGridPageState extends State<BlogStaggeredGridPage> {
-  List<BlogWithSize> _blogs = List<BlogWithSize>();
+  List<BlogWithSize> _blogs = <BlogWithSize>[];
   TextEditingController _textEditingController = TextEditingController();
 
   @override

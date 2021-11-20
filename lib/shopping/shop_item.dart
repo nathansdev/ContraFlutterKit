@@ -7,5 +7,10 @@ class ShopItem {
   final String image;
   final Color bgColor;
 
-  const ShopItem({this.name, this.price, this.by, this.image, this.bgColor});
+  const ShopItem(
+      {required this.name,
+      required this.price,
+      required this.by,
+      required this.image,
+      required this.bgColor});
 }

@@ -13,7 +13,7 @@ class LocationListingPage extends StatefulWidget {
 }
 
 class _LocationListingPageState extends State<LocationListingPage> {
-  List<Location> list = List<Location>();
+  List<Location> list = <Location>[];
 
   @override
   void initState() {

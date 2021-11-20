@@ -7,34 +7,34 @@ import 'package:flutter/material.dart';
 class ItemScrollPhysics extends ScrollPhysics {
   /// Creates physics for snapping to item.
   /// Based on PageScrollPhysics
-  final double itemHeight;
+  final double? itemHeight;
   final double targetPixelsLimit;
 
   const ItemScrollPhysics({
-    ScrollPhysics parent,
+    ScrollPhysics? parent,
     this.itemHeight,
     this.targetPixelsLimit = 3.0,
   })  : assert(itemHeight != null && itemHeight > 0),
         super(parent: parent);
 
   @override
-  ItemScrollPhysics applyTo(ScrollPhysics ancestor) {
+  ItemScrollPhysics applyTo(ScrollPhysics? ancestor) {
     return ItemScrollPhysics(
         parent: buildParent(ancestor), itemHeight: itemHeight);
   }
 
-  double _getItem(ScrollPosition position) {
+  double _getItem(ScrollMetrics position) {
     double maxScrollItem =
-        (position.maxScrollExtent / itemHeight).floorToDouble();
-    return min(max(0, position.pixels / itemHeight), maxScrollItem);
+        (position.maxScrollExtent / itemHeight!).floorToDouble();
+    return min(max(0, position.pixels / itemHeight!), maxScrollItem);
   }
 
-  double _getPixels(ScrollPosition position, double item) {
-    return item * itemHeight;
+  double _getPixels(ScrollMetrics position, double item) {
+    return item * itemHeight!;
   }
 
   double _getTargetPixels(
-      ScrollPosition position, Tolerance tolerance, double velocity) {
+      ScrollMetrics position, Tolerance tolerance, double velocity) {
     double item = _getItem(position);
     if (velocity < -tolerance.velocity)
       item -= targetPixelsLimit;
@@ -43,18 +43,20 @@ class ItemScrollPhysics extends ScrollPhysics {
   }
 
   @override
-  Simulation createBallisticSimulation(
-      ScrollMetrics position, double velocity) {
+  Simulation? createBallisticSimulation(
+      ScrollMetrics? position, double velocity) {
     // If we're out of range and not headed back in range, defer to the parent
     // ballistics, which should put us back in range at a item boundary.
 //    if ((velocity <= 0.0 && position.pixels <= position.minScrollExtent) ||
 //        (velocity >= 0.0 && position.pixels >= position.maxScrollExtent))
 //      return super.createBallisticSimulation(position, velocity);
-    Tolerance tolerance = this.tolerance;
-    final double target = _getTargetPixels(position, tolerance, velocity);
-    if (target != position.pixels)
-      return ScrollSpringSimulation(spring, position.pixels, target, velocity,
-          tolerance: tolerance);
+    if (position != null) {
+      Tolerance tolerance = this.tolerance;
+      final double target = _getTargetPixels(position, tolerance, velocity);
+      if (target != position.pixels)
+        return ScrollSpringSimulation(spring, position.pixels, target, velocity,
+            tolerance: tolerance);
+    }
     return null;
   }
 
@@ -66,22 +68,22 @@ typedef SelectedIndexCallback = void Function(int);
 typedef TimePickerCallback = void Function(DateTime);
 
 class ContraTimePickerSpinner extends StatefulWidget {
-  final DateTime time;
+  final DateTime? time;
   final int minutesInterval;
   final int secondsInterval;
   final bool is24HourMode;
   final bool isShowSeconds;
-  final TextStyle highlightedTextStyle;
-  final TextStyle normalTextStyle;
-  final double itemHeight;
-  final double itemWidth;
-  final AlignmentGeometry alignment;
-  final double spacing;
+  final TextStyle? highlightedTextStyle;
+  final TextStyle? normalTextStyle;
+  final double? itemHeight;
+  final double? itemWidth;
+  final AlignmentGeometry? alignment;
+  final double? spacing;
   final bool isForce2Digits;
-  final TimePickerCallback onTimeChange;
+  final TimePickerCallback? onTimeChange;
 
   ContraTimePickerSpinner(
-      {Key key,
+      {Key? key,
       this.time,
       this.minutesInterval = 1,
       this.secondsInterval = 1,
@@ -111,7 +113,7 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
   int currentSelectedMinuteIndex = -1;
   int currentSelectedSecondIndex = -1;
   int currentSelectedAPIndex = -1;
-  DateTime currentTime;
+  late DateTime currentTime;
   bool isHourScrolling = false;
   bool isMinuteScrolling = false;
   bool isSecondsScrolling = false;
@@ -131,13 +133,13 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
 
   TextStyle _getHighlightedTextStyle() {
     return widget.highlightedTextStyle != null
-        ? widget.highlightedTextStyle
+        ? widget.highlightedTextStyle!
         : defaultHighlightTextStyle;
   }
 
   TextStyle _getNormalTextStyle() {
     return widget.normalTextStyle != null
-        ? widget.normalTextStyle
+        ? widget.normalTextStyle!
         : defaultNormalTextStyle;
   }
 
@@ -154,19 +156,19 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
   }
 
   double _getItemHeight() {
-    return widget.itemHeight != null ? widget.itemHeight : defaultItemHeight;
+    return widget.itemHeight != null ? widget.itemHeight! : defaultItemHeight;
   }
 
   double _getItemWidth() {
-    return widget.itemWidth != null ? widget.itemWidth : defaultItemWidth;
+    return widget.itemWidth != null ? widget.itemWidth! : defaultItemWidth;
   }
 
   double _getSpacing() {
-    return widget.spacing != null ? widget.spacing : defaultSpacing;
+    return widget.spacing != null ? widget.spacing! : defaultSpacing;
   }
 
   AlignmentGeometry _getAlignment() {
-    return widget.alignment != null ? widget.alignment : defaultAlignment;
+    return widget.alignment != null ? widget.alignment! : defaultAlignment;
   }
 
   bool isLoop(int value) {
@@ -188,7 +190,7 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
 
   @override
   void initState() {
-    currentTime = widget.time == null ? DateTime.now() : widget.time;
+    currentTime = widget.time == null ? DateTime.now() : widget.time!;
 
     currentSelectedHourIndex =
         (currentTime.hour % (widget.is24HourMode ? 24 : 12)) + _getHourCount();
@@ -218,8 +220,8 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
     super.initState();
 
     if (widget.onTimeChange != null) {
-      WidgetsBinding.instance
-          .addPostFrameCallback((_) => widget.onTimeChange(getDateTime()));
+      WidgetsBinding.instance!
+          .addPostFrameCallback((_) => widget.onTimeChange!(getDateTime()));
     }
   }
 
@@ -336,7 +338,7 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
             setState(() {
               onScrollEnd();
               if (widget.onTimeChange != null) {
-                widget.onTimeChange(getDateTime());
+                widget.onTimeChange!(getDateTime());
               }
             });
           }
@@ -403,7 +405,7 @@ class _ContraTimePickerSpinnerState extends State<ContraTimePickerSpinner> {
               "ScrollDirection.idle") {
             isAPScrolling = false;
             if (widget.onTimeChange != null) {
-              widget.onTimeChange(getDateTime());
+              widget.onTimeChange!(getDateTime());
             }
           }
         } else if (scrollNotification is ScrollUpdateNotification) {

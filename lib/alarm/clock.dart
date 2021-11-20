@@ -7,5 +7,10 @@ class Clock {
   String am_pm;
   Color color;
 
-  Clock({this.country, this.city, this.time, this.am_pm, this.color});
+  Clock(
+      {required this.country,
+      required this.city,
+      required this.time,
+      required this.am_pm,
+      required this.color});
 }

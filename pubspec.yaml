@@ -4,22 +4,20 @@ description: Flutter application built on top of contra wireframe kit.
 
 version: 1.0.0+1
 
-
 environment:
-  sdk: ">=2.2.2 <3.0.0"
-
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^0.1.2
-  flutter_svg: ^0.19.3
-  flutter_staggered_grid_view: ^0.3.0
-  flutter_time_picker_spinner: ^1.0.6+1
-  charts_flutter: ^0.9.0
-  fl_chart: ^0.10.0
-  google_maps_flutter: ^0.5.28+1
+  cupertino_icons: ^1.0.4
+  flutter_svg: ^0.21.0
+  flutter_staggered_grid_view: ^0.4.1
+  flutter_time_picker_spinner: ^2.0.0
+  charts_flutter: ^0.12.0
+  fl_chart: ^0.20.1
+  google_maps_flutter: ^2.1.1
   flutter_swiper: ^1.1.6
 
 dev_dependencies:

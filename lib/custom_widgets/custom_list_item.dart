@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomListItem extends StatelessWidget {
   final List<String> list;
 
-  const CustomListItem({this.list});
+  const CustomListItem({required this.list});
 
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,8 @@ class PaymentCartItem extends StatelessWidget {
   final String price;
   final String type;
 
-  const PaymentCartItem({this.bgColor, this.price, this.type});
+  const PaymentCartItem(
+      {required this.bgColor, required this.price, required this.type});
 
   @override
   Widget build(BuildContext context) {

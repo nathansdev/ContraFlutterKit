@@ -16,6 +16,7 @@ class WelcomeScreenPage extends StatelessWidget {
           children: <Widget>[
             Platform.isIOS
                 ? AppBar(
+                    backgroundColor: persian_blue,
                     elevation: 0,
                   )
                 : SizedBox(),

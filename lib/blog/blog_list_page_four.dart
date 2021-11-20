@@ -16,7 +16,7 @@ class BlogListPageFour extends StatefulWidget {
 }
 
 class _BlogListPageFourState extends State<BlogListPageFour> {
-  List<Blog> _blogs = List<Blog>();
+  List<Blog> _blogs = <Blog>[];
 
   @override
   void initState() {

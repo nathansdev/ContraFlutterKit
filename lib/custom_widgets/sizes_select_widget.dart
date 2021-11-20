@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 class SizesSelectWidget extends StatefulWidget {
   final List<String> filters;
 
-  const SizesSelectWidget({this.filters});
+  const SizesSelectWidget({required this.filters});
 
   @override
   _SizesSelectWidgetState createState() => _SizesSelectWidgetState();
 }
 
 class _SizesSelectWidgetState extends State<SizesSelectWidget> {
-  List<String> options = List();
-  List<int> selectedChoices = List();
+  List<String> options = [];
+  List<int> selectedChoices = [];
 
   @override
   void initState() {

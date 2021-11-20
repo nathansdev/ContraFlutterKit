@@ -108,6 +108,7 @@ class _SettingsPageOneState extends State<SettingsPageOne> {
                 height: 60,
                 isPrefix: false,
                 isSuffix: false,
+                iconPath: "",
                 text: "Confirm",
                 textColor: white,
                 textSize: 21,

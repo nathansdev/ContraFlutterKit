@@ -18,9 +18,9 @@ class PaymentPageThree extends StatefulWidget {
 
 class _PaymentPageThreeState extends State<PaymentPageThree>
     with SingleTickerProviderStateMixin {
-  List<CardDetail> _list = List<CardDetail>();
-  AnimationController controller;
-  PageController _pageController;
+  late List<CardDetail> _list = <CardDetail>[];
+  late AnimationController controller;
+  late PageController _pageController;
   bool isVertical = true;
   bool isChecked = false;
 

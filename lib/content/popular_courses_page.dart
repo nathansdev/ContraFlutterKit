@@ -16,8 +16,8 @@ class PopularCoursesPage extends StatefulWidget {
 
 class _PopularCoursesPageState extends State<PopularCoursesPage> {
   TextEditingController _textEditingController = TextEditingController();
-  List<Author> authors = List<Author>();
-  List<AuthorText> subjects = List<AuthorText>();
+  List<Author> authors = <Author>[];
+  List<AuthorText> subjects = <AuthorText>[];
 
   @override
   void initState() {

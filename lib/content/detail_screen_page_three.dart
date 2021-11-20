@@ -14,7 +14,7 @@ class DetailScreenPageThree extends StatefulWidget {
 }
 
 class _DetailScreenPageThreeState extends State<DetailScreenPageThree> {
-  List<Color> bgs = List<Color>();
+  List<Color> bgs = <Color>[];
 
   @override
   void initState() {
@@ -81,6 +81,7 @@ class _DetailScreenPageThreeState extends State<DetailScreenPageThree> {
                         isPrefix: false,
                         isSuffix: false,
                         text: "More",
+                        iconPath: "",
                         size: 200,
                         color: persian_blue,
                         height: 60,

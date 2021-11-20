@@ -7,7 +7,12 @@ class Settings {
   Color bgColor;
   Color textColor;
 
-  Settings({this.title, this.text, this.enable, this.bgColor, this.textColor});
+  Settings(
+      {required this.title,
+      required this.text,
+      required this.enable,
+      required this.bgColor,
+      required this.textColor});
 }
 
 class SettingsCardDetail {
@@ -16,7 +21,11 @@ class SettingsCardDetail {
   Color borderColor;
   List<SettingsCardItemDetail> items;
 
-  SettingsCardDetail({this.title, this.bgColor, this.borderColor, this.items});
+  SettingsCardDetail(
+      {required this.title,
+      required this.bgColor,
+      required this.borderColor,
+      required this.items});
 }
 
 class SettingsCardItemDetail {
@@ -24,7 +33,8 @@ class SettingsCardItemDetail {
   Color textColor;
   Color color;
 
-  SettingsCardItemDetail({this.title, this.color, this.textColor});
+  SettingsCardItemDetail(
+      {required this.title, required this.color, required this.textColor});
 }
 
 class SettingsItem {
@@ -32,5 +42,6 @@ class SettingsItem {
   String description;
   bool enable;
 
-  SettingsItem({this.title, this.description, this.enable});
+  SettingsItem(
+      {required this.title, required this.description, required this.enable});
 }

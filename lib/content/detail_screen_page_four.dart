@@ -65,6 +65,7 @@ class _DetailScreenPageFourState extends State<DetailScreenPageFour> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: ContraButton(
+                  iconPath: "",
                   isPrefix: false,
                   isSuffix: false,
                   text: "Lets Go",

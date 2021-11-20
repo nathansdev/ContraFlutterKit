@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 class WeatherWidget extends StatelessWidget {
   WeatherDate date;
 
-  WeatherWidget({this.date});
+  WeatherWidget({required this.date});
 
   @override
   Widget build(BuildContext context) {

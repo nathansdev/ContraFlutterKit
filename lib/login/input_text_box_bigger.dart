@@ -7,7 +7,7 @@ class InputTextBoxBigger extends StatelessWidget {
   final String text;
   final String iconPath;
 
-  const InputTextBoxBigger({this.text, this.iconPath});
+  const InputTextBoxBigger({required this.text,required this.iconPath});
 
   @override
   Widget build(BuildContext context) {

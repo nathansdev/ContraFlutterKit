@@ -71,6 +71,7 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
               padding: EdgeInsets.all(24),
               child: MapWidget(
                 distance: "2.5",
+                isDetail: false,
               ),
             ),
           ),

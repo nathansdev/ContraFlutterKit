@@ -78,6 +78,7 @@ class _DetailScreenPageOneState extends State<DetailScreenPageOne> {
                       ),
                       ContraButton(
                         borderColor: persian_blue,
+                        iconPath: "",
                         text: "Confirm",
                         color: persian_blue,
                         textColor: white,

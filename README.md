@@ -6,6 +6,14 @@ Flutter application built on top of contra wireframe kit. Thorough this project 
   <img src = "screenshots/welcome_screen.png" >
 </p>
 
+## Run and Build
+
+To run the app with few dependencies not having null safety use below command
+- flutter run --no-sound-null-safety
+
+To take apk of the app with few dependencies not having null safety use below command
+- flutter build apk --no-sound-null-safety
+
 ## Kits
 
 Contra flutter kit will be having screens developed in all the categories.

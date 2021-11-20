@@ -17,7 +17,7 @@ class UserListPage extends StatefulWidget {
 
 class _UserListPageState extends State<UserListPage> {
   TextEditingController _textEditingController = TextEditingController();
-  List<User> users = List<User>();
+  List<User> users = <User>[];
 
   @override
   void initState() {
@@ -45,6 +45,7 @@ class _UserListPageState extends State<UserListPage> {
       name: "Kalia Youknow",
       designation: "Muscian",
       profile: "assets/images/peep_lady_right.svg",
+      bgColor: carribean_green,
     ));
     users.add(User(
       textColor: white,

@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class OnboardPageTypeTwo extends StatelessWidget {
   final OnboardData data;
 
-  const OnboardPageTypeTwo({this.data});
+  const OnboardPageTypeTwo({required this.data});
 
   @override
   Widget build(BuildContext context) {

@@ -15,7 +15,7 @@ class WeatherListPage extends StatefulWidget {
 }
 
 class _WeatherListPageState extends State<WeatherListPage> {
-  List<Weather> clocks = List<Weather>();
+  List<Weather> clocks = <Weather>[];
 
   @override
   void initState() {

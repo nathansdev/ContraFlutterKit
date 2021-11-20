@@ -9,11 +9,11 @@ class RoundImageWithText extends StatelessWidget {
   final double size;
 
   const RoundImageWithText({
-    this.borderColor,
-    this.shadowColor,
-    this.color,
-    this.size,
-    this.text,
+    required this.borderColor,
+    required this.shadowColor,
+    required this.color,
+    required this.size,
+    required this.text,
   });
 
   @override

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,10 +15,9 @@ class OnboardingPagerTypeOne extends StatefulWidget {
 }
 
 class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
-  PageController _pageController;
+  late PageController _pageController;
   int currentPageValue = 0;
 
-  final onboardingPageTypeOne = OnboardPageTypeOne();
   final List<Widget> introWidgetsList = [
     OnboardPageTypeOne(
       data: OnboardData(
@@ -132,7 +134,22 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
               ),
             ),
           ],
-        )
+        ),
+        Platform.isIOS
+            ? Positioned(
+                left: 24,
+                top: 48,
+                child: ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/close.svg"),
+              )
+            : SizedBox(),
       ],
     );
   }

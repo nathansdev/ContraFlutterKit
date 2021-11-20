@@ -8,7 +8,7 @@ class BlogCardTypeTwo extends StatelessWidget {
   final VoidCallback onTap;
   final Blog blog;
 
-  const BlogCardTypeTwo({this.onTap, this.blog});
+  const BlogCardTypeTwo({required this.onTap, required this.blog});
 
   @override
   Widget build(BuildContext context) {

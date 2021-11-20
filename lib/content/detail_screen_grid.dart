@@ -13,7 +13,7 @@ class DetailScreenGridPage extends StatefulWidget {
 }
 
 class _DetailScreenGridPageState extends State<DetailScreenGridPage> {
-  List<Color> bgs = List<Color>();
+  List<Color> bgs = <Color>[];
 
   @override
   void initState() {
@@ -91,6 +91,7 @@ class _DetailScreenGridPageState extends State<DetailScreenGridPage> {
                   padding: const EdgeInsets.all(24.0),
                   child: ContraButton(
                     isPrefix: false,
+                    iconPath: "",
                     isSuffix: false,
                     text: "Let's get it done",
                     color: wood_smoke,

@@ -88,10 +88,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
         bottomTitles: SideTitles(
           showTitles: false,
           reservedSize: 22,
-          textStyle: const TextStyle(
-              color: Color(0xff68737d),
-              fontWeight: FontWeight.bold,
-              fontSize: 16),
+          getTextStyles: (value) {
+            return TextStyle(
+                color: Color(0xff68737d),
+                fontWeight: FontWeight.bold,
+                fontSize: 16);
+          },
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
@@ -107,11 +109,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ),
         leftTitles: SideTitles(
           showTitles: false,
-          textStyle: const TextStyle(
-            color: Color(0xff67727d),
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
+          getTextStyles: (value) {
+            return TextStyle(
+              color: Color(0xff67727d),
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            );
+          },
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
@@ -187,10 +191,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
         bottomTitles: SideTitles(
           showTitles: true,
           reservedSize: 22,
-          textStyle: const TextStyle(
-              color: Color(0xff68737d),
-              fontWeight: FontWeight.bold,
-              fontSize: 16),
+          getTextStyles: (value) {
+            return TextStyle(
+                color: Color(0xff68737d),
+                fontWeight: FontWeight.bold,
+                fontSize: 16);
+          },
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
@@ -206,11 +212,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ),
         leftTitles: SideTitles(
           showTitles: true,
-          textStyle: const TextStyle(
-            color: Color(0xff67727d),
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
+          getTextStyles: (value) {
+            return TextStyle(
+                color: Color(0xff68737d),
+                fontWeight: FontWeight.bold,
+                fontSize: 16);
+          },
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
@@ -246,8 +253,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ],
           isCurved: true,
           colors: [
-            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2),
-            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2),
+            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
+            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
           ],
           barWidth: 5,
           isStrokeCapRound: true,
@@ -256,10 +263,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ),
           belowBarData: BarAreaData(show: true, colors: [
             ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                .lerp(0.2)
+                .lerp(0.2)!
                 .withOpacity(0.1),
             ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                .lerp(0.2)
+                .lerp(0.2)!
                 .withOpacity(0.1),
           ]),
         ),

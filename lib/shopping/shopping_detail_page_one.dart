@@ -15,8 +15,8 @@ class ShoppingDetailPageOne extends StatefulWidget {
 }
 
 class _ShoppingDetailPageOneState extends State<ShoppingDetailPageOne> {
-  List<String> _filters = List<String>();
-  List<Color> _colors = List<Color>();
+  List<String> _filters = <String>[];
+  List<Color> _colors = <Color>[];
 
   @override
   void initState() {

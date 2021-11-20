@@ -7,7 +7,7 @@ class LoginPasswordText extends StatelessWidget {
   final String text;
   final String iconPath;
 
-  const LoginPasswordText({this.text, this.iconPath});
+  const LoginPasswordText({required this.text, required this.iconPath});
 
   @override
   Widget build(BuildContext context) {

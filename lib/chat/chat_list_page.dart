@@ -18,7 +18,7 @@ class ChatListPage extends StatefulWidget {
 }
 
 class _ChatListPageState extends State<ChatListPage> {
-  List<Chat> _items = List<Chat>();
+  List<Chat> _items = <Chat>[];
   TextEditingController _textEditingController = TextEditingController();
 
   @override

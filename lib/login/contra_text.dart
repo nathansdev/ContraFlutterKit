@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 class ContraText extends StatelessWidget {
   final Alignment alignment;
   final String text;
-  final double size;
-  final Color color;
-  final FontWeight weight;
-  final TextAlign textAlign;
+  final double? size;
+  final Color? color;
+  final FontWeight? weight;
+  final TextAlign? textAlign;
 
   const ContraText(
-      {this.alignment,
-      this.text,
+      {required this.alignment,
+      required this.text,
       this.size,
       this.color,
       this.weight,

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class StartWidget extends StatelessWidget {
   final Category category;
 
-  const StartWidget({this.category});
+  const StartWidget({required this.category});
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,7 @@ class ImageTextPager extends StatefulWidget {
 }
 
 class _ImageTextPagerState extends State<ImageTextPager> {
-  PageController _pageController;
+ late PageController _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;

@@ -13,11 +13,11 @@ class SettingsPageTwo extends StatefulWidget {
 }
 
 class _SettingsPageTwoState extends State<SettingsPageTwo> {
-  SettingsCardDetail detailOne;
-  SettingsCardDetail detailTwo;
+  late SettingsCardDetail detailOne;
+  late SettingsCardDetail detailTwo;
 
-  List<SettingsCardItemDetail> detailsOne = List<SettingsCardItemDetail>();
-  List<SettingsCardItemDetail> detailsTwo = List<SettingsCardItemDetail>();
+  List<SettingsCardItemDetail> detailsOne = <SettingsCardItemDetail>[];
+  List<SettingsCardItemDetail> detailsTwo = <SettingsCardItemDetail>[];
 
   @override
   void initState() {
