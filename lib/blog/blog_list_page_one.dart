@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/blog/blog_card_type_one.dart';
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
@@ -68,6 +71,22 @@ class _BlogListPageOneState extends State<BlogListPageOne> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
+                  Platform.isIOS
+                      ? ButtonRoundWithShadow(
+                          size: 48,
+                          borderColor: wood_smoke,
+                          color: white,
+                          callback: () {
+                            Navigator.pop(context);
+                          },
+                          shadowColor: wood_smoke,
+                          iconPath: "assets/icons/arrow_back.svg")
+                      : SizedBox(),
+                  Platform.isIOS
+                      ? SizedBox(
+                          width: 20,
+                        )
+                      : SizedBox(),
                   ContraText(
                     size: 44,
                     alignment: Alignment.bottomCenter,

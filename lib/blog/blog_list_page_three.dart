@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/blog/blog_list_item.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
@@ -69,10 +71,20 @@ class _BlogListPageThreeState extends State<BlogListPageThree> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.menu,
-                    color: wood_smoke,
-                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios,
+                            color: wood_smoke,
+                          ),
+                        )
+                      : Icon(
+                          Icons.menu,
+                          color: wood_smoke,
+                        ),
                   Expanded(
                     flex: 1,
                     child: ContraText(

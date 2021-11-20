@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_header.dart';
@@ -66,6 +68,27 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
         height: 200,
         child: Row(
           children: <Widget>[
+            Platform.isIOS
+                ? SizedBox(
+                    width: 20,
+                  )
+                : SizedBox(),
+            Platform.isIOS
+                ? ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/arrow_back.svg")
+                : SizedBox(),
+            Platform.isIOS
+                ? SizedBox(
+                    width: 20,
+                  )
+                : SizedBox(),
             CustomHeader(
               lineOneText: "Saved",
               lineTwotext: "Payments",

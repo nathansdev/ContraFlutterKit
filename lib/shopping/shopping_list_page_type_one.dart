@@ -124,6 +124,9 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 12.0),
               child: ChipsFilterWidget(

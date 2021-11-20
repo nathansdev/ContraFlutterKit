@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/custom_widgets/star_widget.dart';
@@ -102,10 +105,26 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
+                  Platform.isIOS
+                      ? ButtonRoundWithShadow(
+                          size: 48,
+                          borderColor: wood_smoke,
+                          color: white,
+                          callback: () {
+                            Navigator.pop(context);
+                          },
+                          shadowColor: wood_smoke,
+                          iconPath: "assets/icons/arrow_back.svg")
+                      : SizedBox(),
+                  Platform.isIOS
+                      ? SizedBox(
+                          width: 20,
+                        )
+                      : SizedBox(),
                   Expanded(
                     flex: 2,
                     child: ContraText(
-                      size: 44,
+                      size: Platform.isIOS ? 36 : 44,
                       alignment: Alignment.bottomCenter,
                       text: "Shop Yay",
                     ),

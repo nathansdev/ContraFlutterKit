@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/content/popular_courses_item.dart';
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_header.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
@@ -63,12 +66,37 @@ class _PopularCoursesPageState extends State<PopularCoursesPage> {
       backgroundColor: white,
       appBar: CustomAppBar(
         height: 200,
-        child: CustomHeader(
-          fg_color: wood_smoke,
-          bg_color: white,
-          color: wood_smoke,
-          lineOneText: "Popular",
-          lineTwotext: "Courses",
+        child: Row(
+          children: [
+            Platform.isIOS
+                ? SizedBox(
+                    width: 20,
+                  )
+                : SizedBox(),
+            Platform.isIOS
+                ? ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/arrow_back.svg")
+                : SizedBox(),
+            Platform.isIOS
+                ? SizedBox(
+                    width: 20,
+                  )
+                : SizedBox(),
+            CustomHeader(
+              fg_color: wood_smoke,
+              bg_color: white,
+              color: wood_smoke,
+              lineOneText: "Popular",
+              lineTwotext: "Courses",
+            ),
+          ],
         ),
       ),
       body: SingleChildScrollView(

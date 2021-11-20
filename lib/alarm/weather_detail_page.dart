@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/alarm/weather.dart';
 import 'package:contraflutterkit/alarm/weather_widget.dart';
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -49,6 +52,25 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Platform.isIOS
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        ButtonRoundWithShadow(
+                            size: 48,
+                            borderColor: wood_smoke,
+                            color: white,
+                            callback: () {
+                              Navigator.pop(context);
+                            },
+                            shadowColor: wood_smoke,
+                            iconPath: "assets/icons/arrow_back.svg"),
+                      ],
+                    )
+                  : SizedBox(),
               SizedBox(
                 height: 80,
               ),

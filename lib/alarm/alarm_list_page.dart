@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
@@ -44,10 +46,31 @@ class _AlarmListPageState extends State<AlarmListPage> {
         height: 120,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: ContraText(
-            alignment: Alignment.bottomLeft,
-            size: 44,
-            text: "Alarm",
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Platform.isIOS
+                  ? ButtonRoundWithShadow(
+                      size: 48,
+                      borderColor: wood_smoke,
+                      color: white,
+                      callback: () {
+                        Navigator.pop(context);
+                      },
+                      shadowColor: wood_smoke,
+                      iconPath: "assets/icons/arrow_back.svg")
+                  : SizedBox(),
+              Platform.isIOS
+                  ? SizedBox(
+                      width: 20,
+                    )
+                  : SizedBox(),
+              ContraText(
+                alignment: Alignment.bottomLeft,
+                size: 44,
+                text: "Alarm",
+              ),
+            ],
           ),
         ),
       ),

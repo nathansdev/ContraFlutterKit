@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +12,15 @@ class WelcomeScreenPage extends StatelessWidget {
       child: Container(
         color: persian_blue,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            Platform.isIOS
+                ? AppBar(
+                    elevation: 0,
+                  )
+                : SizedBox(),
             Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   child: Center(
@@ -36,7 +43,7 @@ class WelcomeScreenPage extends StatelessWidget {
               ],
             ),
             Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -56,6 +63,9 @@ class WelcomeScreenPage extends StatelessWidget {
                   ]),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 40,
             ),
           ],
         ),

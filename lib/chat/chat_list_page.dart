@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/chat/chat_messages_page.dart';
 import 'package:contraflutterkit/chat/chat_search_page.dart';
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
+import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -105,12 +109,32 @@ class _ChatListPageState extends State<ChatListPage> {
               SizedBox(
                 height: 56,
               ),
-              ContraText(
-                alignment: Alignment.centerLeft,
-                text: "Chat",
+              Row(
+                children: [
+                  Platform.isIOS
+                      ? ButtonRoundWithShadow(
+                          size: 48,
+                          borderColor: wood_smoke,
+                          color: white,
+                          callback: () {
+                            Navigator.pop(context);
+                          },
+                          shadowColor: wood_smoke,
+                          iconPath: "assets/icons/arrow_back.svg")
+                      : SizedBox(),
+                  Platform.isIOS
+                      ? SizedBox(
+                          width: 20,
+                        )
+                      : SizedBox(),
+                  ContraText(
+                    alignment: Alignment.centerLeft,
+                    text: "Chat",
+                  ),
+                ],
               ),
               SizedBox(
-                height: 24,
+                height: 30,
               ),
               CustomSearchText(
                 iconPath: "assets/icons/ic_search.svg",
