@@ -57,7 +57,7 @@ class _LocationListingPageState extends State<LocationListingPage> {
                 : SizedBox(),
             CustomHeader(
               fg_color: wood_smoke,
-              isTwoLines: false,
+              isTwoLines: kIsWeb ? false : true,
               bg_color: white,
               color: wood_smoke,
               lineOneText: "Your",

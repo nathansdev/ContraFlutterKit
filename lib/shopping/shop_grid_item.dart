@@ -26,7 +26,6 @@ class ShopGridItemWidget extends StatelessWidget {
                     side: BorderSide(color: wood_smoke, width: 2))),
             child: SvgPicture.asset(
               shopItem.image,
-              width: 155,
               height: 170,
             ),
           ),

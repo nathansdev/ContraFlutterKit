@@ -97,15 +97,17 @@ class _SettingsPageTwoState extends State<SettingsPageTwo> {
           ],
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          SettingsListCardItem(
-            detail: detailOne,
-          ),
-          SettingsListCardItem(
-            detail: detailTwo,
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SettingsListCardItem(
+              detail: detailOne,
+            ),
+            SettingsListCardItem(
+              detail: detailTwo,
+            )
+          ],
+        ),
       ),
     );
   }

@@ -66,15 +66,22 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
                           SizedBox(
                             width: 20,
                           ),
-                          ButtonRoundWithShadow(
-                              size: 48,
-                              borderColor: wood_smoke,
-                              color: white,
-                              callback: () {
-                                Navigator.pop(context);
-                              },
-                              shadowColor: wood_smoke,
-                              iconPath: "assets/icons/arrow_back.svg"),
+                          Column(
+                            children: [
+                              SizedBox(
+                                height: 20,
+                              ),
+                              ButtonRoundWithShadow(
+                                  size: 48,
+                                  borderColor: wood_smoke,
+                                  color: white,
+                                  callback: () {
+                                    Navigator.pop(context);
+                                  },
+                                  shadowColor: wood_smoke,
+                                  iconPath: "assets/icons/arrow_back.svg"),
+                            ],
+                          ),
                         ],
                       )
                     : SizedBox(),

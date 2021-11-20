@@ -73,6 +73,7 @@ class _ClockListPageState extends State<ClockListPage> {
                 : SizedBox(),
             CustomHeader(
               lineOneText: "World",
+              isTwoLines: kIsWeb ? false : true,
               lineTwotext: "Clock",
               color: white,
               bg_color: persian_blue,

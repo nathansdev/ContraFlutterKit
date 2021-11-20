@@ -3,6 +3,7 @@ import 'package:contraflutterkit/custom_widgets/contra_button_round.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,7 +17,7 @@ class _DetailScreenPageOneState extends State<DetailScreenPageOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.topCenter,
         children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,16 +25,8 @@ class _DetailScreenPageOneState extends State<DetailScreenPageOne> {
               Expanded(
                 flex: 1,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.only(left: 10),
                   color: flamingo,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      SvgPicture.asset(
-                        "assets/images/shopping/peep_both.svg",
-                      ),
-                    ],
-                  ),
                 ),
               ),
               Expanded(
@@ -41,40 +34,43 @@ class _DetailScreenPageOneState extends State<DetailScreenPageOne> {
                 child: Container(
                   padding: EdgeInsets.all(24),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      ContraText(
-                        text: "Chit chat ho jaye",
-                        color: trout,
-                        size: 17,
-                        alignment: Alignment.center,
-                        weight: FontWeight.w800,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      ContraText(
-                        text: "It’s very easy to do whatever you want to do",
-                        color: wood_smoke,
-                        size: 36,
-                        alignment: Alignment.center,
-                        weight: FontWeight.w800,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      ContraText(
-                        text:
-                            "This title may have some detailed descriptions which can go here. But part of this text box is always secured.",
-                        color: trout,
-                        size: 17,
-                        alignment: Alignment.center,
-                        textAlign: TextAlign.center,
-                        weight: FontWeight.w500,
-                      ),
-                      SizedBox(
-                        height: 16,
+                      Column(
+                        children: [
+                          ContraText(
+                            text: "Chit chat ho jaye",
+                            color: trout,
+                            size: 17,
+                            alignment: Alignment.center,
+                            weight: FontWeight.w800,
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          ContraText(
+                            text:
+                                "It’s very easy to do whatever you want to do",
+                            color: wood_smoke,
+                            size: 36,
+                            alignment: Alignment.center,
+                            weight: FontWeight.w800,
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          ContraText(
+                            text:
+                                "This title may have some detailed descriptions which can go here. But part of this text box is always secured.",
+                            color: trout,
+                            size: 17,
+                            alignment: Alignment.center,
+                            textAlign: TextAlign.center,
+                            weight: FontWeight.w500,
+                          ),
+                        ],
                       ),
                       ContraButton(
                         borderColor: persian_blue,
@@ -91,6 +87,48 @@ class _DetailScreenPageOneState extends State<DetailScreenPageOne> {
                     ],
                   ),
                 ),
+              ),
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                width: kIsWeb ? 100 : 10,
+              ),
+              Column(
+                children: [
+                  SizedBox(
+                    height: kIsWeb ? 10 : 100,
+                  ),
+                  SvgPicture.asset(
+                    "assets/images/peep_lady_left.svg",
+                    width: 220,
+                    height: 300,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Column(
+                children: [
+                  SizedBox(
+                    height: kIsWeb ? 10 : 100,
+                  ),
+                  SvgPicture.asset(
+                    "assets/images/peep_man_right.svg",
+                    width: 260,
+                    height: 300,
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: kIsWeb ? 100 : 10,
               ),
             ],
           ),

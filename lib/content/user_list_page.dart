@@ -89,6 +89,7 @@ class _UserListPageState extends State<UserListPage> {
             CustomHeader(
               fg_color: wood_smoke,
               bg_color: white,
+              isTwoLines: kIsWeb ? false : true,
               color: wood_smoke,
               lineOneText: "Popular",
               lineTwotext: "Artists",

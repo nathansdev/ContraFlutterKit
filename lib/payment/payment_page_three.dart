@@ -92,6 +92,7 @@ class _PaymentPageThreeState extends State<PaymentPageThree>
                 : SizedBox(),
             CustomHeader(
               lineOneText: "Saved",
+              isTwoLines: kIsWeb ? false : true,
               lineTwotext: "Payments",
               color: wood_smoke,
               bg_color: white,
