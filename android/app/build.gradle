@@ -46,7 +46,7 @@ android {
 
     defaultConfig {
         applicationId "com.contra.flutter.kit"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

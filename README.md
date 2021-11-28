@@ -11,8 +11,14 @@ Flutter application built on top of contra wireframe kit. Thorough this project 
 To run the app with few dependencies not having null safety use below command
 - flutter run --no-sound-null-safety
 
+To run the web with few dependencies not having null safety use below command
+- flutter run -d chrome --no-sound-null-safety
+
 To take apk of the app with few dependencies not having null safety use below command
 - flutter build apk --no-sound-null-safety
+
+To take build for the web with few dependencies not having null safety use below command
+- flutter build web --no-sound-null-safety
 
 ## Kits
 
