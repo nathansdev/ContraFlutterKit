@@ -9,13 +9,12 @@ class CustomInputText extends StatelessWidget {
   final Color color;
   final VoidCallback callback;
 
-
   const CustomInputText(
-      {this.text,
-      this.borderColor,
-      this.color,
-      this.shadowColor,
-      this.callback});
+      {required this.text,
+      required this.borderColor,
+      required this.color,
+      required this.shadowColor,
+      required this.callback});
 
   @override
   Widget build(BuildContext context) {

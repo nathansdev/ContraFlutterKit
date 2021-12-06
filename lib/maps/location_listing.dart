@@ -1,8 +1,12 @@
+import 'dart:io';
+
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_header.dart';
 import 'package:contraflutterkit/maps/location_list_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'location.dart';
@@ -13,7 +17,7 @@ class LocationListingPage extends StatefulWidget {
 }
 
 class _LocationListingPageState extends State<LocationListingPage> {
-  List<Location> list = List<Location>();
+  List<Location> list = <Location>[];
 
   @override
   void initState() {
@@ -31,12 +35,35 @@ class _LocationListingPageState extends State<LocationListingPage> {
     return Scaffold(
       appBar: CustomAppBar(
         height: 200,
-        child: CustomHeader(
-          fg_color: wood_smoke,
-          bg_color: white,
-          color: wood_smoke,
-          lineOneText: "Your",
-          lineTwotext: "Directions",
+        child: Row(
+          children: [
+            kIsWeb || Platform.isIOS
+                ? SizedBox(
+                    width: 24,
+                  )
+                : SizedBox(
+                    width: 24,
+                  ),
+            kIsWeb || Platform.isIOS
+                ? ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/close.svg")
+                : SizedBox(),
+            CustomHeader(
+              fg_color: wood_smoke,
+              isTwoLines: kIsWeb ? false : true,
+              bg_color: white,
+              color: wood_smoke,
+              lineOneText: "Your",
+              lineTwotext: "Directions",
+            ),
+          ],
         ),
       ),
       body: ListView.builder(

@@ -10,7 +10,7 @@ class ChatListItemWidget extends StatelessWidget {
   final Chat chat;
   final VoidCallback callback;
 
-  const ChatListItemWidget({this.chat, this.callback});
+  const ChatListItemWidget({required this.chat, required this.callback});
 
   @override
   Widget build(BuildContext context) {

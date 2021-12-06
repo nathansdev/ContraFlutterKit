@@ -12,7 +12,10 @@ class ChatSearchItemWidget extends StatelessWidget {
   final Color color;
 
   const ChatSearchItemWidget(
-      {this.chat, this.color, this.borderColor, this.textColor});
+      {required this.chat,
+      required this.color,
+      required this.borderColor,
+      required this.textColor});
 
   @override
   Widget build(BuildContext context) {

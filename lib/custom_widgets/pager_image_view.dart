@@ -6,14 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 class PagerImageView extends StatefulWidget {
   final List<String> images;
 
-  const PagerImageView({this.images});
+  const PagerImageView({required this.images});
 
   @override
   _PagerImageViewState createState() => _PagerImageViewState();
 }
 
 class _PagerImageViewState extends State<PagerImageView> {
-  PageController _pageController;
+  late PageController _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;

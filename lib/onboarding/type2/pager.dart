@@ -1,9 +1,13 @@
+import 'dart:io';
+
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/circle_dot_widget.dart';
 import 'package:contraflutterkit/onboarding/onboard_data.dart';
 import 'package:contraflutterkit/onboarding/type2/onboard_page_two.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,11 +17,11 @@ class OnboardingPagerTypeTwo extends StatefulWidget {
 }
 
 class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
-  PageController _pageController;
+  late PageController _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
-  final onboardingPageTypeTwo = OnboardPageTypeTwo();
+
   final List<Widget> introWidgetsList = [
     OnboardPageTypeTwo(
       data: OnboardData(
@@ -131,7 +135,22 @@ class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
               ),
             ),
           ],
-        )
+        ),
+        kIsWeb || Platform.isIOS
+            ? Positioned(
+                left: 24,
+                top: 48,
+                child: ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/close.svg"),
+              )
+            : SizedBox(),
       ],
     );
   }

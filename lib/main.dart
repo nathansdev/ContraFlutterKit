@@ -3,6 +3,7 @@ import 'package:contraflutterkit/blog/blog_list_page_four.dart';
 import 'package:contraflutterkit/blog/blog_list_page_one.dart';
 import 'package:contraflutterkit/blog/blog_main_page.dart';
 import 'package:contraflutterkit/blog/blog_staggered_grid_page.dart';
+import 'package:contraflutterkit/chat/chat.dart';
 import 'package:contraflutterkit/chat/chat_home_page.dart';
 import 'package:contraflutterkit/chat/chat_list_page.dart';
 import 'package:contraflutterkit/chat/chat_messages_page.dart';
@@ -100,7 +101,13 @@ class MyApp extends StatelessWidget {
         '/contact_us_form': (context) => ContactUsForm(),
         '/chat_home': (context) => ChatHomePage(),
         '/chat_screen_page': (context) => ChatListPage(),
-        '/chat_list_page': (context) => ChatMessagesPage(),
+        '/chat_list_page': (context) => ChatMessagesPage(
+              chat: Chat(
+                  name: "Charli",
+                  message: "Please have a look",
+                  time: "3.30 AM",
+                  count: "2"),
+            ),
         '/shopping_main_page': (context) => ShoppingMainPage(),
         '/shopping_list_page_one': (context) => ShoppingListPageOne(),
         '/shopping_list_page_two': (context) => ShoppingListPageTwo(),
@@ -161,7 +168,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 

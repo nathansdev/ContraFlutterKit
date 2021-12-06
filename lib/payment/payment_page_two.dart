@@ -16,12 +16,12 @@ class PaymentPageTwo extends StatefulWidget {
 
 class _PaymentPageTwoState extends State<PaymentPageTwo>
     with SingleTickerProviderStateMixin {
-  List<PaymentType> types = List<PaymentType>();
-  List<String> list = List<String>();
-  AnimationController controller;
+  late List<PaymentType> types = <PaymentType>[];
+  late List<String> list = <String>[];
+  late AnimationController controller;
   bool isVertical = true;
   bool isChecked = false;
-  PageController _pageController;
+  late PageController _pageController;
 
   @override
   void initState() {
@@ -33,6 +33,7 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
         type: "POPULAR",
         list: list,
         color: flamingo,
+        price: "34",
         buttonColor: wood_smoke,
         buttonTextColor: white));
     types.add(PaymentType(
@@ -64,10 +65,12 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
     _pageController = PageController(initialPage: 0, viewportFraction: 0.8);
   }
 
-  void onChecked(bool val) {
-    setState(() {
-      isChecked = val;
-    });
+  onChecked(bool? val) {
+    if (val != null) {
+      setState(() {
+        isChecked = val;
+      });
+    }
   }
 
   @override
@@ -166,7 +169,9 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Checkbox(
-                    onChanged: onChecked,
+                    onChanged: (value) {
+                      onChecked(value);
+                    },
                     value: isChecked,
                   ),
                   Expanded(

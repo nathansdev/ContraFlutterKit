@@ -7,15 +7,15 @@ import 'color_widget.dart';
 class ColorsSelectWidget extends StatefulWidget {
   final List<Color> colors;
 
-  const ColorsSelectWidget({this.colors});
+  const ColorsSelectWidget({required this.colors});
 
   @override
   _ColorsSelectWidgetState createState() => _ColorsSelectWidgetState();
 }
 
 class _ColorsSelectWidgetState extends State<ColorsSelectWidget> {
-  List<Color> options = List();
-  List<int> selectedChoices = List();
+  List<Color> options = [];
+  List<int> selectedChoices = [];
 
   @override
   void initState() {

@@ -4,11 +4,11 @@ import 'package:flutter/cupertino.dart';
 class BadgeText extends StatelessWidget {
   final Color color;
   final String text;
-  final double size;
+  final double? size;
 
   const BadgeText({
-    this.color,
-    this.text,
+    required this.color,
+    required this.text,
     this.size,
   });
 

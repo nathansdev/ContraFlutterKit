@@ -1,15 +1,18 @@
+import 'dart:io';
+
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/custom_widgets/star_widget.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
+import 'package:contraflutterkit/shopping/category_item.dart' as category;
 import 'package:contraflutterkit/shopping/shop_card_item_small.dart';
 import 'package:contraflutterkit/shopping/shop_item.dart';
 import 'package:contraflutterkit/shopping/shopping_card_pager.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/material.dart';
-
-import 'category_item.dart';
 
 class ShoppingHomePageTwo extends StatefulWidget {
   @override
@@ -17,8 +20,8 @@ class ShoppingHomePageTwo extends StatefulWidget {
 }
 
 class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
-  List<ShopItem> _items = List<ShopItem>();
-  List<Category> _categories = List<Category>();
+  List<ShopItem> _items = <ShopItem>[];
+  List<category.Category> _categories = <category.Category>[];
   TextEditingController _textEditingController = TextEditingController();
 
   @override
@@ -73,18 +76,18 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
         bgColor: flamingo,
         by: "Company name"));
 
+    _categories.add(category.Category(
+        bgColor: bareley_white, startColor: wood_smoke, name: "Men"));
+    _categories.add(category.Category(
+        bgColor: fair_pink, startColor: wood_smoke, name: "Woman"));
     _categories.add(
-        Category(bgColor: bareley_white, startColor: wood_smoke, name: "Men"));
-    _categories.add(
-        Category(bgColor: fair_pink, startColor: wood_smoke, name: "Woman"));
-    _categories
-        .add(Category(bgColor: foam, startColor: wood_smoke, name: "Kid"));
-    _categories.add(Category(
+        category.Category(bgColor: foam, startColor: wood_smoke, name: "Kid"));
+    _categories.add(category.Category(
         bgColor: bareley_white, startColor: wood_smoke, name: "Adult"));
-    _categories
-        .add(Category(bgColor: fair_pink, startColor: wood_smoke, name: "Men"));
-    _categories
-        .add(Category(bgColor: foam, startColor: wood_smoke, name: "Men"));
+    _categories.add(category.Category(
+        bgColor: fair_pink, startColor: wood_smoke, name: "Men"));
+    _categories.add(
+        category.Category(bgColor: foam, startColor: wood_smoke, name: "Men"));
   }
 
   @override
@@ -102,10 +105,26 @@ class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
+                  foundation.kIsWeb || Platform.isIOS
+                      ? ButtonRoundWithShadow(
+                          size: 48,
+                          borderColor: wood_smoke,
+                          color: white,
+                          callback: () {
+                            Navigator.pop(context);
+                          },
+                          shadowColor: wood_smoke,
+                          iconPath: "assets/icons/arrow_back.svg")
+                      : SizedBox(),
+                  foundation.kIsWeb || Platform.isIOS
+                      ? SizedBox(
+                          width: 20,
+                        )
+                      : SizedBox(),
                   Expanded(
                     flex: 2,
                     child: ContraText(
-                      size: 44,
+                      size: foundation.kIsWeb || Platform.isIOS ? 36 : 44,
                       alignment: Alignment.bottomCenter,
                       text: "Shop Yay",
                     ),

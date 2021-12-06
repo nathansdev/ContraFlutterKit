@@ -106,6 +106,7 @@ class _SettingsPageThreeState extends State<SettingsPageThree> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
                 child: ContraButton(
+                  iconPath: "",
                   color: wood_smoke,
                   height: 60,
                   isPrefix: false,

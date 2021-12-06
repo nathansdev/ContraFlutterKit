@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 class ShoppingCardPagerItem extends StatelessWidget {
   final CategoryBig categoryBig;
 
-  const ShoppingCardPagerItem({this.categoryBig});
+  const ShoppingCardPagerItem({required this.categoryBig});
 
   @override
   Widget build(BuildContext context) {

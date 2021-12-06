@@ -14,8 +14,8 @@ class ShoppingListPageOne extends StatefulWidget {
 }
 
 class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
-  List<ShopItem> _items = List<ShopItem>();
-  List<String> _filters = List<String>();
+  List<ShopItem> _items = <ShopItem>[];
+  List<String> _filters = <String>[];
 
   @override
   void initState() {
@@ -124,6 +124,9 @@ class _ShoppingListPageOneState extends State<ShoppingListPageOne> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 12.0),
               child: ChipsFilterWidget(

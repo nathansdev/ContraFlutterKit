@@ -5,7 +5,8 @@ class CircleDotWidget extends StatelessWidget {
   final Color color;
   final Color borderColor;
 
-  const CircleDotWidget({this.isActive, this.color, this.borderColor});
+  const CircleDotWidget(
+      {required this.isActive, required this.color, required this.borderColor});
 
   @override
   Widget build(BuildContext context) {

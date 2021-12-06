@@ -8,7 +8,7 @@ import 'clock.dart';
 class ClockListItem extends StatelessWidget {
   Clock clock;
 
-  ClockListItem({this.clock});
+  ClockListItem({required this.clock});
 
   @override
   Widget build(BuildContext context) {

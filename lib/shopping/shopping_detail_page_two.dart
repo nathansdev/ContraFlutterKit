@@ -12,9 +12,9 @@ class ShoppingDetailPageTwo extends StatefulWidget {
 }
 
 class _ShoppingDetailPageTwoState extends State<ShoppingDetailPageTwo> {
-  List<String> _filters = List<String>();
-  List<String> _images = List<String>();
-  List<Color> _colors = List<Color>();
+  List<String> _filters = <String>[];
+  List<String> _images = <String>[];
+  List<Color> _colors = <Color>[];
 
   @override
   void initState() {

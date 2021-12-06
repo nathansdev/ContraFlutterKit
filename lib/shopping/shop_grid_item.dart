@@ -8,7 +8,7 @@ class ShopGridItemWidget extends StatelessWidget {
   final ShopItem shopItem;
   final VoidCallback onTap;
 
-  const ShopGridItemWidget({this.shopItem, this.onTap});
+  const ShopGridItemWidget({required this.shopItem, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,6 @@ class ShopGridItemWidget extends StatelessWidget {
                     side: BorderSide(color: wood_smoke, width: 2))),
             child: SvgPicture.asset(
               shopItem.image,
-              width: 155,
               height: 170,
             ),
           ),

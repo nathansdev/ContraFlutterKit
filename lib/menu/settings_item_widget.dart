@@ -7,17 +7,17 @@ import 'package:flutter/material.dart';
 class SettingsItemWidget extends StatefulWidget {
   SettingsItem settingsItem;
 
-  SettingsItemWidget({this.settingsItem});
+  SettingsItemWidget({required this.settingsItem});
 
   @override
   _SettingsItemWidgetState createState() => _SettingsItemWidgetState();
 }
 
 class _SettingsItemWidgetState extends State<SettingsItemWidget> {
-  String title;
-  String description;
+  late String title;
+  late String description;
 
-  bool enable;
+  late bool enable;
   bool isChanged = false;
 
   void onChanged(bool value) {

@@ -8,7 +8,11 @@ class Blog {
   final String time;
 
   const Blog(
-      {this.title, this.description, this.bgColor, this.user, this.time});
+      {required this.title,
+      required this.description,
+      required this.bgColor,
+      required this.user,
+      required this.time});
 }
 
 class BlogWithSize {
@@ -19,5 +23,9 @@ class BlogWithSize {
   final double height;
 
   const BlogWithSize(
-      {this.title, this.description, this.bgColor, this.width, this.height});
+      {required this.title,
+      required this.description,
+      required this.bgColor,
+      required this.width,
+      required this.height});
 }

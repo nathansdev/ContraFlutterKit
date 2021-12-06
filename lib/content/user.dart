@@ -7,7 +7,10 @@ class InviteDetail {
   final bool isInvited;
 
   const InviteDetail(
-      {this.name, this.designation, this.profile, this.isInvited});
+      {required this.name,
+      required this.designation,
+      required this.profile,
+      required this.isInvited});
 }
 
 class User {
@@ -17,5 +20,10 @@ class User {
   final Color bgColor;
   final Color textColor;
 
-  const User({this.name, this.designation, this.profile, this.textColor,this.bgColor});
+  const User(
+      {required this.name,
+      required this.designation,
+      required this.profile,
+      required this.textColor,
+      required this.bgColor});
 }

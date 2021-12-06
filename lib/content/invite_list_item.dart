@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 class InviteListItem extends StatelessWidget {
   InviteDetail inviteDetail;
 
-  InviteListItem({this.inviteDetail});
+  InviteListItem({required this.inviteDetail});
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +60,7 @@ class InviteListItem extends StatelessWidget {
           ),
           ContraButton(
             height: 36,
+            iconPath: "",
             color: inviteDetail.isInvited ? wood_smoke : lightening_yellow,
             isSuffix: false,
             isPrefix: false,

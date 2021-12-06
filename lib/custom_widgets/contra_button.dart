@@ -7,30 +7,30 @@ class ContraButton extends StatelessWidget {
   final Color borderColor;
   final Color shadowColor;
   final Color color;
-  final Color textColor;
+  final Color? textColor;
   final String text;
   final VoidCallback callback;
-  final double size;
-  final double height;
+  final double? size;
+  final double? height;
   final bool isPrefix;
   final bool isSuffix;
   final String iconPath;
-  final Color iconColor;
-  final double textSize;
+  final Color? iconColor;
+  final double? textSize;
 
   const ContraButton(
-      {this.borderColor,
-      this.shadowColor,
-      this.color,
-      this.textColor,
-      this.text,
+      {required this.borderColor,
+      required this.shadowColor,
+      required this.color,
+      required this.textColor,
+      required this.text,
       this.size,
       this.height,
-      this.callback,
-      this.isPrefix,
-      this.isSuffix,
+      required this.callback,
+      this.isPrefix = false,
+      this.isSuffix = false,
       this.textSize,
-      this.iconPath,
+      required this.iconPath,
       this.iconColor});
 
   @override

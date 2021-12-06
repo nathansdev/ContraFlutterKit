@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 class WeatherListItem extends StatelessWidget {
   Weather weather;
 
-  WeatherListItem({this.weather});
+  WeatherListItem({required this.weather});
 
   @override
   Widget build(BuildContext context) {

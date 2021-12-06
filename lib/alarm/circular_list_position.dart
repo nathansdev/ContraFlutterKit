@@ -8,9 +8,9 @@ class CircularPosition extends StatefulWidget {
   final Widget child;
 
   CircularPosition({
-    this.angle,
-    this.child,
-    this.radius,
+    required this.angle,
+    required this.child,
+    required this.radius,
   });
 
   @override

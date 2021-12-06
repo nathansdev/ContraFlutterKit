@@ -2,13 +2,12 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../onboard_data.dart';
 
 class OnboardPageTypeOne extends StatelessWidget {
   final OnboardData data;
 
-  const OnboardPageTypeOne({this.data});
+  const OnboardPageTypeOne({required this.data});
 
   @override
   Widget build(BuildContext context) {

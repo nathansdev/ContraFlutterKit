@@ -8,7 +8,7 @@ class CartAddRemoveButton extends StatefulWidget {
 }
 
 class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
-  int count;
+  late int count;
 
   @override
   void initState() {

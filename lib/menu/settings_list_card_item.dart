@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class SettingsListCardItem extends StatelessWidget {
   SettingsCardDetail detail;
 
-  SettingsListCardItem({this.detail});
+  SettingsListCardItem({required this.detail});
 
   @override
   Widget build(BuildContext context) {

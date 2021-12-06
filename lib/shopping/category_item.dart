@@ -5,7 +5,8 @@ class Category {
   final Color bgColor;
   final Color startColor;
 
-  const Category({this.name, this.startColor, this.bgColor});
+  const Category(
+      {required this.name, required this.startColor, required this.bgColor});
 }
 
 class CategoryBig {
@@ -14,5 +15,9 @@ class CategoryBig {
   final Color bgColor;
   final Color startColor;
 
-  const CategoryBig({this.name, this.image, this.startColor, this.bgColor});
+  const CategoryBig(
+      {required this.name,
+      required this.image,
+      required this.startColor,
+      required this.bgColor});
 }

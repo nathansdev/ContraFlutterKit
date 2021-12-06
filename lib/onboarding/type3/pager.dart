@@ -1,9 +1,12 @@
+import 'dart:io';
+
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/circle_dot_widget.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:contraflutterkit/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../onboard_data.dart';
 import 'onboard_page_three.dart';
 
@@ -14,12 +17,11 @@ class OnboardingPagerTypeThree extends StatefulWidget {
 }
 
 class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
-  PageController _pageController;
+  late PageController _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
 
-  final onboardingPageTypeOne = OnboardPageTypeThree();
   final List<Widget> introWidgetsList = [
     OnboardPageTypeThree(
       data: OnboardData(
@@ -121,7 +123,22 @@ class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
                   ]),
             ),
           ],
-        )
+        ),
+        kIsWeb || Platform.isIOS
+            ? Positioned(
+                left: 24,
+                top: 48,
+                child: ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/close.svg"),
+              )
+            : SizedBox(),
       ],
     );
   }

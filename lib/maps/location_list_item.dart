@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class LocationListItem extends StatelessWidget {
   Location location;
 
-  LocationListItem({this.location});
+  LocationListItem({required this.location});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,11 @@ class LocationListItem extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
+            width: MediaQuery.of(context).size.width,
             height: 160,
             child: MapWidget(
               distance: location.distance,
+              isDetail: false,
             ),
           ),
           SizedBox(

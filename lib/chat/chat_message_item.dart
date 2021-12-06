@@ -11,11 +11,11 @@ class ChatMessageItemWidget extends StatelessWidget {
   final bool isTimeStampSame;
 
   const ChatMessageItemWidget(
-      {this.message,
-      this.color,
-      this.isTimeStampSame,
-      this.borderColor,
-      this.textColor});
+      {required this.message,
+      required this.color,
+      required this.isTimeStampSame,
+      required this.borderColor,
+      required this.textColor});
 
   @override
   Widget build(BuildContext context) {

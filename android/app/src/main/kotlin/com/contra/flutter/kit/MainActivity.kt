@@ -1,4 +1,4 @@
-package com.flutter.kit.contra
+package com.contra.flutter.kit
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

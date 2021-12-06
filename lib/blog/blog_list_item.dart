@@ -8,7 +8,7 @@ class BlogListItem extends StatelessWidget {
   final Blog blog;
   final VoidCallback onTap;
 
-  const BlogListItem({this.blog, this.onTap});
+  const BlogListItem({required this.blog, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

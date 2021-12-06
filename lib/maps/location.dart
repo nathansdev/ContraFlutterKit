@@ -3,5 +3,5 @@ class Location {
   String address;
   String distance;
 
-  Location({this.name, this.address, this.distance});
+  Location({required this.name, required this.address, required this.distance});
 }

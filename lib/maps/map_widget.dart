@@ -10,7 +10,7 @@ class MapWidget extends StatefulWidget {
   String distance;
   bool isDetail;
 
-  MapWidget({this.distance, this.isDetail});
+  MapWidget({required this.distance, required this.isDetail});
 
   @override
   _MapWidgetState createState() => _MapWidgetState();

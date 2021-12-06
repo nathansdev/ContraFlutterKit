@@ -3,5 +3,5 @@ class Alarm {
   String am_pm;
   List<String> datesList;
 
-  Alarm({this.time, this.am_pm, this.datesList});
+  Alarm({required this.time, required this.am_pm, required this.datesList});
 }

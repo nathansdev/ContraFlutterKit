@@ -6,18 +6,17 @@ class Weather {
   String time;
   String image;
   String am_pm;
-
   String degree;
   Color color;
 
   Weather(
-      {this.country,
-      this.city,
-      this.am_pm,
-      this.time,
-      this.color,
-      this.image,
-      this.degree});
+      {required this.country,
+      required this.city,
+      required this.am_pm,
+      required this.time,
+      required this.color,
+      required this.image,
+      required this.degree});
 }
 
 class WeatherDate {
@@ -25,5 +24,5 @@ class WeatherDate {
   String image;
   Color color;
 
-  WeatherDate({this.day, this.color, this.image});
+  WeatherDate({required this.day, required this.color, required this.image});
 }

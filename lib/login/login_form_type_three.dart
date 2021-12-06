@@ -64,56 +64,67 @@ class LoginFormTypeThree extends StatelessWidget {
               borderRadius: BorderRadius.circular(16), color: white),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              ContraText(
-                text: "Login",
-                alignment: Alignment.center,
+              Column(
+                children: [
+                  ContraText(
+                    text: "Login",
+                    alignment: Alignment.center,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "You don’t think you should login first and behave like human not robot.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 17,
+                        color: trout,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "You don’t think you should login first and behave like human not robot.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 17, color: trout, fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ButtonPlainWithIcon(
-                color: wood_smoke,
-                textColor: white,
-                iconPath: "assets/icons/mail.svg",
-                isPrefix: true,
-                isSuffix: false,
-                text: "Email",
-                callback: () {},
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ButtonPlainWithIcon(
-                color: persian_blue,
-                textColor: white,
-                iconPath: "assets/icons/facebook.svg",
-                isPrefix: true,
-                isSuffix: false,
-                text: "Facebook",
-                callback: () {},
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ButtonPlainWithIcon(
-                color: carribean_green,
-                textColor: white,
-                iconPath: "assets/icons/twitter.svg",
-                isPrefix: true,
-                isSuffix: false,
-                text: "Twitter",
-                callback: () {},
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ButtonPlainWithIcon(
+                    color: wood_smoke,
+                    textColor: white,
+                    iconPath: "assets/icons/mail.svg",
+                    isPrefix: true,
+                    isSuffix: false,
+                    text: "Email",
+                    callback: () {},
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  ButtonPlainWithIcon(
+                    color: persian_blue,
+                    textColor: white,
+                    iconPath: "assets/icons/facebook.svg",
+                    isPrefix: true,
+                    isSuffix: false,
+                    text: "Facebook",
+                    callback: () {},
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  ButtonPlainWithIcon(
+                    color: carribean_green,
+                    textColor: white,
+                    iconPath: "assets/icons/twitter.svg",
+                    isPrefix: true,
+                    isSuffix: false,
+                    text: "Twitter",
+                    callback: () {},
+                  ),
+                ],
               ),
             ],
           ),

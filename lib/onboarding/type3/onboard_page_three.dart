@@ -8,7 +8,7 @@ import '../onboard_data.dart';
 class OnboardPageTypeThree extends StatelessWidget {
   final OnboardData data;
 
-  const OnboardPageTypeThree({this.data});
+  const OnboardPageTypeThree({required this.data});
 
   @override
   Widget build(BuildContext context) {

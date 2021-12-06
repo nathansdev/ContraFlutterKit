@@ -10,12 +10,12 @@ class ButtonRoundWithShadow extends StatelessWidget {
   final double size;
 
   const ButtonRoundWithShadow(
-      {this.borderColor,
-      this.shadowColor,
-      this.color,
-      this.iconPath,
-      this.size,
-      this.callback});
+      {required this.borderColor,
+      required this.shadowColor,
+      required this.color,
+      required this.iconPath,
+      required this.size,
+      required this.callback});
 
   @override
   Widget build(BuildContext context) {

@@ -7,14 +7,14 @@ import 'alarm.dart';
 class AlarmListItem extends StatefulWidget {
   Alarm alarm;
 
-  AlarmListItem({this.alarm});
+  AlarmListItem({required this.alarm});
 
   @override
   _AlarmListItemState createState() => _AlarmListItemState();
 }
 
 class _AlarmListItemState extends State<AlarmListItem> {
-  List<String> items = List<String>();
+  List<String> items = <String>[];
 
   @override
   void initState() {

@@ -69,30 +69,31 @@ class DetailScreenPageTwo extends StatelessWidget {
               color: white),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              ContraText(
-                textAlign: TextAlign.center,
-                text: "Title of the features",
-                alignment: Alignment.center,
-                size: 36,
-                color: wood_smoke,
-                weight: FontWeight.w800,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              ContraText(
-                text:
-                    "This title may have some detailed descriptions, which can go here. Some of these text box information is secured.",
-                alignment: Alignment.center,
-                size: 15,
-                color: trout,
-                weight: FontWeight.w500,
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 16,
+              Column(
+                children: [
+                  ContraText(
+                    textAlign: TextAlign.center,
+                    text: "Title of the features",
+                    alignment: Alignment.center,
+                    size: 36,
+                    color: wood_smoke,
+                    weight: FontWeight.w800,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ContraText(
+                    text:
+                        "This title may have some detailed descriptions, which can go here. Some of these text box information is secured.",
+                    alignment: Alignment.center,
+                    size: 15,
+                    color: trout,
+                    weight: FontWeight.w500,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
               ContraButton(
                 borderColor: persian_blue,

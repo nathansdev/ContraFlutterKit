@@ -3,18 +3,23 @@ import 'package:contraflutterkit/custom_widgets/custom_list_item.dart';
 import 'package:contraflutterkit/payment/payment_type.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PaymentCartItemBig extends StatelessWidget {
   final PaymentType type;
   final bool isVertical;
 
-  const PaymentCartItemBig({this.type, this.isVertical});
+  const PaymentCartItemBig({required this.type, required this.isVertical});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: isVertical ? MediaQuery.of(context).size.width : 250,
+      height: isVertical
+          ? kIsWeb
+              ? MediaQuery.of(context).size.height * 0.6
+              : MediaQuery.of(context).size.height * 0.5
+          : 250,
       margin: isVertical
           ? EdgeInsets.symmetric(horizontal: 24, vertical: 12)
           : EdgeInsets.only(right: 12, top: 24, bottom: 12),
@@ -35,16 +40,21 @@ class PaymentCartItemBig extends StatelessWidget {
               side: BorderSide(color: wood_smoke, width: 2))),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
-            type.type,
-            style: TextStyle(
-                color: white, fontSize: 25, fontWeight: FontWeight.w500),
-          ),
-          Text(
-            type.price != null ? "\$" + type.price : "FREE",
-            style: TextStyle(
-                color: white, fontSize: 44, fontWeight: FontWeight.w800),
+          Column(
+            children: [
+              Text(
+                type.type,
+                style: TextStyle(
+                    color: white, fontSize: 25, fontWeight: FontWeight.w500),
+              ),
+              Text(
+                type.price != null ? "\$" + type.price : "FREE",
+                style: TextStyle(
+                    color: white, fontSize: 44, fontWeight: FontWeight.w800),
+              ),
+            ],
           ),
           isVertical
               ? CustomListItem(

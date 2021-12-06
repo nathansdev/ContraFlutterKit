@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
@@ -5,6 +7,7 @@ import 'package:contraflutterkit/shopping/shop_card_item.dart';
 import 'package:contraflutterkit/shopping/shop_item.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingHomePageOne extends StatefulWidget {
@@ -13,7 +16,7 @@ class ShoppingHomePageOne extends StatefulWidget {
 }
 
 class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
-  List<ShopItem> _items = List<ShopItem>();
+  List<ShopItem> _items = <ShopItem>[];
   TextEditingController _textEditingController = TextEditingController();
 
   @override
@@ -84,10 +87,20 @@ class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.menu,
-                    color: wood_smoke,
-                  ),
+               kIsWeb||   Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios,
+                            color: wood_smoke,
+                          ),
+                        )
+                      : Icon(
+                          Icons.menu,
+                          color: wood_smoke,
+                        ),
                   Expanded(
                     flex: 1,
                     child: ContraText(
@@ -110,6 +123,9 @@ class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: CustomSearchText(

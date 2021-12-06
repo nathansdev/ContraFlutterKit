@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 class ImageTextPage extends StatefulWidget {
   String image;
 
-  ImageTextPage({this.image});
+  ImageTextPage({required this.image});
 
   @override
   _ImageTextPageState createState() => _ImageTextPageState();

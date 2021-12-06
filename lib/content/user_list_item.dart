@@ -9,7 +9,7 @@ import 'package:flutter_svg/svg.dart';
 class UserListItem extends StatelessWidget {
   final User user;
 
-  const UserListItem({this.user});
+  const UserListItem({required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,9 @@ class UserListItem extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     ContraButton(
+                      callback: () {},
                       color: wood_smoke,
+                      iconPath: "",
                       borderColor: wood_smoke,
                       textColor: white,
                       text: "message",

@@ -23,15 +23,14 @@ class _MenuPageOneState extends State<MenuPageOne> {
             Expanded(
               flex: 1,
               child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-                child: Icon(
-                  Icons.close,
-                  color: black,
-                  size: 32,
-                ),
-              ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(
+                    Icons.close,
+                    color: black,
+                    size: 32,
+                  )),
             ),
             Expanded(
               flex: 1,

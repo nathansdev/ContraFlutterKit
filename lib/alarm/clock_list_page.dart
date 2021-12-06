@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/alarm/clock_list_item.dart';
 import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_header.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'clock.dart';
@@ -14,7 +17,7 @@ class ClockListPage extends StatefulWidget {
 }
 
 class _ClockListPageState extends State<ClockListPage> {
-  List<Clock> clocks = List<Clock>();
+  List<Clock> clocks = <Clock>[];
 
   @override
   void initState() {
@@ -45,12 +48,38 @@ class _ClockListPageState extends State<ClockListPage> {
       backgroundColor: persian_blue,
       appBar: CustomAppBar(
         height: 200,
-        child: CustomHeader(
-          lineOneText: "World",
-          lineTwotext: "Clock",
-          color: white,
-          bg_color: persian_blue,
-          fg_color: white,
+        child: Row(
+          children: [
+            kIsWeb || Platform.isIOS
+                ? SizedBox(
+                    width: 20,
+                  )
+                : SizedBox(),
+            kIsWeb || Platform.isIOS
+                ? ButtonRoundWithShadow(
+                    size: 48,
+                    borderColor: wood_smoke,
+                    color: white,
+                    callback: () {
+                      Navigator.pop(context);
+                    },
+                    shadowColor: wood_smoke,
+                    iconPath: "assets/icons/arrow_back.svg")
+                : SizedBox(),
+            kIsWeb || Platform.isIOS
+                ? SizedBox(
+                    width: 20,
+                  )
+                : SizedBox(),
+            CustomHeader(
+              lineOneText: "World",
+              isTwoLines: kIsWeb ? false : true,
+              lineTwotext: "Clock",
+              color: white,
+              bg_color: persian_blue,
+              fg_color: white,
+            ),
+          ],
         ),
       ),
       floatingActionButton: Align(

@@ -4,5 +4,9 @@ class Message {
   final String time;
   final bool isUser;
 
-  const Message({this.name, this.message, this.time, this.isUser});
+  const Message(
+      {required this.name,
+      required this.message,
+      required this.time,
+      required this.isUser});
 }

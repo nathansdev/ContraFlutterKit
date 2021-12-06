@@ -16,7 +16,7 @@ class InviteListPage extends StatefulWidget {
 
 class _InviteListPageState extends State<InviteListPage> {
   TextEditingController _textEditingController = TextEditingController();
-  List<InviteDetail> invites = List<InviteDetail>();
+  List<InviteDetail> invites = <InviteDetail>[];
 
   @override
   void initState() {

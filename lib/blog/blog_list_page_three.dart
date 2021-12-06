@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/blog/blog_list_item.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'blog.dart';
@@ -13,7 +16,7 @@ class BlogListPageThree extends StatefulWidget {
 }
 
 class _BlogListPageThreeState extends State<BlogListPageThree> {
-  List<Blog> _blogs = List<Blog>();
+  List<Blog> _blogs = <Blog>[];
 
   @override
   void initState() {
@@ -69,10 +72,20 @@ class _BlogListPageThreeState extends State<BlogListPageThree> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.menu,
-                    color: wood_smoke,
-                  ),
+                  kIsWeb || Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios,
+                            color: wood_smoke,
+                          ),
+                        )
+                      : Icon(
+                          Icons.menu,
+                          color: wood_smoke,
+                        ),
                   Expanded(
                     flex: 1,
                     child: ContraText(

@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 class ChipsFilterWidget extends StatefulWidget {
   final List<String> filters;
 
-  const ChipsFilterWidget({this.filters});
+  const ChipsFilterWidget({required this.filters});
 
   @override
   _ChipsFilterWidgetState createState() => _ChipsFilterWidgetState();
 }
 
 class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
-  List<String> options = List();
-  List<int> selectedChoices = List();
+  List<String> options = [];
+  List<int> selectedChoices = [];
 
   @override
   void initState() {

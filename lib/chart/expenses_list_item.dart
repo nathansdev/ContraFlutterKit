@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class ExpenseListItem extends StatelessWidget {
   Expense expense;
 
-  ExpenseListItem({this.expense});
+  ExpenseListItem({required this.expense});
 
   @override
   Widget build(BuildContext context) {

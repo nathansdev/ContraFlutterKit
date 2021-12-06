@@ -1,3 +1,4 @@
+import 'package:contraflutterkit/custom_widgets/button_round_with_shadow.dart';
 import 'package:contraflutterkit/custom_widgets/button_solid_with_icon.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +12,10 @@ class LoginFormTypeFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      // backgroundColor: flamingo,
+      // elevation: 0,
+      // ),
       body: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
         Container(
           color: flamingo,
@@ -121,7 +126,21 @@ class LoginFormTypeFour extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
+        Positioned(
+          left: 24,
+          top: 56,
+          child: ButtonRoundWithShadow(
+            size: 48,
+            iconPath: "assets/icons/close.svg",
+            borderColor: black,
+            shadowColor: black,
+            color: white,
+            callback: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
       ]),
     );
   }

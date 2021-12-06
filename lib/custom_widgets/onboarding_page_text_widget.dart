@@ -5,7 +5,8 @@ class OnboardingPageTextWidget extends StatelessWidget {
   final String detail;
   final Alignment alignment;
 
-  const OnboardingPageTextWidget({this.title, this.detail, this.alignment});
+  const OnboardingPageTextWidget(
+      {required this.title, required this.detail, required this.alignment});
 
   @override
   Widget build(BuildContext context) {

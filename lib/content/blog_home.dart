@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:contraflutterkit/custom_widgets/contra_button.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,10 +29,20 @@ class _BlogHomeState extends State<BlogHome> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.menu,
-                    color: wood_smoke,
-                  ),
+              kIsWeb||    Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios,
+                            color: wood_smoke,
+                          ),
+                        )
+                      : Icon(
+                          Icons.menu,
+                          color: wood_smoke,
+                        ),
                   Expanded(
                     flex: 1,
                     child: ContraText(
@@ -78,6 +91,7 @@ class _BlogHomeState extends State<BlogHome> {
             padding: const EdgeInsets.all(8.0),
             child: ContraButton(
               text: "More",
+                iconPath: "",
               size: 200,
               color: flamingo,
               height: 60,
