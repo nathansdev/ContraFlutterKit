@@ -32,12 +32,12 @@ class _ChatHomePageState extends State<ChatHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), title: Text("Search")),
+              icon: Icon(Icons.search), label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.chat_bubble), title: Text("Chat")),
-          BottomNavigationBarItem(icon: Icon(Icons.info), title: Text("About")),
+              icon: Icon(Icons.chat_bubble), label: "Chat"),
+          BottomNavigationBarItem(icon: Icon(Icons.info), label: "About"),
         ],
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
