@@ -77,15 +77,20 @@ class OnboardPageTypeFour extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(
                             left: 24.0, top: 8, right: 24),
-                        child: ButtonTheme(
-                          minWidth: MediaQuery.of(context).size.width,
-                          child: RaisedButton(
-                            padding: EdgeInsets.all(16),
-                            color: wood_smoke,
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.all(16),
+                              backgroundColor: wood_smoke,
+                              foregroundColor: white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                            ),
                             onPressed: () {
                               Navigator.pushNamed(context, "/welcome_screen");
                             },
-                            textColor: white,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
@@ -99,15 +104,16 @@ class OnboardPageTypeFour extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 8.0),
                                   child: SvgPicture.asset(
-                                      "assets/icons/arrow_next.svg"),
+                                    "assets/icons/arrow_next.svg",
+                                    color:
+                                        white, // Ensure the SVG color matches the text color
+                                  ),
                                 )
                               ],
                             ),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(16.0)),
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

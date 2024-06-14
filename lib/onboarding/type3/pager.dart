@@ -101,25 +101,28 @@ class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                      child: ButtonTheme(
-                        minWidth: MediaQuery.of(context).size.width,
-                        child: RaisedButton(
-                          padding: EdgeInsets.all(16),
-                          color: wood_smoke,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(16),
+                            backgroundColor: wood_smoke,
+                            foregroundColor: white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                            ),
+                          ),
                           onPressed: () {
                             Navigator.pushNamed(context, "/welcome_screen");
                           },
-                          textColor: white,
                           child: Text(
                             "Get Started",
                             style: TextStyle(
                                 fontSize: 21.0, fontWeight: FontWeight.bold),
                           ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(16.0)),
                         ),
                       ),
-                    ),
+                    )
                   ]),
             ),
           ],

@@ -1,12 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:card_swiper/card_swiper.dart';
+
 import 'package:contraflutterkit/custom_widgets/contra_button.dart';
 import 'package:contraflutterkit/custom_widgets/contra_button_round.dart';
 import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 class DetailScreenPageThree extends StatefulWidget {
   @override

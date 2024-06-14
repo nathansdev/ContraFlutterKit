@@ -1,81 +1,62 @@
-import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:contraflutterkit/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:contraflutterkit/utils/colors.dart';
 
-/// Example of a Spark Bar by hiding both axis, reducing the chart margins.
 class SparkBar extends StatelessWidget {
-  final List<charts.Series> seriesList;
+  final List<OrdinalSales> data;
   final bool animate;
 
-  SparkBar(this.seriesList, {required this.animate});
+  SparkBar(this.data, {required this.animate});
 
   factory SparkBar.withSampleData() {
-    return new SparkBar(
+    return SparkBar(
       _createSampleData(),
-      // Disable animations for image tests.
       animate: false,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return new charts.BarChart(
-      [],
-      animate: animate,
-
-      /// Assign a custom style for the measure axis.
-      ///
-      /// The NoneRenderSpec only draws an axis line (and even that can be hidden
-      /// with showAxisLine=false).
-      primaryMeasureAxis:
-          new charts.NumericAxisSpec(renderSpec: new charts.NoneRenderSpec()),
-
-      /// This is an OrdinalAxisSpec to match up with BarChart's default
-      /// ordinal domain axis (use NumericAxisSpec or DateTimeAxisSpec for
-      /// other charts).
-      domainAxis: new charts.OrdinalAxisSpec(
-          // Make sure that we draw the domain axis line.
-          showAxisLine: false,
-          // But don't draw anything else.
-          renderSpec: new charts.NoneRenderSpec()),
-
-      // With a spark chart we likely don't want large chart margins.
-      // 1px is the smallest we can make each margin.
-      layoutConfig: new charts.LayoutConfig(
-          leftMarginSpec: new charts.MarginSpec.fixedPixel(0),
-          topMarginSpec: new charts.MarginSpec.fixedPixel(0),
-          rightMarginSpec: new charts.MarginSpec.fixedPixel(0),
-          bottomMarginSpec: new charts.MarginSpec.fixedPixel(1)),
+    return AspectRatio(
+      aspectRatio: 2,
+      child: BarChart(
+        BarChartData(
+          alignment: BarChartAlignment.center,
+          maxY: data.map((e) => e.sales).reduce((a, b) => a > b ? a : b).toDouble(),
+          titlesData: FlTitlesData(show: false),
+          borderData: FlBorderData(show: false),
+          barGroups: data.asMap().entries.map((entry) {
+            return BarChartGroupData(
+              x: entry.key,
+              barRods: [
+                BarChartRodData(
+                  toY: entry.value.sales.toDouble(),
+                  color: entry.value.colorVal,
+                  width: 16,
+                  borderRadius: BorderRadius.zero,
+                )
+              ],
+            );
+          }).toList(),
+        ),
+        swapAnimationDuration: animate ? Duration(milliseconds: 150) : Duration.zero,
+      ),
     );
   }
 
-  /// Create series list with single series
-  static List<charts.Series<OrdinalSales, String>> _createSampleData() {
-    final globalSalesData = [
-      new OrdinalSales(2007, 3100, selago),
-      new OrdinalSales(2008, 3500, bareley_white),
-      new OrdinalSales(2009, 5000, white),
-      new OrdinalSales(2010, 2500, lavandar_bush),
-      new OrdinalSales(2011, 3200, foam),
-      new OrdinalSales(2012, 4500, white),
-      new OrdinalSales(2012, 4500, white)
-    ];
-
+  static List<OrdinalSales> _createSampleData() {
     return [
-      new charts.Series<OrdinalSales, String>(
-        id: 'Global Revenue',
-        colorFn: (OrdinalSales sales, _) =>
-            charts.ColorUtil.fromDartColor(sales.colorVal),
-        domainFn: (OrdinalSales sales, _) => sales.year.toString(),
-        measureFn: (OrdinalSales sales, _) => sales.sales,
-        data: globalSalesData,
-      ),
+      OrdinalSales(2007, 3100, selago),
+      OrdinalSales(2008, 3500, bareley_white),
+      OrdinalSales(2009, 5000, white),
+      OrdinalSales(2010, 2500, lavandar_bush),
+      OrdinalSales(2011, 3200, foam),
+      OrdinalSales(2012, 4500, white),
+      OrdinalSales(2013, 4500, white)
     ];
   }
 }
 
-/// Sample ordinal data type.
 class OrdinalSales {
   final int year;
   final int sales;
@@ -101,23 +82,21 @@ class BarChartSample3State extends State<BarChartSample3> {
         child: BarChart(
           BarChartData(
             backgroundColor: white,
-            groupsSpace: 0,
             alignment: BarChartAlignment.center,
             maxY: 20,
             barTouchData: BarTouchData(
               enabled: false,
               touchTooltipData: BarTouchTooltipData(
-                tooltipBgColor: Colors.transparent,
                 tooltipPadding: const EdgeInsets.all(0),
-                tooltipBottomMargin: 8,
+                tooltipMargin: 8,
                 getTooltipItem: (
-                  BarChartGroupData group,
-                  int groupIndex,
-                  BarChartRodData rod,
-                  int rodIndex,
-                ) {
+                    BarChartGroupData group,
+                    int groupIndex,
+                    BarChartRodData rod,
+                    int rodIndex,
+                    ) {
                   return BarTooltipItem(
-                    rod.y.round().toString(),
+                    rod.toY.round().toString(),
                     TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -128,103 +107,77 @@ class BarChartSample3State extends State<BarChartSample3> {
             ),
             titlesData: FlTitlesData(
               show: true,
-              bottomTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (value) {
-                  return TextStyle(
-                      color: const Color(0xff7589a2),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14);
-                },
-                margin: 20,
-                getTitles: (double value) {
-                  switch (value.toInt()) {
-                    case 0:
-                      return '';
-                    case 1:
-                      return '';
-                    case 2:
-                      return '';
-                    case 3:
-                      return '';
-                    case 4:
-                      return '';
-                    case 5:
-                      return '';
-                    case 6:
-                      return '';
-                    default:
-                      return '';
-                  }
-                },
+              bottomTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    return Text(
+                      '',
+                      style: TextStyle(
+                        color: const Color(0xff7589a2),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    );
+                  },
+                  reservedSize: 20,
+                ),
               ),
-              leftTitles: SideTitles(showTitles: false),
+              leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
             ),
             borderData: FlBorderData(
                 show: false, border: Border.all(width: 2, color: wood_smoke)),
             barGroups: [
-              BarChartGroupData(barsSpace: 0, x: 0, barRods: [
+              BarChartGroupData(x: 0, barRods: [
                 BarChartRodData(
-                    y: 8,
+                    toY: 8,
                     width: 56,
-                    colors: [selago],
-                    borderRadius: BorderRadius.all(Radius.circular(0)))
-              ], showingTooltipIndicators: [
-                0
+                    color: selago,
+                    borderRadius: BorderRadius.zero)
               ]),
               BarChartGroupData(x: 1, barRods: [
                 BarChartRodData(
-                    y: 15,
+                    toY: 15,
                     width: 56,
-                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                    colors: [bareley_white])
-              ], showingTooltipIndicators: [
-                0
+                    borderRadius: BorderRadius.zero,
+                    color: bareley_white)
               ]),
               BarChartGroupData(x: 2, barRods: [
                 BarChartRodData(
-                    y: 12,
+                    toY: 12,
                     width: 56,
-                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                    colors: [pink_salomn])
-              ], showingTooltipIndicators: [
-                0
+                    borderRadius: BorderRadius.zero,
+                    color: pink_salomn)
               ]),
               BarChartGroupData(x: 3, barRods: [
                 BarChartRodData(
-                    y: 16,
+                    toY: 16,
                     width: 56,
-                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                    colors: [lavandar_bush])
-              ], showingTooltipIndicators: [
-                0
+                    borderRadius: BorderRadius.zero,
+                    color: lavandar_bush)
               ]),
-              BarChartGroupData(x: 3, barRods: [
+              BarChartGroupData(x: 4, barRods: [
                 BarChartRodData(
-                    y: 13,
+                    toY: 13,
                     width: 56,
-                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                    colors: [santas_gray])
-              ], showingTooltipIndicators: [
-                0
+                    borderRadius: BorderRadius.zero,
+                    color: santas_gray)
               ]),
-              BarChartGroupData(x: 3, barRods: [
+              BarChartGroupData(x: 5, barRods: [
                 BarChartRodData(
-                    y: 6,
+                    toY: 6,
                     width: 56,
-                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                    colors: [selago])
-              ], showingTooltipIndicators: [
-                0
+                    borderRadius: BorderRadius.zero,
+                    color: selago)
               ]),
-              BarChartGroupData(x: 3, barRods: [
+              BarChartGroupData(x: 6, barRods: [
                 BarChartRodData(
-                    y: 8,
+                    toY: 8,
                     width: 56,
-                    borderRadius: BorderRadius.all(Radius.circular(0)),
-                    colors: [foam])
-              ], showingTooltipIndicators: [
-                0
+                    borderRadius: BorderRadius.zero,
+                    color: foam)
               ]),
             ],
           ),
