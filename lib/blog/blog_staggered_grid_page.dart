@@ -3,7 +3,6 @@ import 'package:contraflutterkit/custom_widgets/custom_app_bar.dart';
 import 'package:contraflutterkit/custom_widgets/custom_search_text.dart';
 import 'package:contraflutterkit/login/contra_text.dart';
 import 'package:contraflutterkit/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -121,21 +120,21 @@ class _BlogStaggeredGridPageState extends State<BlogStaggeredGridPage> {
                 controller: _textEditingController,
               ),
             ),
-            StaggeredGridView.countBuilder(
-                padding: const EdgeInsets.all(4.0),
-                staggeredTileBuilder: (int index) =>
-                    new StaggeredTile.count(2, index.isEven ? 2 : 1),
-                crossAxisCount: 4,
-                mainAxisSpacing: 4.0,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                crossAxisSpacing: 4.0,
-                itemCount: _blogs.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return BlogStaggeredItem(
-                    blog: _blogs[index],
-                  );
-                }),
+            StaggeredGrid.count(
+              crossAxisCount: 4,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
+              children: _blogs.map((blog) {
+                int index = _blogs.indexOf(blog);
+                return StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: index.isEven ? 2 : 1,
+                  child: BlogStaggeredItem(
+                    blog: blog,
+                  ),
+                );
+              }).toList(),
+            ),
           ],
         ),
       ),
