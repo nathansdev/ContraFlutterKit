@@ -41,4 +41,3 @@ flutter:
         - asset: assets/fonts/Montserrat-ExtraBold.ttf
         - asset: assets/fonts/Montserrat-Medium.ttf
   uses-material-design: true
-
