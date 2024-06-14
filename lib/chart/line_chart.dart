@@ -8,15 +8,11 @@ class LineChartSample2 extends StatefulWidget {
 
 class _LineChartSample2State extends State<LineChartSample2> {
   List<Color> gradientColors = [
-//    const Color(0xff23b6e6),
-//    const Color(0xff02d39a),
     const Color(0xffFFD465),
     const Color(0xfffcd465),
   ];
 
   List<Color> lineColors = [
-//    const Color(0xff23b6e6),
-//    const Color(0xff02d39a),
     const Color(0xFF18191F),
     const Color(0xFF18191F),
   ];
@@ -46,7 +42,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
         SizedBox(
           width: 60,
           height: 34,
-          child: FlatButton(
+          child: TextButton(
             onPressed: () {
               setState(() {
                 showAvg = !showAvg;
@@ -57,7 +53,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               style: TextStyle(
                   fontSize: 12,
                   color:
-                      showAvg ? Colors.white.withOpacity(0.5) : Colors.white),
+                  showAvg ? Colors.white.withOpacity(0.5) : Colors.white),
             ),
           ),
         ),
@@ -65,11 +61,65 @@ class _LineChartSample2State extends State<LineChartSample2> {
     );
   }
 
+  Widget bottomTitleWidgets(double value, TitleMeta meta) {
+    const style = TextStyle(
+      color: Color(0xff68737d),
+      fontWeight: FontWeight.bold,
+      fontSize: 16,
+    );
+    Widget text;
+    switch (value.toInt()) {
+      case 2:
+        text = const Text('MAR', style: style);
+        break;
+      case 5:
+        text = const Text('JUN', style: style);
+        break;
+      case 8:
+        text = const Text('SEP', style: style);
+        break;
+      default:
+        text = const Text('', style: style);
+        break;
+    }
+
+    return SideTitleWidget(
+      axisSide: meta.axisSide,
+      child: text,
+    );
+  }
+
+  Widget leftTitleWidgets(double value, TitleMeta meta) {
+    const style = TextStyle(
+      color: Color(0xff67727d),
+      fontWeight: FontWeight.bold,
+      fontSize: 15,
+    );
+    String text;
+    switch (value.toInt()) {
+      case 1:
+        text = '10k';
+        break;
+      case 3:
+        text = '30k';
+        break;
+      case 5:
+        text = '50k';
+        break;
+      default:
+        return Container();
+    }
+
+    return Text(text, style: style, textAlign: TextAlign.left);
+  }
+
   LineChartData mainData() {
     return LineChartData(
       gridData: FlGridData(
         show: false,
         drawVerticalLine: true,
+        horizontalInterval: 1,
+        verticalInterval: 1,
         getDrawingHorizontalLine: (value) {
           return FlLine(
             color: const Color(0xff37434d),
@@ -85,62 +135,40 @@ class _LineChartSample2State extends State<LineChartSample2> {
       ),
       titlesData: FlTitlesData(
         show: true,
-        bottomTitles: SideTitles(
-          showTitles: false,
-          reservedSize: 22,
-          getTextStyles: (value) {
-            return TextStyle(
-                color: Color(0xff68737d),
-                fontWeight: FontWeight.bold,
-                fontSize: 16);
-          },
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 2:
-                return 'MAR';
-              case 5:
-                return 'JUN';
-              case 8:
-                return 'SEP';
-            }
-            return '';
-          },
-          margin: 8,
+        rightTitles: AxisTitles(
+          sideTitles: SideTitles(showTitles: false),
         ),
-        leftTitles: SideTitles(
-          showTitles: false,
-          getTextStyles: (value) {
-            return TextStyle(
-              color: Color(0xff67727d),
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
-            );
-          },
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 1:
-                return '10k';
-              case 3:
-                return '30k';
-              case 5:
-                return '50k';
-            }
-            return '';
-          },
-          reservedSize: 28,
-          margin: 12,
+        topTitles: AxisTitles(
+          sideTitles: SideTitles(showTitles: false),
+        ),
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+            reservedSize: 30,
+            interval: 1,
+            getTitlesWidget: bottomTitleWidgets,
+          ),
+        ),
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+            interval: 1,
+            getTitlesWidget: leftTitleWidgets,
+            reservedSize: 42,
+          ),
         ),
       ),
       borderData: FlBorderData(
-          show: false,
-          border: Border.all(color: const Color(0xff37434d), width: 1)),
+        show: false,
+        border: Border.all(color: const Color(0xff37434d), width: 1),
+      ),
       minX: 0,
       maxX: 11,
       minY: 0,
       maxY: 6,
       lineBarsData: [
         LineChartBarData(
-          spots: [
+          spots: const [
             FlSpot(0, 5),
             FlSpot(1, 3),
             FlSpot(2.6, 2),
@@ -151,7 +179,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(11, 4),
           ],
           isCurved: true,
-          colors: gradientColors,
+          gradient: LinearGradient(
+            colors: gradientColors,
+          ),
           barWidth: 5,
           isStrokeCapRound: true,
           dotData: FlDotData(
@@ -159,8 +189,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ),
           belowBarData: BarAreaData(
             show: true,
-            colors:
-                gradientColors.map((color) => color.withOpacity(0.3)).toList(),
+            gradient: LinearGradient(
+              colors: gradientColors
+                  .map((color) => color.withOpacity(0.3))
+                  .toList(),
+            ),
           ),
         ),
       ],
@@ -173,6 +206,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
       gridData: FlGridData(
         show: true,
         drawHorizontalLine: true,
+        verticalInterval: 1,
+        horizontalInterval: 1,
         getDrawingVerticalLine: (value) {
           return FlLine(
             color: const Color(0xff37434d),
@@ -188,61 +223,40 @@ class _LineChartSample2State extends State<LineChartSample2> {
       ),
       titlesData: FlTitlesData(
         show: true,
-        bottomTitles: SideTitles(
-          showTitles: true,
-          reservedSize: 22,
-          getTextStyles: (value) {
-            return TextStyle(
-                color: Color(0xff68737d),
-                fontWeight: FontWeight.bold,
-                fontSize: 16);
-          },
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 2:
-                return 'MAR';
-              case 5:
-                return 'JUN';
-              case 8:
-                return 'SEP';
-            }
-            return '';
-          },
-          margin: 8,
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 30,
+            getTitlesWidget: bottomTitleWidgets,
+            interval: 1,
+          ),
         ),
-        leftTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (value) {
-            return TextStyle(
-                color: Color(0xff68737d),
-                fontWeight: FontWeight.bold,
-                fontSize: 16);
-          },
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 1:
-                return '10k';
-              case 3:
-                return '30k';
-              case 5:
-                return '50k';
-            }
-            return '';
-          },
-          reservedSize: 28,
-          margin: 12,
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            getTitlesWidget: leftTitleWidgets,
+            reservedSize: 42,
+            interval: 1,
+          ),
+        ),
+        topTitles: AxisTitles(
+          sideTitles: SideTitles(showTitles: false),
+        ),
+        rightTitles: AxisTitles(
+          sideTitles: SideTitles(showTitles: false),
         ),
       ),
       borderData: FlBorderData(
-          show: true,
-          border: Border.all(color: const Color(0xff37434d), width: 1)),
+        show: true,
+        border: Border.all(color: const Color(0xff37434d), width: 1),
+      ),
       minX: 0,
       maxX: 11,
       minY: 0,
       maxY: 6,
       lineBarsData: [
         LineChartBarData(
-          spots: [
+          spots: const [
             FlSpot(0, 3.44),
             FlSpot(2.6, 3.44),
             FlSpot(4.9, 3.44),
@@ -252,23 +266,30 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(11, 3.44),
           ],
           isCurved: true,
-          colors: [
-            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
-            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
-          ],
+          gradient: LinearGradient(
+            colors: [
+              ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
+              ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
+            ],
+          ),
           barWidth: 5,
           isStrokeCapRound: true,
           dotData: FlDotData(
             show: false,
           ),
-          belowBarData: BarAreaData(show: true, colors: [
-            ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                .lerp(0.2)!
-                .withOpacity(0.1),
-            ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                .lerp(0.2)!
-                .withOpacity(0.1),
-          ]),
+          belowBarData: BarAreaData(
+            show: true,
+            gradient: LinearGradient(
+              colors: [
+                ColorTween(begin: gradientColors[0], end: gradientColors[1])
+                    .lerp(0.2)!
+                    .withOpacity(0.1),
+                ColorTween(begin: gradientColors[0], end: gradientColors[1])
+                    .lerp(0.2)!
+                    .withOpacity(0.1),
+              ],
+            ),
+          ),
         ),
       ],
     );

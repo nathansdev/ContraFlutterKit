@@ -30,12 +30,12 @@ class _PopularCoursesHomePageState extends State<PopularCoursesHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label:("Home")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), label: "Search"),
+              icon: Icon(Icons.search), label:("Search")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.chat_bubble), label: "Chat"),
-          BottomNavigationBarItem(icon: Icon(Icons.info), label: "About"),
+              icon: Icon(Icons.chat_bubble), label:("Chat")),
+          BottomNavigationBarItem(icon: Icon(Icons.info), label:("About")),
         ],
         currentIndex: _currentIndex,
         onTap: _onItemTapped,

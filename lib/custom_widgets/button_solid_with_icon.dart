@@ -26,39 +26,39 @@ class ButtonPlainWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: size != null ? size! : MediaQuery.of(context).size.width,
-      child: RaisedButton(
-        padding: EdgeInsets.all(16),
-        color: color,
-        onPressed: callback,
-        textColor: textColor,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            isPrefix
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: SvgPicture.asset(
-                      iconPath,
-                      color: white,
-                    ),
-                  )
-                : SizedBox(),
-            Text(
-              text,
-              style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+        minWidth: size != null ? size! : MediaQuery.of(context).size.width,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.all(16),
+            backgroundColor: color,
+            foregroundColor: textColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
             ),
-            isSuffix
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: SvgPicture.asset(iconPath),
-                  )
-                : SizedBox()
-          ],
-        ),
-        shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(16.0)),
-      ),
-    );
+          ),
+          onPressed: callback,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (isPrefix)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SvgPicture.asset(
+                    iconPath,
+                    color: white,
+                  ),
+                ),
+              Text(
+                text,
+                style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+              ),
+              if (isSuffix)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SvgPicture.asset(iconPath),
+                ),
+            ],
+          ),
+        ));
   }
 }

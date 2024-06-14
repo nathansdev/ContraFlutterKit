@@ -86,32 +86,41 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
                   Expanded(
                     flex: 1,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 6),
-                      child: RaisedButton(
-                        padding: EdgeInsets.all(16),
-                        color: white,
-                        textColor: black,
-                        onPressed: () {
-//                          Navigator.pushNamed(context, "/welcome_screen");
-                        },
-                        child: Text(
-                          "Skip",
-                          style: TextStyle(
-                              fontSize: 21.0, fontWeight: FontWeight.bold),
-                        ),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(16.0),
-                            side: BorderSide(color: black, width: 2.0)),
-                      ),
-                    ),
+                        padding: const EdgeInsets.only(right: 6),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(16),
+                            backgroundColor:
+                                Colors.white, // Instead of 'primary'
+                            foregroundColor: Colors.black, //
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                              side: BorderSide(color: black, width: 2.0),
+                            ),
+                          ),
+                          onPressed: () {
+                            // Navigator.pushNamed(context, "/welcome_screen");
+                          },
+                          child: Text(
+                            "Skip",
+                            style: TextStyle(
+                                fontSize: 21.0, fontWeight: FontWeight.bold),
+                          ),
+                        )),
                   ),
                   Expanded(
                     flex: 1,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 6),
-                      child: RaisedButton(
-                        padding: EdgeInsets.all(16),
-                        color: wood_smoke,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(16),
+                          backgroundColor: wood_smoke,
+                          foregroundColor: white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                        ),
                         onPressed: () {
                           if (_pageController.hasClients) {
                             if (currentPageValue < 2) {
@@ -127,14 +136,11 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
                             Navigator.pushNamed(context, "/welcome_screen");
                           }
                         },
-                        textColor: white,
                         child: Text(
                           "Next",
                           style: TextStyle(
                               fontSize: 21.0, fontWeight: FontWeight.bold),
                         ),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(16.0)),
                       ),
                     ),
                   )
